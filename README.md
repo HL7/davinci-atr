@@ -1,2 +1,2 @@
 # davinci-atr
-Da Vinci Risk Based Contracts Member Attribution List
+This is the repository for the Da Vinci Risk Based Contracts Member Attribution List FHIR Implementation Guide project.
