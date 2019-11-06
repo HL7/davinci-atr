@@ -4080,7 +4080,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
           <xs:documentation xml:lang="en">3.5.0</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="4.0.0">
+      <xs:enumeration value="4.0.1">
         <xs:annotation>
           <xs:documentation xml:lang="en">4.0.0</xs:documentation>
         </xs:annotation>
