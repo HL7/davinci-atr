@@ -1,38 +1,73 @@
 <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
-  <li><a href="index.html">IG Home</a></li>
-  <li><a href="toc.html">Table of Contents</a></li>
+  <li>
+    <a href="{{site.data.info.assets}}toc.html">Table of Contents</a>
+  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">MyIg Background<b class="caret">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">ATR Specification<b class="caret">
       </b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="background.html">Backaground</a>
+        <a href="{{site.data.info.assets}}index.html">ATR Home Page</a>
+      </li>
+      <li>
+        <a href="{{site.data.info.assets}}usecases.html">Use Cases and Overview</a>
+      </li>
+      <li>
+        <a href="{{site.data.info.assets}}background.html">Technical Background</a>
+      </li>
+      <li>
+        <a href="{{site.data.info.assets}}spec.html">
+          <b>Formal Specification</b>
+        </a>
+      </li>
+      <li>
+        <a href="{{site.data.info.assets}}downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="{{site.data.info.assets}}credits.html">Credits</a>
       </li>
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Specification<b class="caret">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts<b class="caret">
       </b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="spec.html">Detailed Specification</a>
+        <a href="{{site.data.info.assets}}allartifacts.html">Artifacts Overview</a>
+      </li>
+      <li>
+        <a href="{{site.data.info.assets}}artifacts.html">FHIR R4 ATR-specific Artifacts</a>
+      </li>
+      <li>
+        <a href="http://hl7.org/fhir/us/core/STU3">US Core - R4 based</a>
       </li>
     </ul>
-  </li>
-  <li><a href="artifacts.html">Artifact Index</a></li>
+  </li>  
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Base Specs<b class="caret">
       </b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a target="_blank" href="{{site.data.fhir.path}}index.html">FHIR Spec <img src="external.png" style="text-align: baseline"/></a>
+        <a target="_blank" href="{{site.data.fhir.path}}index.html">FHIR R4 Spec <img src="external.png" style="text-align: baseline"/></a>
       </li>
       <li>
-        <a href="downloads.html">Downloads</a>
+        <a target="_blank" href="http://hl7.org/fhir/us/core/STU3">US Core STU3<img src="external.png" style="text-align: baseline"/></a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/uv/bulkdata/index.html">Bulk Data IG<img src="external.png" style="text-align: baseline"/></a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/uv/bulkdata/authorization/index.html">SMART on FHIR Backend Services Authorization<img src="external.png" style="text-align: baseline"/></a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/smart-app-launch/index.html">SMART on FHIR <img src="external.png" style="text-align: baseline"/></a>
       </li>
     </ul>
   </li>
-</ul>      
+  <li>
+    <a href="http://hl7.org/fhir/us/davinci-atr/history.html">History</a>
+  </li>
+</ul>
