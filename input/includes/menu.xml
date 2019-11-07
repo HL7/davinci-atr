@@ -35,13 +35,10 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="{{site.data.info.assets}}allartifacts.html">Artifacts Overview</a>
-      </li>
-      <li>
         <a href="{{site.data.info.assets}}artifacts.html">FHIR R4 ATR-specific Artifacts</a>
       </li>
       <li>
-        <a href="http://hl7.org/fhir/us/core/STU3">US Core - R4 based</a>
+        <a href="http://hl7.org/fhir/us/core/STU3">US Core - R4 version</a>
       </li>
     </ul>
   </li>  

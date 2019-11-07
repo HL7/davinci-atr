@@ -23,21 +23,21 @@
   </jurisdiction>
   <packageId value="hl7.fhir.us.davinci-atr"/>
   <fhirVersion value="4.0.1"/>
-  <!--   <dependsOn>
-    <uri value="http://hl7.org/fhir/us/core"/>
+   <dependsOn>
+    <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core"/>
     <packageId value="hl7.fhir.us.core"/>
     <version value="3.1.0"/>
-  </dependsOn> -->
+  </dependsOn>
   <definition>
     <!-- You don't need to define any groupings.  The IGPublisher will define them for you.  You only need to do so if your IG is 'special' and it's
       inappropriate to use the defaults.  Feel free to provide feedback about the defaults... -->
-    <!--    <resource>
+     <resource>
       <reference>
-        <reference value="StructureDefinition/structuredefinition-somePatientProfile"/>
+        <reference value="StructureDefinition/myObservation"/>
       </reference>
       <name value="Name you want in artifact list"/>
       <description value="Description you want in artifact list"/>
-    </resource>-->
+    </resource>
     <page>
       <!-- The root will always be toc.html - the template will force it if you don't do it -->
       <nameUrl value="toc.html"/>
@@ -45,7 +45,7 @@
       <generation value="html"/>
       <page>
         <nameUrl value="index.html"/>
-        <title value="ATR IG Home Page"/>
+        <title value="IG Home Page"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -61,6 +61,11 @@
       <page>
         <nameUrl value="spec.html"/>
         <title value="Detailed Specification"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="credits.html"/>
+        <title value="Credits"/>
         <generation value="markdown"/>
       </page>
       <page>

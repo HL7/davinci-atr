@@ -59,14 +59,14 @@ The implementation guide is organized into the following sections:
 * [Use Cases and Overview](usecases.html) describes the intent of the implementation guide, gives examples of its use and provides a high-level overview of expected process flow
 * [Technical Background](background.html) describes the different specifications this implementation guide relies on and indicates what developers should read and understand prior to implementing this specification
 * [Formal Specification](spec.html) covers the detailed implementation requirements and conformance expectation
-* [Artifacts](allartifacts.html) introduces and provides links to the [FHIR R4](artifacts.html) profiles, search parameters and other FHIR artifacts used in this implementation guide
+* [Artifacts](artifacts.html) introduces and provides links to the [FHIR R4](artifacts.html) profiles, search parameters and other FHIR artifacts used in this implementation guide
 * [Downloads](downloads.html) allows download of this and other specifications as well as other useful files
 * [Credits](credits.html) identifies the individuals and organizations involved in developing this implementation guide
 
 ### Dependencies
 This implementation guide relies on the following other specifications:
 * **[FHIR R4]({{site.data.fhir.path}})** - The 'current' official version of FHIR as of the time this implementation guide was published.  See the [background page](background.html#fhir) for key pieces of this specification implementers should be familiar with.
-* **[US Core STU3](http://hl7.org/fhir/us/core/STU3)** - The version of US Core based on FHIR R4.
+* **[US Core STU3](http://hl7.org/fhir/us/core/index.html)** - The version of US Core based on FHIR R4.
 * **[Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/index.html)** - The Bulk Data Implementation Guide that will be leveraged as part of this IG.
 * **[SMART on FHIR Backend Services Authorization](http://hl7.org/fhir/uv/bulkdata/authorization/index.html)** - Security protocols to be used for exchaning the MAL.
 
