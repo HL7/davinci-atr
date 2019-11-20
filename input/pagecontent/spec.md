@@ -47,10 +47,40 @@ Where US Core profiles do not yet exist (e.g. for Coverage, Group), profiles hav
 #### Bulk Data IG 
 This section outlines how the Bulk Data IG will be leveraged by this implementation guide. 
 
+Producer systems SHALL support the ```[base]/Group/[id]/$export``` operation for member attribution list implementation. 
+
+Producer systems SHALL support the reading and searching of Group resources per the capability statement expectations outlined below.
+
+Producer systems SHALL support ```Patient, Related Person, Practitioner, PractitionerRole, Location, Organization, Coverage, Group``` resource types for the ```[base]/Group/[id]/$export?_type``` parameter.
+
+Producer systems SHALL support the Bulk Data Request Flow as defined in the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
+
+Producer systems MAY support the Bulk Data Delete Request as defined in the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
+
+Producer systems SHALL support the Bulk Data Status Request as defined in the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
+
+Producer systems SHALL set the requireAccessToken to ```true``` within the Bulk Data Status Request response body as defined in the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
+
+Producer systems SHALL require Consumer systems to provide valid ```access token``` to access the member attribution list files. 
+
+When the Consumer systems do not have appropriate authorization to the data requested, the Producer systems SHALL return OperationOutcome with appropriate error message.
+
+When the Consumer systems do not have appropriate access token to access the data requested, the Producer systems SHALL return OperationOutcome with appropriate error message.
 
 
 #### SMART on FHIR Backend Services Authorization
 This section outlines how the SMART on FHIR Backend Services Authorization guide will be used by this implementation guide. 
+
+Producer systems SHALL advertise conformance to SMART Backend Services by hosting a Well-Known Uniform Resource Identifiers (URIs) as defined in the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
+
+Producer systems SHALL include token_endpoint, scopes_supported, token_endpoint_auth_methods_supported and token_endpoint_auth_signing_alg_values_supported as defined in the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
+
+Consumer systems SHALL share their JWKS with the Producer systems using URLs as defined in the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
+
+Consumer systems SHALL obtain the access token as defined in the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
+
+Producer systems SHALL support ```system/Patient.read, system/Practitioner.read, system/PractitionerRole.read, system/Coverage.read, system/Organization.read, system/RelatedPerson.read, system/Location.read, system/Group.read``` scopes.
+
 
 
 #### Capability Statements
