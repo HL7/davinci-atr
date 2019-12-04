@@ -1,0 +1,800 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CapabilityStatement xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+  <id value="davinci-atr-consumer"/>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>DaVinciAtrConsumer</h2>
+      <p>(Requirements Definition Capability Statement)</p>
+      <p>Canonical URL: http://hl7.org/fhir/us/davinci-atr/CapabilityStatement/davinci-atr-consumer Published: 2019-12-20 (draft)</p>
+      <p>Published by: <b>HL7 International - Financial Management</b>
+      </p>
+      <p>This profile defines the expected capabilities of the <i>DaVinci ATR Consumer </i> actor.  
+      This actor is responsible for consuming the member attribution list for Risk Based Contracts. 
+      Typically Payers are the Producers of the member attribution list and Provider organization are consumers.</p>
+      <h2>General</h2>
+      <div class="table-wrapper">
+        <table>
+          <tbody>
+            <tr>
+              <th>FHIR Version:</th>
+              <td>$ver$</td>
+            </tr>
+            <tr>
+              <th>Supported formats:</th>
+              <td>json</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h2>REST  behavior</h2>
+      <p>The primary focus of the Consumer is to retrieve and use the member attribution list for implementing different DaVinci use cases such as CDex, PDex. The list can also be used for other purposes as needed by the Consumer.</p>
+      <p>
+        <b>Security:</b>
+      </p>
+      <p>Implementations must meet the general security requirements documented in FHIR <a href="http://hl7.org/fhir/security.html">Security guidance</a>.</p>
+      <p>In addition the Consumer needs to meet the security requirements as outlined in the <a href="spec.html#smart-on-fhir-backend-services-authorization">Formal Specification - Security Section.</a></p>
+      <h3>Resource summary</h3>
+      <div class="table-wrapper">
+        <table class="grid">
+          <thead>
+            <tr>
+              <th>Resource</th>
+              <th>Search</th>
+              <th>Read</th>
+              <th>Read Version</th>
+              <th>Instance History</th>
+              <th>Resource History</th>
+              <th>Create</th>
+              <th>Update</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+           <tr>
+              <th>Coverage (<a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-coverage.html">Profile</a>)</th>
+              <td/>
+              <td>
+                <a title="Allows retrieval of a specific Coverage Resource" href="#Coverage-read">Yes</a>
+              </td>
+              <td>
+                <a title="Allows retrieval of a specific version of a Coverage Resource" href="#Coverage-vread">Yes</a>
+              </td>
+              <td>
+                <a title="Allows review of changes to a Coverage Resource over time" href="#Coverage-history-instance">Yes</a>
+              </td>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <th>Group (<a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-group.html">Profile</a>)</th>
+              <td>
+                <a title="Allows a user to search for existing Groups" href="#Group-search-type">Yes</a>
+              </td>
+              <td>
+                <a title="Allows retrieval of a specific Group" href="#Group-read">Yes</a>
+              </td>
+              <td>
+                <a title="Allows retrieval of a specific version of a Group" href="#Group-vread">Yes</a>
+              </td>
+              <td>
+                <a title="Allows review of changes to a Group over time" href="#Group-history-instance">Yes</a>
+              </td>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+            </tr>  
+            <tr>
+              <th>Location (<a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-location.html">Profile</a>)</th>
+              <td/>
+              <td>
+                <a title="Allows retrieval of a specific Location Resource" href="#Location-read">Yes</a>
+              </td>
+              <td>
+                <a title="Allows retrieval of a specific version of a Location Resource" href="#Location-vread">Yes</a>
+              </td>
+              <td>
+                <a title="Allows review of changes to a Location Resource over time" href="#Location-history-instance">Yes</a>
+              </td>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+            </tr>  
+            <tr>
+              <th>Organization (<a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-organization.html">Profile</a>)</th>
+              <td/>
+              <td>
+                <a title="Allows retrieval of a specific Organization Resource" href="#Organization-read">Yes</a>
+              </td>
+              <td>
+                <a title="Allows retrieval of a specific version of a Organization Resource" href="#Organization-vread">Yes</a>
+              </td>
+              <td>
+                <a title="Allows review of changes to a Organization Resource over time" href="#Organization-history-instance">Yes</a>
+              </td>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+            </tr>    
+            <tr>
+            <th>Patient (<a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-patient.html">Profile</a>)</th>
+              <td/>
+              <td>
+                <a title="Allows retrieval of a specific Patient Resource" href="#Patient-read">Yes</a>
+              </td>
+              <td>
+                <a title="Allows retrieval of a specific version of a Patient Resource" href="#Patient-vread">Yes</a>
+              </td>
+              <td>
+                <a title="Allows review of changes to a Patient Resource over time" href="#Patient-history-instance">Yes</a>
+              </td>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+            <th>Practitioner (<a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-practitioner.html">Profile</a>)</th>
+              <td/>
+              <td>
+                <a title="Allows retrieval of a specific Practitioner Resource" href="#Practitioner-read">Yes</a>
+              </td>
+              <td>
+                <a title="Allows retrieval of a specific version of a Practitioner Resource" href="#Practitioner-vread">Yes</a>
+              </td>
+              <td>
+                <a title="Allows review of changes to a Practitioner Resource over time" href="#Practitioner-history-instance">Yes</a>
+              </td>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+            <th>PractitionerRole (<a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-practitionerrole.html">Profile</a>)</th>
+              <td/>
+              <td>
+                <a title="Allows retrieval of a specific PractitionerRole Resource" href="#PractitionerRole-read">Yes</a>
+              </td>
+              <td>
+                <a title="Allows retrieval of a specific version of a PractitionerRole Resource" href="#PractitionerRole-vread">Yes</a>
+              </td>
+              <td>
+                <a title="Allows review of changes to a PractitionerRole Resource over time" href="#PractitionerRole-history-instance">Yes</a>
+              </td>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+            <th>RelatedPerson (<a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-relatedperson.html">Profile</a>)</th>
+              <td/>
+              <td>
+                <a title="Allows retrieval of a specific RelatedPerson Resource" href="#RelatedPerson-read">Yes</a>
+              </td>
+              <td>
+                <a title="Allows retrieval of a specific version of a RelatedPerson Resource" href="#RelatedPersone-vread">Yes</a>
+              </td>
+              <td>
+                <a title="Allows review of changes to a RelatedPerson Resource over time" href="#PRelatedPerson-history-instance">Yes</a>
+              </td>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        <b>Operations:</b>
+      </p>
+      <ul>
+        <li>
+          <a href="http://hl7.org/fhir/uv/bulkdata/OperationDefinition-group-export.html">Group Export</a>
+        </li>
+      </ul>
+      <br/>
+      <br/>
+      <h3>
+        <a href="{{site.data.fhir.path}}coverage.html">Coverage</a>
+      </h3>
+      <p>Profile: <a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-coverage.html">http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-coverage</a>
+      </p>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="Coverage-read"> </a>
+                <span>read</span>
+              </th>
+              <td>
+                <p>Allows retrieval of a specific known Coverage Resource</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a name="Coverage-vread"> </a>
+                <span>vread</span>
+              </th>
+              <td>
+                <p>Allows retrieval of a specific version of a Coverage Resource</p>
+              </td>
+            </tr>      
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      <br/>
+      <h3>
+        <a href="{{site.data.fhir.path}}group.html">Group</a>
+      </h3>
+      <p>Profile: <a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-group.html">http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-group</a>
+      </p>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="Group-search-type"> </a>
+                <span>search-type</span>
+              </th>
+              <td>
+                <p>Allows discovery of existing Groups corresponding to a Consumer using their own TAX and NPI Identifiers.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a name="Group-read"> </a>
+                <span>read</span>
+              </th>
+              <td>
+                <p>Allows retrieval of a specific Group resource.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a name="Group-vread"> </a>
+                <span>vread</span>
+              </th>
+              <td>
+                <p>Allows retrieval of a historical version of a Group resource.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a name="Group-history-instance"> </a>
+                <span>history-instance</span>
+              </th>
+              <td>
+                <p>Allows review of changes to a Group over time</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Search</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Type</th>
+              <th>Definition &amp; Chaining</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>identifier</th>
+              <td>token</td>
+              <td>Search using identifiers which would be NPI and/or TIN for the Consumer</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <br/>
+      <br/>
+      <h3>
+        <a href="{{site.data.fhir.path}}location.html">Location</a>
+      </h3>
+      <p>Profile: <a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-location.html">http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-location</a>
+      </p>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="Location-read"> </a>
+                <span>read</span>
+              </th>
+              <td>
+                <p>Allows retrieval of a specific known Location Resource</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a name="Location-vread"> </a>
+                <span>vread</span>
+              </th>
+              <td>
+                <p>Allows retrieval of a specific version of a Location Resource</p>
+              </td>
+            </tr>      
+          </tbody>
+        </table>
+      </div>
+      
+      <br/>
+      <br/>
+      <h3>
+        <a href="{{site.data.fhir.path}}organization.html">Organization</a>
+      </h3>
+      <p>Profile: <a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-organization.html">http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-organization</a>
+      </p>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="Organization-read"> </a>
+                <span>read</span>
+              </th>
+              <td>
+                <p>Allows retrieval of a specific known Organization Resource</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a name="Organization-vread"> </a>
+                <span>vread</span>
+              </th>
+              <td>
+                <p>Allows retrieval of a specific version of a Organization Resource</p>
+              </td>
+            </tr>      
+          </tbody>
+        </table>
+      </div>
+      
+      <br/>
+      <br/>
+      <h3>
+        <a href="{{site.data.fhir.path}}patient.html">Patient</a>
+      </h3>
+      <p>Profile: <a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-patient.html">http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-patient</a>
+      </p>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="Patient-read"> </a>
+                <span>read</span>
+              </th>
+              <td>
+                <p>Allows retrieval of a specific known Patient Resource</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a name="Patient-vread"> </a>
+                <span>vread</span>
+              </th>
+              <td>
+                <p>Allows retrieval of a specific version of a Patient Resource</p>
+              </td>
+            </tr>      
+          </tbody>
+        </table>
+      </div>
+      
+      <br/>
+      <br/>
+      <h3>
+        <a href="{{site.data.fhir.path}}practitioner.html">Practitioner</a>
+      </h3>
+      <p>Profile: <a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-practitioner.html">http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-practitioner</a>
+      </p>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="Practitioner-read"> </a>
+                <span>read</span>
+              </th>
+              <td>
+                <p>Allows retrieval of a specific known Practitioner Resource</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a name="Practitioner-vread"> </a>
+                <span>vread</span>
+              </th>
+              <td>
+                <p>Allows retrieval of a specific version of a Practitioner Resource</p>
+              </td>
+            </tr>      
+          </tbody>
+        </table>
+      </div>
+      
+      <br/>
+      <br/>
+      <h3>
+        <a href="{{site.data.fhir.path}}practitionerrole.html">PractitionerRole</a>
+      </h3>
+      <p>Profile: <a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-practitionerrole.html">http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-practitionerrole</a>
+      </p>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="PractitionerRole-read"> </a>
+                <span>read</span>
+              </th>
+              <td>
+                <p>Allows retrieval of a specific known PractitionerRole Resource</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a name="PractitionerRole-vread"> </a>
+                <span>vread</span>
+              </th>
+              <td>
+                <p>Allows retrieval of a specific version of a PractitionerRole Resource</p>
+              </td>
+            </tr>      
+          </tbody>
+        </table>
+      </div>
+      
+      <br/>
+      <br/>
+      <h3>
+        <a href="{{site.data.fhir.path}}relatedperson.html">RelatedPerson</a>
+      </h3>
+      <p>Profile: <a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-relatedperson.html">http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-relatedperson</a>
+      </p>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="RelatedPerson-read"> </a>
+                <span>read</span>
+              </th>
+              <td>
+                <p>Allows retrieval of a specific known RelatedPerson Resource</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a name="RelatedPerson-vread"> </a>
+                <span>vread</span>
+              </th>
+              <td>
+                <p>Allows retrieval of a specific version of a RelatedPerson Resource</p>
+              </td>
+            </tr>      
+          </tbody>
+        </table>
+      </div>
+      
+    </div>
+  </text>
+  <url value="http://hl7.org/fhir/us/davinci-atr/CapabilityStatement/davinci-atr-consumer"/>
+  <name value="DaVinciAtrConsumer"/>
+  <title value="DaVinci ATR Consumer"/>
+  <status value="draft"/>
+  <date value="2014-07-06"/>
+  <publisher value="HL7 International - Financial Management"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://www.hl7.org/about/davinci"/>
+    </telecom>
+  </contact>
+  <description value="This profile defines the expected capabilities of the ''Consumer'' role when conforming to the DaVinci Risk Based Contracts Member Attribution List Implementation Guide.  
+  This role is responsible for retrieving and using the Member Attribution List for DaVinci use cases such as CDex, PDex. The Member Attribution List can be used for other purposes also."/>
+  <kind value="requirements"/>
+  <fhirVersion value="4.0.0"/>
+  <format value="xml"/>
+  <format value="json"/>
+  <rest>
+    <mode value="client"/>
+    <documentation value="The focus of the Consumer is to retrieve and use the Member Attribution List. Typically Payers are Producers and Provider Organizations/ACOs/HIEs etc act as Consumers. "/>
+    <security>
+      <description value="Implementations must meet the general security requirements documented in the security section of the implementation guide."/>
+    </security>
+    <resource>
+      <type value="Coverage"/>
+      <profile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-coverage"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="read"/>
+        <documentation value="Allows retrieval of a specific Coverage Resource"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="vread"/>
+        <documentation value="Allows retrieval of a specific version of a Coverage Resource"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="history-instance"/>
+        <documentation value="Allows review of changes to a Coverage Instance over time"/>
+      </interaction>
+    </resource>
+    <resource>
+      <type value="Group"/>
+      <profile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-group"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="search-type"/>
+        <documentation value="Allows discovery of existing Groups."/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="read"/>
+        <documentation value="Allows retrieval of a specific Group Resource"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="vread"/>
+        <documentation value="Allows retrieval of a historical version of a Group Resource"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="history-instance"/>
+        <documentation value="Allows review of changes to a Group Resource over time"/>
+      </interaction>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="identifier"/>
+        <definition value="http://hl7.org/fhir/search.html#token"/>
+        <type value="token"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="Location"/>
+      <profile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-location"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="read"/>
+        <documentation value="Allows retrieval of a specific Location Resource"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="vread"/>
+        <documentation value="Allows retrieval of a specific version of a Location Resource"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="history-instance"/>
+        <documentation value="Allows review of changes to a Location Instance over time"/>
+      </interaction>
+    </resource>
+    <resource>
+      <type value="Organization"/>
+      <profile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-organization"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="read"/>
+        <documentation value="Allows retrieval of a specific Organization Resource"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="vread"/>
+        <documentation value="Allows retrieval of a specific version of a Organization Resource"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="history-instance"/>
+        <documentation value="Allows review of changes to a Organization Instance over time"/>
+      </interaction>
+    </resource>
+    <resource>
+      <type value="Patient"/>
+      <profile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-patient"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="read"/>
+        <documentation value="Allows retrieval of a specific Patient Resource"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="vread"/>
+        <documentation value="Allows retrieval of a specific version of a Patient Resource"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="history-instance"/>
+        <documentation value="Allows review of changes to a Patient Instance over time"/>
+      </interaction>
+    </resource>
+    <resource>
+      <type value="Practitioner"/>
+      <profile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-practitioner"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="read"/>
+        <documentation value="Allows retrieval of a specific Practitioner Resource"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="vread"/>
+        <documentation value="Allows retrieval of a specific version of a Practitioner Resource"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="history-instance"/>
+        <documentation value="Allows review of changes to a Practitioner Instance over time"/>
+      </interaction>
+    </resource>
+    <resource>
+      <type value="PractitionerRole"/>
+      <profile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-practitionerrole"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="read"/>
+        <documentation value="Allows retrieval of a specific PractitionerRole Resource"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="vread"/>
+        <documentation value="Allows retrieval of a specific version of a PractitionerRole Resource"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="history-instance"/>
+        <documentation value="Allows review of changes to a PractitionerRole Instance over time"/>
+      </interaction>
+    </resource>
+    <resource>
+      <type value="RelatedPerson"/>
+      <profile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-relatedperson"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="read"/>
+        <documentation value="Allows retrieval of a specific RelatedPerson Resource"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="vread"/>
+        <documentation value="Allows retrieval of a specific version of a RelatedPerson Resource"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <code value="history-instance"/>
+        <documentation value="Allows review of changes to a RelatedPerson Instance over time"/>
+      </interaction>
+    </resource>
+    <operation>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="SHALL"/>
+      </extension>
+      <name value="export"/>
+      <definition value="http://hl7.org/fhir/uv/bulkdata/OperationDefinition-group-export.html"/>
+    </operation>
+  </rest>
+</CapabilityStatement>

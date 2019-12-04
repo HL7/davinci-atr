@@ -88,11 +88,14 @@ This section lists the capability statements for Producer and Consumer systems.
 
 ##### Producer Systems
 
-* List operations , profiles, search parameters
+The specific requirements for the Producer systems are outlined in the [Producer Capability Statement](davinci-atr-producer.html).
+
+
 
 ##### Consumer Systems
 
-* List operations , profiles, search parameters
+The specific requirements for the Producer systems are outlined in the [Consumer Capability Statement](davinci-atr-consumer.html).
+
 
 
 
