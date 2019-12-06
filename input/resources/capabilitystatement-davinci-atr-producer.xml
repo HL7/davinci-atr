@@ -664,7 +664,7 @@
         <documentation value="Allows review of changes to a Location Instance over time"/>
       </interaction>
     </resource>
-    <resource>
+    <resource> 
       <type value="Organization"/>
       <profile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-organization"/>
       <interaction>

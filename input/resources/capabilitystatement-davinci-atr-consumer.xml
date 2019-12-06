@@ -792,7 +792,7 @@
     <operation>
       <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
         <valueCode value="SHALL"/>
-      </extension>
+      </extension> 
       <name value="export"/>
       <definition value="http://hl7.org/fhir/uv/bulkdata/OperationDefinition-group-export.html"/>
     </operation>
