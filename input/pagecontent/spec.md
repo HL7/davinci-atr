@@ -81,6 +81,10 @@ Consumer systems SHALL obtain the access token as defined in the [Bulk Data IG](
 
 Producer systems SHALL support ```system/Patient.read, system/Practitioner.read, system/PractitionerRole.read, system/Coverage.read, system/Organization.read, system/RelatedPerson.read, system/Location.read, system/Group.read``` scopes.
 
+During Consumer registration, the Producer system  SHALL collect the NPI and Tax Identification Numbers applicable for a specific contract along with the specific contract information. This information is necessary for the Producer to create the necessary Member Attribution List and provide an API that will allow the Consumer to retrieve the Member Attribution List. 
+
+When the Consumer is trying to discover the specific Group resource that represents the Member Attribution List for a specific contract, the Producer SHALL verify that the Consumer credentials provided allow the Consumer to access the requested specific Group Resource. 
+**NOTE:** This verification is for a specific Group instance and not just the type which is controlled by the scopes.
 
 
 #### Capability Statements
@@ -99,23 +103,107 @@ The specific requirements for the Producer systems are outlined in the [Consumer
 
 
 
-### Member Attribution List Exchange Interactions Details
+### Member Attribution List Exchange Interactions Details and APIs
 
 #### Consumer identifies relevant Member Attribution List in Producer's system (Discovery of Group Resource)
 
-Add Example Requests and Responses.
+This interaction outlines the APIs for a Consumer (for example, Provider organization) to discover the Group Resource in a Producer's system ( for example, Payer organization).This Group resource represents the Member Attribution List that has been created by the Producer based on a contract between the Producer and the Consumer.
+FFor example, Multicare a Provider Organization would like to identify the Member Attribution List that a Payer organization (e.g Cambia Health Systems) has created based on a contract between Cambia and Multicare.
 
-#### Consumer requests Member Attribution List from Producer's system (Bulk Data Request)
+**Precondition:**
 
-Add Example Requests and Responses.
+In order to discover the appropriate Group Resource (Member Attribution List) the Consumer is expected to know its own NPI and Tax Identification Number.
 
-#### Producer makes Member Attribution List available to Consumer (Bulk Data Response)
+**API:**
 
-Add Example Requests and Responses.
+```
+
+GET <Server Base URL>/Group?identifier:oftype=http://terminology.hl7.org/CodeSystem/v2-0203|NPI|<ExampleNPI>&identifier:oftype=http://terminology.hl7.org/CodeSystem/v2-0203|TAX|<ExampleTIN>
+
+```
+
+In the above API, notice the use of "oftype" modifier on the search to allow searching based on type which includes a CodeSystem and a Value. In addition the "ExampleNPI and ExampleTIN" will be substituted with the values that represent the Consumer organization.
+
+The Producer verifies the client credentials according to the SMART Backend Services Authorization protocols and in addition verifies that the Consumer is allowed to access the specific Member Attribution List and returns one or more Group Resources representing the Member Attribution Lists for each contract between the Producer and the Consumer.
+
+**Expected Result:**
+
+Consumer receives one or more Group Resources from the API call. Each Group Resource represents a specific Member Attribution List between the Producer and the Consumer. To narrow down the specific Member Attribution List for a specific contract the Consumer has to examine the ```Group.characterstic.valueReference``` element and compare the contract information.
+
+
+#### Consumer requests Member Attribution List from Producer's system (Member Attribution List Export Request - Bulk Data Request)
+
+AThis interaction outlines the APIs for a Consumer (Provider) organization to request the full Member Attribution List that is applicable to their specific organization for a specific contract.
+**Note:** The request has to be accepted by the Payer and eventually a Member Attribution List would be made available. This is an asynchronous request following Bulk Data IG specifications.
+
+For example, Multicare would like to request the Member Attribution List details from Cambia Health Systems for a specific contract. 
+
+**Precondition:** 
+
+Provider Organization knows the specific Group Resource for the specific contract that represents the Member Attribution List from executing the discovery of group resource API outlined previously.
+
+
+**API:**
+
+```
+
+GET or POST <Server Base URL>/Group/[Group id]/$export?_type=Patient,Practitioner,PractitionerRole,Organization,Location,Coverage,RelatedPerson
+
+
+```
+
+**Expected Results:**
+Request is accepted by the Producer and a Content Location is received as part of the Response. 
+
+#### Consumer polls the Content Location for Request Completion and Member Attribution List data location (Member Attribution List Export Request Polling - Bulk Data Poll Request)
+
+This interaction outlines the APIs for a Consumer (Provider) organization to poll the Content Location received as part of Member Attribution List Export Request outlined previously. This polling is required to determine completion status of the export request. This would be repeated until the request is complete or cancelled following the Bulk Data IG specifications.
+
+For example, Multicare would poll the content location received from Cambia as part of the Member Attribution List Export Request. 
+
+**Preconditions:** 
+
+* Consumer has requested the Member Attribution List export which has been accepted by the Producer.
+* Consumer organization has the URL for the Content Location where the request status can be polled.
+
+**API**
+
+```
+
+GET <Content Location from Member Attribution List Export Request>
+
+```
+
+**Expected Results:**
+
+* The completion status of the Member Attribution List Export Request.
+* Once the request is completed, a 200 HTTP code is returned along with the Response Body containing the URLs for the files representing the Member Attribution List.
+* At least one URL is returned for each of the resource types specified using the _type parameter in the Member Attribution List Export Request which are Patient,Practitioner,PractitionerRole,Organization,Location,Coverage and RelatedPerson resources.
 
 #### Consumer retrieves Member Attribution List from Producer (FHIR Request)
 
-Add Example Requests and Responses.
+AThis interaction outlines the APIs for a Consumer (Provider) organization to retrieve each of the files that represent the Member Attribution List.
+
+For example, Multicare retrieves each of the NDJSON files representing the Member Attribution List. 
+
+**Precondition:**
+
+Consumer has the URLs to retrieve the files representing the Member Attribution List from a successfully completed Member Attribution List Export Request. These URLs are obtained by executing the Member Attribution List Export Request Polling interaction until the request is completed.
+
+**API:**
+
+```
+
+GET <File URL for each Resource identified in Member Attribution List Export Request completion response>
+
+```
+
+**Expected Results:**
+
+* Retrieve the NDJSON files for each of the following resources.
+* One or more NDJSON files for Patient,Practitioner,PractitionerRole,Organization,Location,Coverage and RelatedPerson
+
+
  
 
 
