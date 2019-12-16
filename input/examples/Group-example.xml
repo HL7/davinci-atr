@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Group xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas-r5/fhir-single.xsd">
+  <id value="MemberAttributionListExample"/>
+  <meta> 
+    <versionId value="1"/>
+    <lastUpdated value="2015-02-07T13:28:17.239+05:00"/>
+  </meta>
+  <text> 
+    <status value="additional"/> 
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p> Patients attributed to Provider Organization based on a specific risk based contract</p> 
+    </div> 
+  </text> 
+  
+  <!--  NPI Identifier  -->
+  <identifier>
+ 	<use value="official"/>
+    <type>
+      <coding>
+      	 <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+ 		 <code value="NPI"/>
+ 		 <display value="NPI"/>
+      </coding>
+    </type>
+    <system value="http://hl7.org.fhir/sid/us-npi"/>
+    <value value="1003802679"/>
+  </identifier>
+  
+  <!--  TAX Identifier  -->
+  <identifier>
+ 	<use value="official"/>
+    <type>
+      <coding>
+      	 <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+ 		 <code value="TAX"/>
+ 		 <display value="TAX"/>
+      </coding>
+    </type>
+    <system value="http://www.irs.gov/"/>
+    <value value="12-1234567"/>
+  </identifier>
+  
+  <active value="true"/>
+  <type value="person"/>
+  <actual value="true"/>
+  <name value="Member Attribution List for Contract InsurancePlan/SampleContract"/>
+  <managingEntity>
+  	<reference value="Organization/ExampleOrg"/>
+  </managingEntity>
+  <characteristic>
+  	<code>
+  		<text value="Members Attributed based on Contract"/>
+  	</code>
+  	<valueReference>
+  		<reference value="InsurancePlan/SampleContract"/>
+  	</valueReference>
+  	<exclude value="false"/>
+  </characteristic>
+
+  <member> 
+  	<extension url="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-changeType">
+   		<valueCode value="new"/>
+    </extension>
+    <entity> 
+      <reference value="Patient/pat1"/> 
+    </entity> 
+    <period> 
+      <start value="2020-01-01"/>
+      <end value="2020-12-31"/>
+    </period> 
+  </member> 
+  
+  <member> 
+  	<extension url="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-changeType">
+   		<valueCode value="nochange"/>
+    </extension>
+    <entity> 
+      <reference value="Patient/pat2"/> 
+    </entity> 
+    <period> 
+      <start value="2020-01-01"/>
+      <end value="2020-12-31"/>
+    </period> 
+  </member>
+</Group>

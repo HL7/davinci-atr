@@ -40,6 +40,9 @@
       <li>
         <a href="http://hl7.org/fhir/us/core/STU3">US Core - R4 version</a>
       </li>
+      <li>
+        <a href="{{site.data.info.assets}}downloads.html">Downloads</a>
+      </li>
     </ul>
   </li>  
   <li class="dropdown">
@@ -65,6 +68,6 @@
     </ul>
   </li>
   <li>
-    <a href="http://hl7.org/fhir/us/davinci-atr/history.html">History</a>
+    <a href="{{site.data.info.assets}}history.html">History</a>
   </li>
 </ul>
