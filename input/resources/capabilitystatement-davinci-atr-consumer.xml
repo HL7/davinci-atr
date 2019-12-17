@@ -52,52 +52,33 @@
           </thead>
           <tbody>
            <tr>
-              <th>Coverage (<a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-coverage.html">Profile</a>)</th>
+              <th>Coverage (<a href="StructureDefinition-davinci-atr-coverage.html">Profile</a>)</th>
               <td/>
               <td>
-                <a title="Allows retrieval of a specific Coverage Resource" href="#Coverage-read">Yes</a>
+                <a title="Allows retrieval of a specific Coverage Resource" href="#Coverage-read">SHALL</a>
               </td>
               <td>
-                <a title="Allows retrieval of a specific version of a Coverage Resource" href="#Coverage-vread">Yes</a>
+                <a title="Allows retrieval of a specific version of a Coverage Resource" href="#Coverage-vread">SHALL</a>
               </td>
-              <td>
-                <a title="Allows review of changes to a Coverage Resource over time" href="#Coverage-history-instance">Yes</a>
-              </td>
+              <td/>
               <td/>
               <td/>
               <td/>
               <td/>
             </tr>
             <tr>
-              <th>Group (<a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-group.html">Profile</a>)</th>
+              <th>Group (<a href="StructureDefinition-davinci-atr-group.html">Profile</a>)</th>
               <td>
-                <a title="Allows a user to search for existing Groups" href="#Group-search-type">Yes</a>
+                <a title="Allows a user to search for existing Groups" href="#Group-search-type">SHALL</a>
               </td>
               <td>
-                <a title="Allows retrieval of a specific Group" href="#Group-read">Yes</a>
+                <a title="Allows retrieval of a specific Group" href="#Group-read">SHALL</a>
               </td>
               <td>
-                <a title="Allows retrieval of a specific version of a Group" href="#Group-vread">Yes</a>
+                <a title="Allows retrieval of a specific version of a Group" href="#Group-vread">SHALL</a>
               </td>
               <td>
-                <a title="Allows review of changes to a Group over time" href="#Group-history-instance">Yes</a>
-              </td>
-              <td/>
-              <td/>
-              <td/>
-              <td/>
-            </tr>  
-            <tr>
-              <th>Location (<a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-location.html">Profile</a>)</th>
-              <td/>
-              <td>
-                <a title="Allows retrieval of a specific Location Resource" href="#Location-read">Yes</a>
-              </td>
-              <td>
-                <a title="Allows retrieval of a specific version of a Location Resource" href="#Location-vread">Yes</a>
-              </td>
-              <td>
-                <a title="Allows review of changes to a Location Resource over time" href="#Location-history-instance">Yes</a>
+                <a title="Allows review of changes to a Group over time" href="#Group-history-instance">SHALL</a>
               </td>
               <td/>
               <td/>
@@ -105,85 +86,90 @@
               <td/>
             </tr>  
             <tr>
-              <th>Organization (<a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-organization.html">Profile</a>)</th>
+              <th>Location (<a href="StructureDefinition-davinci-atr-location.html">Profile</a>)</th>
               <td/>
               <td>
-                <a title="Allows retrieval of a specific Organization Resource" href="#Organization-read">Yes</a>
+                <a title="Allows retrieval of a specific Location Resource" href="#Location-read">SHALL</a>
               </td>
               <td>
-                <a title="Allows retrieval of a specific version of a Organization Resource" href="#Organization-vread">Yes</a>
+                <a title="Allows retrieval of a specific version of a Location Resource" href="#Location-vread">SHALL</a>
+              </td>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+              <td/>
+            </tr>  
+            <tr>
+              <th>Organization (<a href="StructureDefinition-davinci-atr-organization.html">Profile</a>)</th>
+              <td/>
+              <td>
+                <a title="Allows retrieval of a specific Organization Resource" href="#Organization-read">SHALL</a>
               </td>
               <td>
-                <a title="Allows review of changes to a Organization Resource over time" href="#Organization-history-instance">Yes</a>
+                <a title="Allows retrieval of a specific version of a Organization Resource" href="#Organization-vread">SHALL</a>
               </td>
+              <td/>
               <td/>
               <td/>
               <td/>
               <td/>
             </tr>    
             <tr>
-            <th>Patient (<a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-patient.html">Profile</a>)</th>
+            <th>Patient (<a href="StructureDefinition-davinci-atr-patient.html">Profile</a>)</th>
               <td/>
               <td>
-                <a title="Allows retrieval of a specific Patient Resource" href="#Patient-read">Yes</a>
+                <a title="Allows retrieval of a specific Patient Resource" href="#Patient-read">SHALL</a>
               </td>
               <td>
-                <a title="Allows retrieval of a specific version of a Patient Resource" href="#Patient-vread">Yes</a>
+                <a title="Allows retrieval of a specific version of a Patient Resource" href="#Patient-vread">SHALL</a>
               </td>
-              <td>
-                <a title="Allows review of changes to a Patient Resource over time" href="#Patient-history-instance">Yes</a>
-              </td>
+              <td/>
               <td/>
               <td/>
               <td/>
               <td/>
             </tr>
             <tr>
-            <th>Practitioner (<a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-practitioner.html">Profile</a>)</th>
+            <th>Practitioner (<a href="StructureDefinition-davinci-atr-practitioner.html">Profile</a>)</th>
               <td/>
               <td>
-                <a title="Allows retrieval of a specific Practitioner Resource" href="#Practitioner-read">Yes</a>
+                <a title="Allows retrieval of a specific Practitioner Resource" href="#Practitioner-read">SHALL</a>
               </td>
               <td>
-                <a title="Allows retrieval of a specific version of a Practitioner Resource" href="#Practitioner-vread">Yes</a>
+                <a title="Allows retrieval of a specific version of a Practitioner Resource" href="#Practitioner-vread">SHALL</a>
               </td>
-              <td>
-                <a title="Allows review of changes to a Practitioner Resource over time" href="#Practitioner-history-instance">Yes</a>
-              </td>
+              <td/>
               <td/>
               <td/>
               <td/>
               <td/>
             </tr>
             <tr>
-            <th>PractitionerRole (<a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-practitionerrole.html">Profile</a>)</th>
+            <th>PractitionerRole (<a href="StructureDefinition-davinci-atr-practitionerrole.html">Profile</a>)</th>
               <td/>
               <td>
-                <a title="Allows retrieval of a specific PractitionerRole Resource" href="#PractitionerRole-read">Yes</a>
+                <a title="Allows retrieval of a specific PractitionerRole Resource" href="#PractitionerRole-read">SHALL</a>
               </td>
               <td>
-                <a title="Allows retrieval of a specific version of a PractitionerRole Resource" href="#PractitionerRole-vread">Yes</a>
+                <a title="Allows retrieval of a specific version of a PractitionerRole Resource" href="#PractitionerRole-vread">SHALL</a>
               </td>
-              <td>
-                <a title="Allows review of changes to a PractitionerRole Resource over time" href="#PractitionerRole-history-instance">Yes</a>
-              </td>
+              <td/>
               <td/>
               <td/>
               <td/>
               <td/>
             </tr>
             <tr>
-            <th>RelatedPerson (<a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-relatedperson.html">Profile</a>)</th>
+            <th>RelatedPerson (<a href="StructureDefinition-davinci-atr-relatedperson.html">Profile</a>)</th>
               <td/>
               <td>
-                <a title="Allows retrieval of a specific RelatedPerson Resource" href="#RelatedPerson-read">Yes</a>
+                <a title="Allows retrieval of a specific RelatedPerson Resource" href="#RelatedPerson-read">SHALL</a>
               </td>
               <td>
-                <a title="Allows retrieval of a specific version of a RelatedPerson Resource" href="#RelatedPersone-vread">Yes</a>
+                <a title="Allows retrieval of a specific version of a RelatedPerson Resource" href="#RelatedPerson-vread">SHALL</a>
               </td>
-              <td>
-                <a title="Allows review of changes to a RelatedPerson Resource over time" href="#PRelatedPerson-history-instance">Yes</a>
-              </td>
+              <td/>
               <td/>
               <td/>
               <td/>
@@ -205,7 +191,7 @@
       <h3>
         <a href="{{site.data.fhir.path}}coverage.html">Coverage</a>
       </h3>
-      <p>Profile: <a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-coverage.html">http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-coverage</a>
+      <p>Profile: <a href="StructureDefinition-davinci-atr-coverage.html">http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-coverage</a>
       </p>
       <h4>Interactions</h4>
       <div class="table-wrapper">
@@ -243,7 +229,7 @@
       <h3>
         <a href="{{site.data.fhir.path}}group.html">Group</a>
       </h3>
-      <p>Profile: <a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-group.html">http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-group</a>
+      <p>Profile: <a href="StructureDefinition-davinci-atr-group.html">http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-group</a>
       </p>
       <h4>Interactions</h4>
       <div class="table-wrapper">
@@ -319,7 +305,7 @@
       <h3>
         <a href="{{site.data.fhir.path}}location.html">Location</a>
       </h3>
-      <p>Profile: <a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-location.html">http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-location</a>
+      <p>Profile: <a href="StructureDefinition-davinci-atr-location.html">http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-location</a>
       </p>
       <h4>Interactions</h4>
       <div class="table-wrapper">
@@ -358,7 +344,7 @@
       <h3>
         <a href="{{site.data.fhir.path}}organization.html">Organization</a>
       </h3>
-      <p>Profile: <a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-organization.html">http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-organization</a>
+      <p>Profile: <a href="StructureDefinition-davinci-atr-organization.html">http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-organization</a>
       </p>
       <h4>Interactions</h4>
       <div class="table-wrapper">
@@ -397,7 +383,7 @@
       <h3>
         <a href="{{site.data.fhir.path}}patient.html">Patient</a>
       </h3>
-      <p>Profile: <a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-patient.html">http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-patient</a>
+      <p>Profile: <a href="StructureDefinition-davinci-atr-patient.html">http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-patient</a>
       </p>
       <h4>Interactions</h4>
       <div class="table-wrapper">
@@ -436,7 +422,7 @@
       <h3>
         <a href="{{site.data.fhir.path}}practitioner.html">Practitioner</a>
       </h3>
-      <p>Profile: <a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-practitioner.html">http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-practitioner</a>
+      <p>Profile: <a href="StructureDefinition-davinci-atr-practitioner.html">http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-practitioner</a>
       </p>
       <h4>Interactions</h4>
       <div class="table-wrapper">
@@ -475,7 +461,7 @@
       <h3>
         <a href="{{site.data.fhir.path}}practitionerrole.html">PractitionerRole</a>
       </h3>
-      <p>Profile: <a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-practitionerrole.html">http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-practitionerrole</a>
+      <p>Profile: <a href="StructureDefinition-davinci-atr-practitionerrole.html">http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-practitionerrole</a>
       </p>
       <h4>Interactions</h4>
       <div class="table-wrapper">
@@ -514,7 +500,7 @@
       <h3>
         <a href="{{site.data.fhir.path}}relatedperson.html">RelatedPerson</a>
       </h3>
-      <p>Profile: <a href="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-relatedperson.html">http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-relatedperson</a>
+      <p>Profile: <a href="StructureDefinition-davinci-atr-relatedperson.html">http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-relatedperson</a>
       </p>
       <h4>Interactions</h4>
       <div class="table-wrapper">
