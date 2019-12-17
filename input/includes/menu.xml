@@ -38,7 +38,7 @@
         <a href="{{site.data.info.assets}}artifacts.html">FHIR R4 ATR-specific Artifacts</a>
       </li>
       <li>
-        <a href="http://hl7.org/fhir/us/core/STU3">US Core - R4 version</a>
+        <a href="{{site.data.fhir.uscoreR4}}/index.html">US Core STU3 (FHIR R4 version)</a>
       </li>
       <li>
         <a href="{{site.data.info.assets}}downloads.html">Downloads</a>
@@ -54,7 +54,7 @@
         <a target="_blank" href="{{site.data.fhir.path}}index.html">FHIR R4 Spec <img src="external.png" style="text-align: baseline"/></a>
       </li>
       <li>
-        <a target="_blank" href="http://hl7.org/fhir/us/core/STU3">US Core STU3<img src="external.png" style="text-align: baseline"/></a>
+        <a target="_blank" href="{{site.data.fhir.uscoreR4}}/index.html">US Core STU3 (FHIR R4 version)<img src="external.png" style="text-align: baseline"/></a>
       </li>
       <li>
         <a target="_blank" href="http://hl7.org/fhir/uv/bulkdata/index.html">Bulk Data IG<img src="external.png" style="text-align: baseline"/></a>

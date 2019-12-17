@@ -23,7 +23,7 @@
   </jurisdiction>
   <packageId value="hl7.fhir.us.davinci-atr"/>
   <fhirVersion value="4.0.1"/>
-   <dependsOn>
+   <dependsOn id="uscoreR4">
     <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core"/>
     <packageId value="hl7.fhir.us.core"/>
     <version value="3.1.0"/>
