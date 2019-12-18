@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Start by finding all references to "myig" and updating to appropriate text for your IG, including changing realm -->
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas-r5/fhir-single.xsd">  
   <id value="davinci-atr"/>
   <url value="http://hl7.org/fhir/us/davinci-atr/ImplementationGuide/davinci-atr"/>
@@ -31,13 +30,6 @@
   <definition>
     <!-- You don't need to define any groupings.  The IGPublisher will define them for you.  You only need to do so if your IG is 'special' and it's
       inappropriate to use the defaults.  Feel free to provide feedback about the defaults... -->
-     <!-- <resource>
-      <reference>
-        <reference value="StructureDefinition/myObservation"/>
-      </reference>
-      <name value="Name you want in artifact list"/>
-      <description value="Description you want in artifact list"/>
-    </resource> -->
     <page>
       <!-- The root will always be toc.html - the template will force it if you don't do it -->
       <nameUrl value="toc.html"/>

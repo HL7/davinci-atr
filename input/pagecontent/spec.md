@@ -98,7 +98,7 @@ The specific requirements for the Producer systems are outlined in the [Producer
 
 ##### Consumer Systems
 
-The specific requirements for the Producer systems are outlined in the [Consumer Capability Statement](davinci-atr-consumer.html).
+The specific requirements for the Producer systems are outlined in the [Consumer Capability Statement](CapabilityStatement-davinci-atr-consumer.html).
 
 
 
