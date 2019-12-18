@@ -80,7 +80,7 @@ Implementers should familiarize themselves with the FHIR resources used within t
 This implementation guide also builds on the US Core Implementation Guide where profiles exist for the resources identified in the data model above and implementers need to familiarize themselves with these profiles in those Implementation Guides.
 <table>
   <tr>
-    <td><a href="http://hl7.org/fhir/us/core/STU3">US Core (3.0.0 - R4 based)</a></td>
+    <td><a href="{{site.data.fhir.uscoreR4}}/index.html">US Core 3.1.0 - FHIR R4 based IG</a></td>
   </tr>
 </table>
 

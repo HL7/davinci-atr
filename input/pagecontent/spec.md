@@ -92,7 +92,7 @@ This section lists the capability statements for Producer and Consumer systems.
 
 ##### Producer Systems
 
-The specific requirements for the Producer systems are outlined in the [Producer Capability Statement](davinci-atr-producer.html).
+The specific requirements for the Producer systems are outlined in the [Producer Capability Statement](CapabilityStatement-davinci-atr-producer.html).
 
 
 
