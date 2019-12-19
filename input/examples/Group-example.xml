@@ -19,7 +19,7 @@
       <coding>
       	 <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
  		 <code value="NPI"/>
- 		 <display value="NPI"/>
+ 		 <display value="National provider identifier"/>
       </coding>
     </type>
     <system value="http://hl7.org.fhir/sid/us-npi"/>
@@ -33,7 +33,7 @@
       <coding>
       	 <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
  		 <code value="TAX"/>
- 		 <display value="TAX"/>
+ 		 <display value="Tax Id Number"/>
       </coding>
     </type>
     <system value="http://www.irs.gov/"/>
@@ -45,7 +45,7 @@
   <actual value="true"/>
   <name value="Member Attribution List for Contract InsurancePlan/SampleContract"/>
   <managingEntity>
-  	<reference value="Organization/ExampleOrg"/>
+  	<reference value="Organization/CambiaPayer"/>
   </managingEntity>
   <characteristic>
   	<code>

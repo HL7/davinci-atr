@@ -621,7 +621,7 @@
           <valueCode value="SHALL"/>
         </extension>
         <name value="identifier"/>
-        <definition value="http://hl7.org/fhir/search.html#token"/>
+        <definition value="{{site.data.fhir.path}}search.html#token"/>
         <type value="token"/>
       </searchParam>
     </resource>
