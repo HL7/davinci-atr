@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Organization xmlns="http://hl7.org/fhir">
   <id value="CambiaPayer"/>
+  <text> <status value="generated"/> 
+	<div xmlns="http://www.w3.org/1999/xhtml">
+	<p> <b> Generated Narrative with Details</b> </p> 
+	<p> <b> Example Payer Organization : </b> Payer (e.g Cambia) </p> 
+	</div>  
+  </text> 
   <active value="true"/>
   <type>
     <coding>

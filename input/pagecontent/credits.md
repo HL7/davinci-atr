@@ -30,6 +30,9 @@ Project participants included:
 * Allscripts (Emma Jones, Jeffrey Danford)
 * Blue Cross Blue Shield of Alabama (Tony Benson, Kevin Lambert, Gini McGlothin, Morry Payne, Clarissa Winchester)
 * Cerner (Hans Buitendijk, Kevin Shekleton, Michelle Miller)
+* Cambia Health Solutions (John Staeleens)
 * Epic (Danielle Friend, Isaac Vetter)
+* Humana (Patrick Murtha)
+* MultiCare (Anna Taylor)
 
 Our thanks to these and to the many others not explicitly listed who contributed their time, enthusiasm and expertise to this work.
