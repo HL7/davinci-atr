@@ -3,11 +3,23 @@
  "title" : "Risk Based Contracts Member Attribution List FHIR IG", 
  "canonical" : "http://hl7.org/fhir/us/davinci-atr", 
  "introduction" : "The FHIR IG enables exchanging rosters of patients between Payers and Providers.",
- "list" : [{
+ "list" : [
+ {
   "version" : "current",
   "desc" : "Continuous Integration Build (latest in version control)",
-  "path" : "https://build.fhir.org/ig/HL7/davinci-atr",
+  "path" : "http://build.fhir.org/ig/HL7/davinci-atr",
   "status" : "ci-build",
-  "current" : true
- }]
+  "current" : "true"
+ },
+ {
+ "version" : "0.1.0",
+  "date" : "2020-02-01",
+  "desc" : "STU1 for Ballot",
+  "changes" : "Initial Version for Ballot",
+  "path" : "http://build.fhir.org/ig/HL7/davinci-atr/2020Feb/index.html",
+  "status" : "ballot",
+  "sequence" : "STU1",
+  "fhirVersion" : "4.0.1"
+ }
+ ]
 }
