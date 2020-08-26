@@ -25,7 +25,7 @@ Individuals interested in participating in the Risk Based Contracts Member Attri
 ### Overview
 The process of establishing and exchanging member lists for risk based contracts are complex and time consuming. Currently there are no standards in use for establishing and exchanging risk based contract member lists between payers and providers. The most common method in use today involves creation of files (CSVs, txt etc) and exchanging them using different methods such as Email and Secure Eile Transfer Protocol (SFTP).This implementation guide will use HL7 FHIR to specify standards for exchanging of Member Attribution Lists (MAL) between providers and payers. The list can be used by providers and payers to implement use cases for Value Based Contracts (VBC), Quality Reporting, Davinci Payer Data Exchange (PDex), Davinic Clinical Data Exchange (CDex) among others. 
 
-The purpose of this implementation guide is to define the mechanisms (protocols), data structures and value sets to be used for exchanging the MAL. The MAL typically contains the following information:
+The purpose of this implementation guide is to define the mechanisms (protocols), data structures and value sets to be used for exchanging the MAL. The MAL typically contains the following information
 
 * Plan/Contract information which is the basis for the Member Attribution list
 * Patient Information
