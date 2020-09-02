@@ -33,18 +33,30 @@ Provider Organization A enters a risk based contract with Payer B. As part of es
 
 The following definitions are used for the Member Attribution List implementation guide.
 
+1. __MemberId:__
+A unique identifier for a member within a payers plan.
+
+2. __Payer Identifier:__ 
+A unique identifier for an organization that provides insurance plans and enters into contracts with health care providers.
+
+3. __Contract Identifier:__
+A unique identifier assigned by the Payer to the agreement with a specific healthcare provider.
+
+4. __Plan Identifier:__
+A unique identifier for an insurance plan that a payer provides. Members belong to specific plans.
+
+**NOTE:** The combination of Member Identifier, Payer Identifier, Contract Identifier and Plan Identifier is always unique.
+
 1. __Attribution:__ 
 Results of Algorithmic process that assigns patients to providers or payers or Groups.
 Assignment process where patients are just assigned to the group manually. 
 A Patient could declare to be part of a Group by providing or selecting their PCP information or ACO information.
-
-Add examples for each of the above 
-	- For example when patients belong to a HMO plan there is an Attribution List created with all the patients who are on the HMO plan.
+For example when patients belong to a HMO plan there is an Attribution List created with all the patients who are on the HMO plan.
 
 
 2. __Member Attribution List:__
-Enumeration of patients who are attributed to payers, providers, medical homes or groups. 
-The Attribution list contains the patient information along with information such as Attributed Provider, Health Plan information, Validity Period for the list, Risk Information etc. 
+Enumeration of patients who are attributed to payers, providers, medical homes or groups. Patients may belong to multiple plans. 
+The Attribution list contains the patient information along with information such as Attributed Provider, Health Plan information, Validity Period for the list, Risk Information etc. A member may be present multiple times within a member attribution list, however the combination of Member Identifier, Payer Identifier, Contract Identifier and Plan Identifier is always unique and can be used to identify the member.
 
 3. __Attributed Provider:__
 Provider responsible for the health of the Patient per the contract and will receive the payments and credits based on performance.
@@ -110,7 +122,7 @@ Once the list is finalized, the Payer and Provider agree to exchange the list pe
 
 ### Member Attribution List Exchange Patterns
 
-The section takes the workflow described above and identifies the different types of exchange patterns that are currently used. Although each of the patterns identified below are used in the real world, the initial version of the Implemetnation Guide will focus on the exchange mechanisms identified in pattern #2.
+The section takes the workflow described above and identifies the different types of exchange patterns that are currently used. Although each of the patterns identified below are used in the real world, the initial version of the Implementation Guide will focus on the exchange mechanisms identified in pattern #2.
 
 {::options parse_block_html="false" /}
 <figure>
@@ -118,7 +130,7 @@ The section takes the workflow described above and identifies the different type
 </figure>
 {::options parse_block_html="true" /}
 
-<br></br>
+<br/>
 
 {::options parse_block_html="false" /}
 <figure>

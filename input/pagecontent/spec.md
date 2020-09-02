@@ -114,6 +114,20 @@ The Producer specific requirements for REST interactions, operations, profiles a
 The Consumer specific requirements for REST interactions, operations, profiles and search parameters to be supported are outlined in the [Consumer Capability Statement](CapabilityStatement-davinci-atr-consumer.html).
 
 
+### Member Attribution List Data Model requirements
+
+The section outlines specific requirements that need to be followed in creating the Member Attribution List.
+
+Producers SHALL create one Member Attribution List represented by a Group Resource per Contract between a Payer and a Provider.
+
+Producers SHALL ensure the combination of Member Identifier, Payer Identifier, Contract Identifier and Plan Identifier are unique. 
+ 
+Producers SHALL include the Contract Identifier within the Group.identifier element during the creation of the Member Attribution List.
+
+Producers SHALL include the Plan Identifier in Coverage.class data element during the creation of the Member Attribution List.
+
+Producers SHALL include the Coverage that is associated with the member in the Member Attribution List as part of the Group.member.anyReference data element.
+
 
 
 ### Member Attribution List Exchange Interactions Details and APIs
