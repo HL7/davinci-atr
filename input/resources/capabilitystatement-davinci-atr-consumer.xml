@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>DaVinciAtrConsumer</h2>
       <p>(Requirements Definition Capability Statement)</p>
-      <p>Canonical URL: http://hl7.org/fhir/us/davinci-atr/CapabilityStatement/davinci-atr-consumer Published: 2019-12-20 (draft)</p>
+      <p>Canonical URL: http://hl7.org/fhir/us/davinci-atr/CapabilityStatement/davinci-atr-consumer </p>
       <p>Published by: <b>HL7 International - Financial Management</b>
       </p>
       <p>This profile defines the expected capabilities of the <i>DaVinci ATR Consumer </i> actor.  
@@ -18,7 +18,7 @@
           <tbody>
             <tr>
               <th>FHIR Version:</th>
-              <td>$ver$</td>
+              <td>4.0.1</td>
             </tr>
             <tr>
               <th>Supported formats:</th>
@@ -57,9 +57,7 @@
               <td>
                 <a title="Allows retrieval of a specific Coverage Resource" href="#Coverage-read">SHALL</a>
               </td>
-              <td>
-                <a title="Allows retrieval of a specific version of a Coverage Resource" href="#Coverage-vread">SHALL</a>
-              </td>
+              <td/>
               <td/>
               <td/>
               <td/>
@@ -75,10 +73,10 @@
                 <a title="Allows retrieval of a specific Group" href="#Group-read">SHALL</a>
               </td>
               <td>
-                <a title="Allows retrieval of a specific version of a Group" href="#Group-vread">SHALL</a>
+                <a title="Allows retrieval of a specific version of a Group" href="#Group-vread">SHOULD</a>
               </td>
               <td>
-                <a title="Allows review of changes to a Group over time" href="#Group-history-instance">SHALL</a>
+                <a title="Allows review of changes to a Group over time" href="#Group-history-instance">SHOULD</a>
               </td>
               <td/>
               <td/>
@@ -91,9 +89,7 @@
               <td>
                 <a title="Allows retrieval of a specific Location Resource" href="#Location-read">SHALL</a>
               </td>
-              <td>
-                <a title="Allows retrieval of a specific version of a Location Resource" href="#Location-vread">SHALL</a>
-              </td>
+              <td/>
               <td/>
               <td/>
               <td/>
@@ -106,9 +102,7 @@
               <td>
                 <a title="Allows retrieval of a specific Organization Resource" href="#Organization-read">SHALL</a>
               </td>
-              <td>
-                <a title="Allows retrieval of a specific version of a Organization Resource" href="#Organization-vread">SHALL</a>
-              </td>
+              <td/>
               <td/>
               <td/>
               <td/>
@@ -121,9 +115,7 @@
               <td>
                 <a title="Allows retrieval of a specific Patient Resource" href="#Patient-read">SHALL</a>
               </td>
-              <td>
-                <a title="Allows retrieval of a specific version of a Patient Resource" href="#Patient-vread">SHALL</a>
-              </td>
+              <td/>
               <td/>
               <td/>
               <td/>
@@ -136,9 +128,7 @@
               <td>
                 <a title="Allows retrieval of a specific Practitioner Resource" href="#Practitioner-read">SHALL</a>
               </td>
-              <td>
-                <a title="Allows retrieval of a specific version of a Practitioner Resource" href="#Practitioner-vread">SHALL</a>
-              </td>
+              <td/>
               <td/>
               <td/>
               <td/>
@@ -151,9 +141,7 @@
               <td>
                 <a title="Allows retrieval of a specific PractitionerRole Resource" href="#PractitionerRole-read">SHALL</a>
               </td>
-              <td>
-                <a title="Allows retrieval of a specific version of a PractitionerRole Resource" href="#PractitionerRole-vread">SHALL</a>
-              </td>
+              <td/>
               <td/>
               <td/>
               <td/>
@@ -166,9 +154,7 @@
               <td>
                 <a title="Allows retrieval of a specific RelatedPerson Resource" href="#RelatedPerson-read">SHALL</a>
               </td>
-              <td>
-                <a title="Allows retrieval of a specific version of a RelatedPerson Resource" href="#RelatedPerson-vread">SHALL</a>
-              </td>
+              <td/>
               <td/>
               <td/>
               <td/>
@@ -179,7 +165,8 @@
         </table>
       </div>
       <p>
-        <b>Operations:</b>
+        <h3>FHIR Operations summary</h3>
+        <p>The Consumer SHALL be capable of invoking the following FHIR operations.</p>
       </p>
       <ul>
         <li>
@@ -212,15 +199,7 @@
                 <p>Allows retrieval of a specific known Coverage Resource</p>
               </td>
             </tr>
-            <tr>
-              <th>
-                <a name="Coverage-vread"> </a>
-                <span>vread</span>
-              </th>
-              <td>
-                <p>Allows retrieval of a specific version of a Coverage Resource</p>
-              </td>
-            </tr>      
+               
           </tbody>
         </table>
       </div>
@@ -326,15 +305,7 @@
                 <p>Allows retrieval of a specific known Location Resource</p>
               </td>
             </tr>
-            <tr>
-              <th>
-                <a name="Location-vread"> </a>
-                <span>vread</span>
-              </th>
-              <td>
-                <p>Allows retrieval of a specific version of a Location Resource</p>
-              </td>
-            </tr>      
+                
           </tbody>
         </table>
       </div>
@@ -365,15 +336,7 @@
                 <p>Allows retrieval of a specific known Organization Resource</p>
               </td>
             </tr>
-            <tr>
-              <th>
-                <a name="Organization-vread"> </a>
-                <span>vread</span>
-              </th>
-              <td>
-                <p>Allows retrieval of a specific version of a Organization Resource</p>
-              </td>
-            </tr>      
+               
           </tbody>
         </table>
       </div>
@@ -404,15 +367,7 @@
                 <p>Allows retrieval of a specific known Patient Resource</p>
               </td>
             </tr>
-            <tr>
-              <th>
-                <a name="Patient-vread"> </a>
-                <span>vread</span>
-              </th>
-              <td>
-                <p>Allows retrieval of a specific version of a Patient Resource</p>
-              </td>
-            </tr>      
+                
           </tbody>
         </table>
       </div>
@@ -443,15 +398,7 @@
                 <p>Allows retrieval of a specific known Practitioner Resource</p>
               </td>
             </tr>
-            <tr>
-              <th>
-                <a name="Practitioner-vread"> </a>
-                <span>vread</span>
-              </th>
-              <td>
-                <p>Allows retrieval of a specific version of a Practitioner Resource</p>
-              </td>
-            </tr>      
+              
           </tbody>
         </table>
       </div>
@@ -482,15 +429,7 @@
                 <p>Allows retrieval of a specific known PractitionerRole Resource</p>
               </td>
             </tr>
-            <tr>
-              <th>
-                <a name="PractitionerRole-vread"> </a>
-                <span>vread</span>
-              </th>
-              <td>
-                <p>Allows retrieval of a specific version of a PractitionerRole Resource</p>
-              </td>
-            </tr>      
+                
           </tbody>
         </table>
       </div>
@@ -521,15 +460,7 @@
                 <p>Allows retrieval of a specific known RelatedPerson Resource</p>
               </td>
             </tr>
-            <tr>
-              <th>
-                <a name="RelatedPerson-vread"> </a>
-                <span>vread</span>
-              </th>
-              <td>
-                <p>Allows retrieval of a specific version of a RelatedPerson Resource</p>
-              </td>
-            </tr>      
+                
           </tbody>
         </table>
       </div>
@@ -551,8 +482,7 @@
   <description value="This profile defines the expected capabilities of the ''Consumer'' role when conforming to the DaVinci Risk Based Contracts Member Attribution List Implementation Guide.  
   This role is responsible for retrieving and using the Member Attribution List for DaVinci use cases such as CDex, PDex. The Member Attribution List can be used for other purposes also."/>
   <kind value="requirements"/>
-  <fhirVersion value="4.0.0"/>
-  <format value="xml"/>
+  <fhirVersion value="4.0.1"/>
   <format value="json"/>
   <rest>
     <mode value="client"/>
@@ -570,13 +500,7 @@
         <code value="read"/>
         <documentation value="Allows retrieval of a specific Coverage Resource"/>
       </interaction>
-      <interaction>
-        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-          <valueCode value="SHALL"/>
-        </extension>
-        <code value="vread"/>
-        <documentation value="Allows retrieval of a specific version of a Coverage Resource"/>
-      </interaction>
+      
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <valueCode value="SHALL"/>
@@ -604,14 +528,14 @@
       </interaction>
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-          <valueCode value="SHALL"/>
+          <valueCode value="SHOULD"/>
         </extension>
         <code value="vread"/>
         <documentation value="Allows retrieval of a historical version of a Group Resource"/>
       </interaction>
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-          <valueCode value="SHALL"/>
+          <valueCode value="SHOULD"/>
         </extension>
         <code value="history-instance"/>
         <documentation value="Allows review of changes to a Group Resource over time"/>
@@ -624,6 +548,10 @@
         <definition value="{{site.data.fhir.path}}search.html#token"/>
         <type value="token"/>
       </searchParam>
+      <operation>
+      	<name value="export"/>
+      	<definition value="http://hl7.org/fhir/uv/bulkdata/OperationDefinition-group-export.html"/>
+      </operation>
     </resource>
     <resource>
       <type value="Location"/>
@@ -635,13 +563,7 @@
         <code value="read"/>
         <documentation value="Allows retrieval of a specific Location Resource"/>
       </interaction>
-      <interaction>
-        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-          <valueCode value="SHALL"/>
-        </extension>
-        <code value="vread"/>
-        <documentation value="Allows retrieval of a specific version of a Location Resource"/>
-      </interaction>
+      
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <valueCode value="SHALL"/>
@@ -660,13 +582,7 @@
         <code value="read"/>
         <documentation value="Allows retrieval of a specific Organization Resource"/>
       </interaction>
-      <interaction>
-        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-          <valueCode value="SHALL"/>
-        </extension>
-        <code value="vread"/>
-        <documentation value="Allows retrieval of a specific version of a Organization Resource"/>
-      </interaction>
+      
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <valueCode value="SHALL"/>
@@ -685,13 +601,7 @@
         <code value="read"/>
         <documentation value="Allows retrieval of a specific Patient Resource"/>
       </interaction>
-      <interaction>
-        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-          <valueCode value="SHALL"/>
-        </extension>
-        <code value="vread"/>
-        <documentation value="Allows retrieval of a specific version of a Patient Resource"/>
-      </interaction>
+      
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <valueCode value="SHALL"/>
@@ -710,13 +620,7 @@
         <code value="read"/>
         <documentation value="Allows retrieval of a specific Practitioner Resource"/>
       </interaction>
-      <interaction>
-        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-          <valueCode value="SHALL"/>
-        </extension>
-        <code value="vread"/>
-        <documentation value="Allows retrieval of a specific version of a Practitioner Resource"/>
-      </interaction>
+      
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <valueCode value="SHALL"/>
@@ -735,13 +639,7 @@
         <code value="read"/>
         <documentation value="Allows retrieval of a specific PractitionerRole Resource"/>
       </interaction>
-      <interaction>
-        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-          <valueCode value="SHALL"/>
-        </extension>
-        <code value="vread"/>
-        <documentation value="Allows retrieval of a specific version of a PractitionerRole Resource"/>
-      </interaction>
+      
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <valueCode value="SHALL"/>
@@ -760,13 +658,7 @@
         <code value="read"/>
         <documentation value="Allows retrieval of a specific RelatedPerson Resource"/>
       </interaction>
-      <interaction>
-        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-          <valueCode value="SHALL"/>
-        </extension>
-        <code value="vread"/>
-        <documentation value="Allows retrieval of a specific version of a RelatedPerson Resource"/>
-      </interaction>
+      
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <valueCode value="SHALL"/>
@@ -776,13 +668,5 @@
       </interaction>
     </resource>
     
-    <!--  
-    <operation>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHALL"/>
-      </extension> 
-      <name value="export"/>
-      <definition value="http://hl7.org/fhir/uv/bulkdata/OperationDefinition-group-export.html"/>
-    </operation> -->
   </rest>
 </CapabilityStatement>

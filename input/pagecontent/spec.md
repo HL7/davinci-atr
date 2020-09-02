@@ -31,9 +31,20 @@ This implementation guide sets expectations for two types of systems:
 
 The requirements and expectations described here are not intended to be exhaustive. Producers and Consumers could potentially support additional resources and extensions, etc.  The purpose of this implementation guide is to establish a baseline of expected behavior and data elements that communication partners can rely on and then build from.  Future versions of this specification will evolve based on implementer feedback.
 
+#### Claiming Conformance 
+
+Producers and Consumers asserting conformance to this implementation guide have to implement the requirements outlines in [Producer Capability Statement](CapabilityStatement-davinci-atr-producer.html) and [Consumer Capability Statement](CapabilityStatement-davinci-atr-consumer.html) respectively. The following definition of MUST SUPPORT is to be used in the implementation of the requirements.
+
+##### MUST SUPPORT Definition
+
+* Producers SHALL be capable of populating all data elements as specified by the profiles and are returned using the specified APIs in the capability statement.
+* Consumers SHALL be capable of processing resource instances containing the MUST SUPPPORT data elements without generating an error or causing the application to fail. In other words Consumers SHOULD be capable of displaying the data elements for human use or storing it for other purposes.
+* In situations where information on a particular data element is not present and the reason for absence is unknown, Producers SHALL NOT include the data elements in the resource instance returned from executing the API requests.
+* When accessing Member Attribution Lists, Consumers SHALL interpret missing data elements within resource instances as data not present in the Producer's system.
+
 
 #### Profiles
-This specification makes significant use of [FHIR profiles]({{site.data.fhir.path}}profiling.html), search parameter definitions and terminology artifacts to describe the content to be shared as part of Memeber Attribution List interactions. The implementation guide supports two versions of FHIR: [STU3](http://hl7.org/fhir/STU3) and [R4]({{site.data.fhir.path}}) and profiles for both are listed for each interaction.  This version of the specification does not (yet) provide guidance for DSTU2 resources.
+This specification makes significant use of [FHIR profiles]({{site.data.fhir.path}}profiling.html), search parameter definitions and terminology artifacts to describe the content to be shared as part of Member Attribution List interactions. The implementation guide supports two versions of FHIR: [STU3](http://hl7.org/fhir/STU3) and [R4]({{site.data.fhir.path}}) and profiles for both are listed for each interaction.  This version of the specification does not (yet) provide guidance for DSTU2 resources.
 
 The full set of profiles defined in this implementation guide can be found by following the links on the [FHIR Artifacts](artifacts.html) page.
 
@@ -53,7 +64,7 @@ Producer systems SHALL support the reading and searching of Group resources per 
 
 Producer systems SHALL support ```Patient, Related Person, Practitioner, PractitionerRole, Location, Organization, Coverage, Group``` resource types for the ```[base]/Group/[id]/$export?_type``` parameter.
 
-Producer systems SHALL support the Bulk Data Request Flow as defined in the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
+Producer systems SHALL support the Bulk Data Kick-off Request as defined in the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
 
 Producer systems MAY support the Bulk Data Delete Request as defined in the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
 
@@ -62,6 +73,8 @@ Producer systems SHALL support the Bulk Data Status Request as defined in the [B
 Producer systems SHALL set the requireAccessToken to ```true``` within the Bulk Data Status Request response body as defined in the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
 
 Producer systems SHALL require Consumer systems to provide valid ```access token``` to access the member attribution list files. 
+
+Producer systems SHALL support the Bulk Data File Request as defined in the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
 
 When the Consumer systems do not have appropriate authorization to the data requested, the Producer systems SHALL return OperationOutcome with appropriate error message.
 
@@ -92,13 +105,13 @@ This section lists the capability statements for Producer and Consumer systems.
 
 ##### Producer Systems
 
-The specific requirements for the Producer systems are outlined in the [Producer Capability Statement](CapabilityStatement-davinci-atr-producer.html).
+The Producer specific requirements for REST interactions, operations, profiles and search parameters to be supported are outlined in the [Producer Capability Statement](CapabilityStatement-davinci-atr-producer.html). 
 
 
 
 ##### Consumer Systems
 
-The specific requirements for the Producer systems are outlined in the [Consumer Capability Statement](CapabilityStatement-davinci-atr-consumer.html).
+The Consumer specific requirements for REST interactions, operations, profiles and search parameters to be supported are outlined in the [Consumer Capability Statement](CapabilityStatement-davinci-atr-consumer.html).
 
 
 
@@ -108,7 +121,7 @@ The specific requirements for the Producer systems are outlined in the [Consumer
 #### Consumer identifies relevant Member Attribution List in Producer's system (Discovery of Group Resource)
 
 This interaction outlines the APIs for a Consumer (for example, Provider organization) to discover the Group Resource in a Producer's system ( for example, Payer organization).This Group resource represents the Member Attribution List that has been created by the Producer based on a contract between the Producer and the Consumer.
-FFor example, Multicare a Provider Organization would like to identify the Member Attribution List that a Payer organization (e.g Cambia Health Systems) has created based on a contract between Cambia and Multicare.
+For example, Multicare a Provider Organization would like to identify the Member Attribution List that a Payer organization (e.g Cambia Health Systems) has created based on a contract between Cambia and Multicare.
 
 **Precondition:**
 
@@ -122,7 +135,7 @@ GET <Server Base URL>/Group?identifier:oftype=http://terminology.hl7.org/CodeSys
 
 ```
 
-In the above API, notice the use of "oftype" modifier on the search to allow searching based on type which includes a CodeSystem and a Value. In addition the "ExampleNPI and ExampleTIN" will be substituted with the values that represent the Consumer organization.
+In the above API, notice the use of "oftype" modifier on the search to allow searching based on type which includes a CodeSystem and a Value. In addition the “<ExampleNPI>" and "<ExampleTIN>” will be substituted with the values that represent the Consumer organization.
 
 The Producer verifies the client credentials according to the SMART Backend Services Authorization protocols and in addition verifies that the Consumer is allowed to access the specific Member Attribution List and returns one or more Group Resources representing the Member Attribution Lists for each contract between the Producer and the Consumer.
 
@@ -133,7 +146,7 @@ Consumer receives one or more Group Resources from the API call. Each Group Reso
 
 #### Consumer requests Member Attribution List from Producer's system (Member Attribution List Export Request - Bulk Data Request)
 
-AThis interaction outlines the APIs for a Consumer (Provider) organization to request the full Member Attribution List that is applicable to their specific organization for a specific contract.
+This interaction outlines the APIs for a Consumer (Provider) organization to request the full Member Attribution List that is applicable to their specific organization for a specific contract.
 **Note:** The request has to be accepted by the Payer and eventually a Member Attribution List would be made available. This is an asynchronous request following Bulk Data IG specifications.
 
 For example, Multicare would like to request the Member Attribution List details from Cambia Health Systems for a specific contract. 

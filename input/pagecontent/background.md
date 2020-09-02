@@ -11,7 +11,7 @@ The process that Da Vinci has adopted includes:
 Additional information about Da Vinci, its members, the use cases and the implementation guides being developed can all be found on the [HL7 website](http://www.hl7.org/about/davinci). Meeting minutes and other materials can be found on the [Da Vinci Confluence page](https://confluence.hl7.org/display/DVP).
 
 ### Systems
-The implementation guide defines the responsibilities of the two types of systems involved in a ATR solution:
+The implementation guide defines the responsibilities of the two types of systems involved in an ATR solution:
 
 **Producer systems** are typically Payer systems but could theoretically be any system responsible for producing a Member Attribution List. These systems typically act as servers. 
 
@@ -42,7 +42,7 @@ prior to reading the rest of this implementation guide.
 This implementation guide supports [FHIR R4]({{site.data.fhir.path}}index.html) versions of the FHIR standard. FHIR R4 is just recently published and the goal is to ensure the implementation guide is aligned with the current direction of the FHIR standard. Initial implementations will focus on FHIR R4.
 
 #### Data Model
-This section maps the Member Attribution List data to FHIR resources to give an introduction to the resources that will be used in the guide. 
+This section maps the Member Attribution List data to FHIR resources to introduce resources that will be used in the implementation guide. 
 
 {::options parse_block_html="false" /}
 <figure>
@@ -64,11 +64,10 @@ Implementers should familiarize themselves with the FHIR resources used within t
     <td>
       <a href="{{site.data.fhir.path}}coverage.html">Coverage</a><br/>
       <a href="{{site.data.fhir.path}}group.html">Group</a><br/>
-      <a href="{{site.data.fhir.path}}insuranceplan.html">InsurancePlan</a><br/>
       <a href="{{site.data.fhir.path}}location.html">Location</a><br/>
       <a href="{{site.data.fhir.path}}organization.html">Organization</a><br/>
       <a href="{{site.data.fhir.path}}patient.html">Patient</a><br/>
-      <a href="{{site.data.fhir.path}}person.html">Person</a><br/>
+      <a href="{{site.data.fhir.path}}relatedperson.html">RelatedPerson</a><br/>
       <a href="{{site.data.fhir.path}}practitioner.html">Practitioner</a><br/>
       <a href="{{site.data.fhir.path}}practitionerrole.html">PractitionerRole</a><br/>
     </td>
