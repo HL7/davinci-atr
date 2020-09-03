@@ -2,24 +2,6 @@
 {% endraw %}
 <!--ReleaseHeader-->
 <!--EndReleaseHeader-->
-<blockquote class="stu-note">
-<p>
-This specification is being prepared for balloting and connectathon testing.  It is expected to evolve, possibly significantly, as part of that process.
-</p>
-<p>
-Feedback is welcome and may be submitted through the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> indicating "US Da Vinci ATR" as the specification.
-</p>
-<p>
-This implementation guide is dependent on other specifications.  Please submit any comments you have on these base specifications as follows:
-</p>
-<ul>
-  <li>Feedback on the FHIR core specification should be submitted to the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> with "FHIR Core" as the specification.</li>
-  <li>Feedback on the US core profiles should be submitted to the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> with "US Core" as the specification.</li>
-</ul>
-<p>
-Individuals interested in participating in the Risk Based Contracts Member Attribution List or  other HL7 Da Vinci projects can find information about Da Vinci [here](http://www.hl7.org/about/davinci).
-</p>
-</blockquote>
 
 
 ### Overview
