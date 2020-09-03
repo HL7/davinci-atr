@@ -5,9 +5,9 @@
 
 
 ### Overview
-The processes of establishing and exchanging member lists for risk based contracts are complex and time consuming. Currently there are no standards in use for establishing and exchanging risk based contract member lists between payers and providers. The most common method in use today involves creation of files (CSVs, txt etc) and exchanging them using different methods such as Email and Secure File Transfer Protocol (SFTP).This implementation guide will use HL7 FHIR to specify standards for exchanging of Member Attribution Lists (MAL) between providers and payers. The list can be used by providers and payers to implement use cases for Value Based Contracts (VBC), Quality Reporting, Davinci Payer Data Exchange (PDex), Da Vinci Clinical Data Exchange (CDex) among others. 
+The processes of establishing and exchanging member lists for risk based contracts are complex and time consuming. Currently there are no standards in use for establishing and exchanging risk based contract member lists between payers and providers. The most common method in use today involves creation of files (CSVs, txt etc) and exchanging them using different methods such as Email and Secure File Transfer Protocol (SFTP).This implementation guide will use HL7 FHIR to specify standards for exchanging of Member Attribution Lists between providers and payers. The list can be used by providers and payers to implement use cases for Value Based Contracts (VBC), Quality Reporting, Davinci Payer Data Exchange (PDex), Da Vinci Clinical Data Exchange (CDex) among others. 
 
-The purpose of this implementation guide is to define the mechanisms (protocols), data structures and value sets to be used for exchanging the MAL. The MAL typically contains the following information
+The purpose of this implementation guide is to define the mechanisms (protocols), data structures and value sets to be used for exchanging the Member Attribution List. The Member Attribution List typically contains the following information
 
 * Plan/Contract information which is the basis for the Member Attribution list
 * Patient Information
@@ -22,7 +22,7 @@ The implementation guide is designed to allow for initial support of basic capab
 The following features are in scope for future versions of the implementation guide 
 
 * Notification of changes in Member Attribution Lists
-* Exchange of Incremental Member Attribution Lists
+* Exchange of partial Member Attribution Lists which contain information about changes and not the complete list.
 * Requesting changes to existing Member Attribution Lists
 
 The following aspects are not in-scope for the implementation guide

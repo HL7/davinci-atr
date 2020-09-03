@@ -17,9 +17,9 @@ The implementation guide defines the responsibilities of the two types of system
 
 **Consumer systems** are typically Provider systems that act on behalf of provider organizations who retrieve the attribution list from Producer. These systems typically act as clients.
 
-### Underlying technologies
+### Underlying Specifications
 
-This guide is based on the [HL7 FHIR]({{site.data.fhir.path}}index.html) standard, as well as the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/index.html) and [SMART on FHIR Backend Services Authorization](http://hl7.org/fhir/uv/bulkdata/authorization/index.html) specifications, which build additional capabilities on top of FHIR.  This architecture is intended to maximize the number of clinical systems that conform to this guide as well as to allow for easy growth and extensibility of system capabilities in the future.
+This guide is based on the [HL7 FHIR]({{site.data.fhir.path}}index.html) standard, as well as the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/index.html) and [SMART on FHIR Backend Services Authorization](http://hl7.org/fhir/uv/bulkdata/authorization/index.html) specifications which build additional capabilities on top of FHIR.  This architecture is intended to maximize the number of clinical systems that conform to this guide as well as to allow for easy growth and extensibility of system capabilities in the future.
 
 Implementers of this specification therefore need to understand some basic information about these specifications.
 

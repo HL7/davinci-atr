@@ -18,8 +18,8 @@
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
   <WindowHeight>16940</WindowHeight>
   <WindowWidth>27640</WindowWidth>
-  <WindowTopX>4300</WindowTopX>
-  <WindowTopY>2760</WindowTopY>
+  <WindowTopX>2500</WindowTopX>
+  <WindowTopY>4180</WindowTopY>
   <ActiveSheet>2</ActiveSheet>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
@@ -1146,7 +1146,7 @@
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="60">
-    <Cell ss:StyleID="s90"><Data ss:Type="String">ATRCoverage</Data><NamedCell
+    <Cell ss:StyleID="s90"><Data ss:Type="String">ATR Coverage</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s91"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s91"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -3426,9 +3426,7 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>2</ActiveRow>
      <ActiveCol>0</ActiveCol>
-     <RangeSelection>R3</RangeSelection>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

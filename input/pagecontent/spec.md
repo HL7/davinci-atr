@@ -154,7 +154,7 @@ The section outlines specific requirements that need to be followed in creating 
 
 * When members are not attributed to a provider or an organization, Producers MAY attribute the member to the Settlement Entity organization which is responsible for the contract. Producers SHALL include the attribution period in the Group.member.period element. 
 
-* Producers SHALL include the contract validity period in Group.period data element.
+* Producers SHALL include the contract validity period in Group.extension (membershipValidityPeriod) data element.
 
 #### Security and Privacy considerations on Identifiers
 

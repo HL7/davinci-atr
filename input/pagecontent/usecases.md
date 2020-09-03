@@ -2,6 +2,12 @@
 
 Providers need to access Member Attribution Lists for the following business needs
 
+* Use the list to close care gaps for members that 'count' in financial reconciliation
+
+* Use the list to prospectively manage patients and meet quality metrics and manage costs by closing care gaps.
+
+* Use the list to track care costs of attributed patients, manage utilization, monitor referrals/specialist care.
+
 * Use the list to perform end of year reconciliation to get 'credit' for the right patients based on plans/contracts. 
 
 * Use the list for monthly membership tracking to see trends and confirm accountable care PMPM payments
@@ -10,21 +16,17 @@ Providers need to access Member Attribution Lists for the following business nee
 
 * Use the list to keep historical data of patients for continuity of care as members fall off or get added to the list
 
-* Use the list to close care gaps for members that 'count' in financial reconciliation
-
 * Use the list for performance reporting on specific targets and measures.
-
-* Use the list to identify patients that they can work on to improve performance for specific measures and targets.
 
 Using FHIR based APIs, providers and payers can exchange Member Attribution Lists which can enable existing business processes and systems to meet the above business needs. The creation of a Member Attribution List typically starts with a need to identify the patients for a specific purpose such as Risk Based Contracts or Quality Reporting. Once the patients are identified other FHIR APIs and Da Vinci specifications can be used to retrieve clinical, financial or other relevant information as needed.
 
 ### Example Member Attribution List Exchange Scenarios (Success path)
 
 #### Scenario 1
-Provider Organization A enters a risk based contract with Payer B. As part of establishing the contract targets, specific measures and financial incentives are documented. Payer B uses historical claims and other information present about members to create a Member Attribution List for Provider Organization A. The Member Attribution List identifies the list of patients that Provider Organization A is responsible for as part of the contract. Payer B needs to exchange this list with Provider Organization A periodically to ensure that Provider Organization A is aware of the list of patients that it is responsible for as per the contract. Payer B could publish the list in standard way and Provider Organization A retrieves the list for use. Alternatively Provider Organization A may request for the list and Payer B provides the list once it is ready.
+Provider Organization A enters a risk-based contract with Payer B. As part of establishing the contract targets, specific measures and financial incentives are documented. Payer B uses historical claims and other information present about members to create a Member Attribution List for Provider Organization A. The Member Attribution List identifies the list of patients that Provider Organization A is responsible for as part of the contract. Payer B needs to exchange this list with Provider Organization A periodically to ensure that Provider Organization A is aware of the list of patients that it is responsible for as per the contract. Payer B could publish the list in standard way and Provider Organization A retrieves the list for use. Alternatively Provider Organization A may request for the list and Payer B provides the list once it is ready.
 
 #### Scenario 2
-Provider Organization A enters a risk based contract with Payer B. As part of establishing the contract targets, specific measures, financial incentives are documented. Payer B uses historical claims and other information present about members to create a Member Attribution List for Provider Organization A. The list is published by Payer B and Provider Organization A retrieves the list. Once Provider Organization A reconciles the list, it identifies a list of changes that need to be done to the list and notifies the Payer B about the changes. Payer B either accepts or rejects the changes and may modify the existing Member Attribution List. If the list is modified, Payer B notifies Provider Organization A of the changes. Provider Organization A retrieves the list and starts using the list for various business needs. 
+Provider Organization A enters a risk-based contract with Payer B. As part of establishing the contract targets, specific measures, financial incentives are documented. Payer B uses historical claims and other information present about members to create a Member Attribution List for Provider Organization A. The list is published by Payer B and Provider Organization A retrieves the list. Once Provider Organization A reconciles the list, it identifies a list of changes that need to be done to the list and notifies the Payer B about the changes. Payer B either accepts or rejects the changes and may modify the existing Member Attribution List. If the list is modified, Payer B notifies Provider Organization A of the changes. Provider Organization A retrieves the list and starts using the list for various business needs. 
 
 ** Note: For the initial version of the Implementation Guide, the notification of changes and requesting changes are not in scope. These aspects will be examined in future releases.   
 
@@ -55,7 +57,7 @@ Enumeration of patients who are attributed to payers, providers, medical homes o
 The Attribution list contains the patient information along with information such as Attributed Provider, Health Plan information, Validity Period for the list, Risk Information etc. A member may be present multiple times within a member attribution list, however the combination of Member Identifier, Payer Identifier, Contract Identifier and Plan Identifier is always unique and can be used to identify the member.
 
 7. __Attributed Provider:__
-Provider responsible for the health of the Patient per the contract and will receive the payments and credits based on performance.
+Provider responsible for managing the quality and costs of the patient’s health care per the contract and will receive the payments and credits based on performance.
 
 8. __Attribution Period:__
 The period over which the member is attributed to a specific provider. The period has a start and an end date.
