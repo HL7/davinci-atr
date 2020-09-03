@@ -85,7 +85,7 @@ This implementation guide also builds on the US Core Implementation Guide where 
 
 
 #### Bulk Data IG
-Bulk Data IG will be used to retrieve the Member Attribution List. Once the Member Attribution List is retrieved, the Bulk Data IG will be further used to retrieve clinical and financial information about the members using other DaVinci implementation guides. 
+Bulk Data IG will be used to retrieve the Member Attribution List and related data. Bulk Data IG is used as the data could be large for some Member Attribution Lists. In addition, the requests and responses in existing workflows are asynchronous. Other Da Vinci implementation guides such as PDex, CDex are not used as part of this IG for Member Attribution List retrieval.
 
 #### SMART on FHIR Backend Services Authorization
 The SMART on FHIR Backend Services Authorization is used to secure all the system interactions between the Producers and the Consumers.

@@ -47,33 +47,32 @@ A unique identifier for an insurance plan that a payer provides. Members belong 
 
 **NOTE:** The combination of Member Identifier, Payer Identifier, Contract Identifier and Plan Identifier is always unique.
 
-1. __Attribution:__ 
-Results of Algorithmic process that assigns patients to providers or payers or Groups.
-Assignment process where patients are just assigned to the group manually. 
-A Patient could declare to be part of a Group by providing or selecting their PCP information or ACO information.
-For example when patients belong to a HMO plan there is an Attribution List created with all the patients who are on the HMO plan.
+5. __Attribution:__ 
+Results of Algorithmic or manual process that assigns patients to providers or payers. Alternatively a patient could declare to be part of a Group by providing or selecting their PCP information or ACO information.
 
-
-2. __Member Attribution List:__
+6. __Member Attribution List:__
 Enumeration of patients who are attributed to payers, providers, medical homes or groups. Patients may belong to multiple plans. 
 The Attribution list contains the patient information along with information such as Attributed Provider, Health Plan information, Validity Period for the list, Risk Information etc. A member may be present multiple times within a member attribution list, however the combination of Member Identifier, Payer Identifier, Contract Identifier and Plan Identifier is always unique and can be used to identify the member.
 
-3. __Attributed Provider:__
+7. __Attributed Provider:__
 Provider responsible for the health of the Patient per the contract and will receive the payments and credits based on performance.
 
-4. __Producer:__
-Entity creating the attribution list.
-Owns the master copy of the list. 
-Allows for changes to be made to the list. 
-Can receive an initial list from consumer and owns the list after that and publishes the list from that point.
+8. __Attribution Period:__
+The period over which the member is attributed to a specific provider. The period has a start and an end date.
 
-5. __Consumer:__ 
-Entity consuming the attribution list. 
-May contribute to the creation of the list owned by the Producer.
-May request changes to be made to the list owned by the Producer.
-May receive an initial list from producer and may request changes to the list before reaching final agreement on the list.
+8. __Producer:__
+An Entity creating the attribution list.
+Producer Owns the master copy of the list. 
+Producers allow for changes to be made to the list. 
+A Producer may receive an initial list from consumer and owns the list after that point in time and publishes the list for consumptionCons.
 
-6. __Attribution List Data:__
+9. __Consumer:__ 
+An Entity consuming the attribution list. 
+Consumers may contribute to the creation of the list owned by the Producer.
+Consumers may request changes to be made to the list owned by the Producer.
+Consumers may receive an initial list from producer and may request changes to the list before reaching final agreement on the list.
+
+10. __Attribution List Data:__
 Data contained within the attribution list. Data includes
 * Patient Demographics Data 
 * Attributed Provider Data (First Name, Last Name, Id, NPI, TIN, Address)
@@ -81,7 +80,7 @@ Data contained within the attribution list. Data includes
 * Attribution Data (Effective Start and End Date for Attribution, Attribution Method, Risk score)
 * Miscellaneous Data (ACO Information, Conditions)
 
-7. __Attribution List Changes:__ 
+11. __Attribution List Changes:__ 
 Addition of patients to the attribution list. 
 Deletion of patients to the attribution list. 
 Changes in attribution list data. 
@@ -105,6 +104,7 @@ In this step the Payer informs the Provider about the list and makes it availabl
 
 **3a. Provider (Consumer) informs Payer (Payer) about changes **<br/>
 Once the Provider receives the list in Step 2, Provider reconciles the list with internal lists and data and in case changes are needed, notifies the Payer about specific changes. These changes could be to add additional patients, remove patients from the list etc. The specific mechanism of how this exchange happens varies based on Payers and Providers. Future versions of this implementation guide will specify standards for requesting and notifying of changes.
+If the Consumer has no changes, then Step 3a would not be executed and the Consumer has accepted the list for usage. 
 
 Note: Steps 2 and 3a may be repeated as many times as needed until the Producer and Consumer agree upon the member attribution list.
 
@@ -114,7 +114,8 @@ Once the Provider receives the list in Step 2, Provider reconciles the list with
 **4. Payer (Producer) makes list available to Provider (Consumer) at regular intervals **<br/>
 Once the list is finalized, the Payer and Provider agree to exchange the list periodically as required. The specific mechanism of how this exchange happens varies based on Payers and Providers. This implementation guide will specify standards for this interaction.
 
-**NOTE:** The above workflow is the normal scenario. In addition to the above workflow the Producer may change the list periodically based on additional data. As this happens the Producer may decide to redo Steps 2 through 4. The change reconciliation process is out of scope for the current version of the IG as outlined in the above steps.
+**NOTE:** The above workflow is the normal scenario. In addition to the above workflow the Producer may change the list periodically based on additional data. As this happens the Producer may decide to redo Steps 2 through 4. In this version of the IG, there are no notification mechanisms created for a Producer to notify a consumer when the list changes. However there could be an agreed upon cadence between the Producer and the Consumer on how often the list is exchanged. 
+Every change that is made to the list may be available to the Consumer based on the cadence. In other words if it is a monthly list, then as changes get made the updated list will be exchanged on a monthly basis. The change reconciliation process is out of scope for the current version of the IG as outlined in the above steps.
 
 #### Considerations
 

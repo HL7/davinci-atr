@@ -273,7 +273,17 @@
             <tr>
               <th>identifier</th>
               <td>token</td>
-              <td>Search using identifiers which would be NPI and/or TIN for the Consumer</td>
+              <td>Search using identifiers which can be Consumer NPI, Consumer TIN, Settlement Entity Identifier, Contract Identifier. Combinations of AND/OR logic for the different identifiers are allowed according to the FHIR specification.</td>
+            </tr>
+            <tr>
+              <th>name</th>
+              <td>string</td>
+              <td>Search using Group name.</td>
+            </tr>
+            <tr>
+              <th>period</th>
+              <td>date</td>
+              <td>Search using contract validity period.</td>
             </tr>
           </tbody>
         </table>
@@ -547,6 +557,22 @@
         <name value="identifier"/>
         <definition value="{{site.data.fhir.path}}search.html#token"/>
         <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="name"/>
+        <definition value="{{site.data.fhir.path}}search.html#string"/>
+        <type value="string"/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="period"/>
+        <definition value="{{site.data.fhir.path}}search.html#date"/>
+        <type value="date"/>
       </searchParam>
       <operation>
       	<name value="export"/>

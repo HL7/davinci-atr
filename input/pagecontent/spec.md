@@ -94,10 +94,10 @@ Consumer systems SHALL obtain the access token as defined in the [Bulk Data IG](
 
 Producer systems SHALL support ```system/Patient.read, system/Practitioner.read, system/PractitionerRole.read, system/Coverage.read, system/Organization.read, system/RelatedPerson.read, system/Location.read, system/Group.read``` scopes.
 
-During Consumer registration, the Producer system  SHALL collect the NPI and Tax Identification Numbers applicable for a specific contract along with the specific contract information. This information is necessary for the Producer to create the necessary Member Attribution List and provide an API that will allow the Consumer to retrieve the Member Attribution List. 
+During Consumer registration, the Producer system  MAY collect the NPI and Tax Identification Numbers applicable for a specific contract along with the specific contract information. This information MAY be used by the Producer to create the necessary Member Attribution List and provide an API that will allow the Consumer to retrieve the Member Attribution List. Producers MAY follow other OAuth best practices for Consumer registration.
 
 When the Consumer is trying to discover the specific Group resource that represents the Member Attribution List for a specific contract, the Producer SHALL verify that the Consumer credentials provided allow the Consumer to access the requested specific Group Resource. 
-**NOTE:** This verification is for a specific Group instance and not just the type which is controlled by the scopes.
+**NOTE:** This verification is for a specific Group instance and not just the Group Resource type which is controlled by the scopes.
 
 
 #### Capability Statements
@@ -118,16 +118,49 @@ The Consumer specific requirements for REST interactions, operations, profiles a
 
 The section outlines specific requirements that need to be followed in creating the Member Attribution List.
 
-Producers SHALL create one Member Attribution List represented by a Group Resource per Contract between a Payer and a Provider.
+#### Representing Contracts
 
-Producers SHALL ensure the combination of Member Identifier, Payer Identifier, Contract Identifier and Plan Identifier are unique. 
+* Producers SHALL create one Member Attribution List represented by an instance of Group Resource. There will be exactly one Group Resource instance per Contract between a Payer and a Provider.
+
+* Producers SHALL ensure the combination of Member Identifier, Payer Identifier, Contract Identifier and Plan Identifier are unique. 
  
-Producers SHALL include the Contract Identifier within the Group.identifier element during the creation of the Member Attribution List.
+* Producers SHALL include the Contract Identifier within the Group.identifier element during the creation of the Member Attribution List.
 
-Producers SHALL include the Plan Identifier in Coverage.class data element during the creation of the Member Attribution List.
+* Producers SHALL make available the Group resource for Consumers for at least the duration of the contract in compliance with applicable regulations and policies. 
 
-Producers SHALL include the Coverage that is associated with the member in the Member Attribution List as part of the Group.member.anyReference data element.
+* Producers SHALL create new versions of Group resource instances as data in the Group (Members, Attributed periods, coverage references, attributed providers) change. Producers may or may not retain older versions of the Group based on their instance version scheme. In some instances Producers may choose a version scheme based on agreements with Consumers. When queried by the Consumers, Producers SHALL return the latest version of the Group resource instance unless a specific version is queried.
 
+
+#### Representing Plans and Coverage
+
+* Producers SHALL include the Plan Identifier in Coverage.class data element during the creation of the Member Attribution List.
+
+* Producers SHALL include the Coverage that is associated with the member in the Member Attribution List as part of the Group.member.anyReference data element.
+
+#### Handling Identifiers
+
+* Producers SHALL include settlement entity names, ACO identifiers in Group.identifier during the creation of the Member Attribution List. This is helpful for Consumers to discover the Group using a single settlement entity name and/or an ACO identifier. 
+
+* Producers SHALL include the provider NPI and/or TIN in Group.identifier field during the creation of the Member Attribution List. These identifiers are used by Consumers to discover the Group Resource using their own NPI and/or TIN.
+
+* When Member Identifiers are present, Producers SHALL include the Member Identifier in the Coverage.identifier.
+
+
+#### Handling Attribution Period, Contract Period and Attributed Providers
+
+* Producers SHALL include the attribution period in the Group.member.period data element. This indicates the period over which the member is attributed to the provider.
+
+* When members get attributed to different providers during the same contract for different providers, Producers SHALL include the member multiple times in the Member Attribution List, once for each provider with whom the member is attributed including their attribution period. 
+
+* When members are not attributed to a provider or an organization, Producers MAY attribute the member to the Settlement Entity organization which is responsible for the contract. Producers SHALL include the attribution period in the Group.member.period element. 
+
+* Producers SHALL include the contract validity period in Group.period data element.
+
+#### Security and Privacy considerations on Identifiers
+
+* Producers SHOULD exchange Provider NPI and TIN only as needed and when the NPIs and TINs belong to providers associated with the receiving organization.
+
+* Consumers SHOULD NOT be sharing the NPI and TIN information amongst providers unless required for PTO.
 
 
 ### Member Attribution List Exchange Interactions Details and APIs
@@ -140,6 +173,7 @@ For example, Multicare a Provider Organization would like to identify the Member
 **Precondition:**
 
 In order to discover the appropriate Group Resource (Member Attribution List) the Consumer is expected to know its own NPI and Tax Identification Number.
+Note: Producers and Consumers MAY have a predetermined cadence on exchanging member attribution lists and this API could be invoked based on the cadence.
 
 **API:**
 
