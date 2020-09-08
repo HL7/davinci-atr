@@ -502,7 +502,7 @@
     </security>
     <resource>
       <type value="Coverage"/>
-      <profile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-coverage"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-coverage"/>
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <valueCode value="SHALL"/>
@@ -521,7 +521,7 @@
     </resource>
     <resource>
       <type value="Group"/>
-      <profile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-group"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-group"/>
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <valueCode value="SHALL"/>
@@ -581,7 +581,7 @@
     </resource>
     <resource>
       <type value="Location"/>
-      <profile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-location"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-location"/>
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <valueCode value="SHALL"/>
@@ -600,7 +600,7 @@
     </resource>
     <resource>
       <type value="Organization"/>
-      <profile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-organization"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-organization"/>
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <valueCode value="SHALL"/>
@@ -619,7 +619,7 @@
     </resource>
     <resource>
       <type value="Patient"/>
-      <profile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-patient"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-patient"/>
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <valueCode value="SHALL"/>
@@ -638,7 +638,7 @@
     </resource>
     <resource>
       <type value="Practitioner"/>
-      <profile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-practitioner"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-practitioner"/>
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <valueCode value="SHALL"/>
@@ -657,7 +657,7 @@
     </resource>
     <resource>
       <type value="PractitionerRole"/>
-      <profile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-practitionerrole"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-practitionerrole"/>
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <valueCode value="SHALL"/>
@@ -676,7 +676,7 @@
     </resource>
     <resource>
       <type value="RelatedPerson"/>
-      <profile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-relatedperson"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-relatedperson"/>
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <valueCode value="SHALL"/>

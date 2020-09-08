@@ -8,7 +8,7 @@ The process that Da Vinci has adopted includes:
 4. pilot the standard
 5. support the production use of the IG to enable exchange of data to support interoperability for value-based care.
 
-Additional information about Da Vinci, its members, the use cases and the implementation guides being developed can all be found on the [HL7 website](http://www.hl7.org/about/davinci). Meeting minutes and other materials can be found on the [Da Vinci Confluence page](https://confluence.hl7.org/display/DVP).
+Additional information about Da Vinci, its members, the use cases and the implementation guides being developed can all be found on the [HL7 website](http://www.hl7.org/about/davinci). Meeting minutes and other materials can be found on the [Da Vinci Confluence page](https://confluence.hl7.org/display/DVP). The guiding principles for Da Vinci can be found [here](https://confluence.hl7.org/display/DVP/Da+Vinci+Clinical+Advisory+Council+Members?preview=/66940155/66942916/Guiding%20Principles%20for%20Da%20Vinci%20Implementation%20Guides.pdf).
 
 ### Systems
 The implementation guide defines the responsibilities of the two types of systems involved in an ATR solution:

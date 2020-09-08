@@ -185,14 +185,14 @@ For example, Multicare a Provider Organization would like to identify the Member
 
 **Precondition:**
 
-In order to discover the appropriate Group Resource (Member Attribution List) the Consumer is expected to know its own NPI and Tax Identification Number.
+In order to discover the appropriate Group Resource (Member Attribution List) the Consumer is expected to know its own NPI and/or Tax Identification Number or Contract Identifier or Settlement Entity Identifiers. Producers and Consumers may exchange this information during the contract establishment. Similarly Producers may provide the name of the Group resource representing the Member Attribution List that can be retrieved by the Consumer. 
 Note: Producers and Consumers MAY have a predetermined cadence on exchanging member attribution lists and this API could be invoked based on the cadence.
 
-**API:**
+**API: Discover Group using NPI and TIN**
 
 ```
 
-GET <Server Base URL>/Group?identifier:oftype=http://terminology.hl7.org/CodeSystem/v2-0203|NPI|<ExampleNPI>&identifier:oftype=http://terminology.hl7.org/CodeSystem/v2-0203|TAX|<ExampleTIN>
+GET <Server Base URL>/Group?identifier=http://terminology.hl7.org/CodeSystem/v2-0203|NPI|<ExampleNPI>&identifier=http://terminology.hl7.org/CodeSystem/v2-0203|TAX|<ExampleTIN>
 
 ```
 
@@ -200,9 +200,39 @@ In the above API, notice the use of "oftype" modifier on the search to allow sea
 
 The Producer verifies the client credentials according to the SMART Backend Services Authorization protocols and in addition verifies that the Consumer is allowed to access the specific Member Attribution List and returns one or more Group Resources representing the Member Attribution Lists for each contract between the Producer and the Consumer.
 
+**API: Discover Group using NPI or TIN**
+
+
+```
+
+GET <Server Base URL>/Group?identifier=http://terminology.hl7.org/CodeSystem/v2-0203|<NPI or TAX>|<ExampleNPI or ExampleTIN>
+
+```
+
+
+**API: Discover Group using Identifiers (Contract Identifier or Settlement Entity Identifier)**
+
+
+```
+
+GET <Server Base URL>/Group?identifier=http://example.org|<Identifier Value>
+
+```
+
+
+**API: Discover Group using Name**
+
+
+```
+
+GET <Server Base URL>/Group?name=myorg
+
+```
+
+
 **Expected Result:**
 
-Consumer receives one or more Group Resources from the API call. Each Group Resource represents a specific Member Attribution List between the Producer and the Consumer. To narrow down the specific Member Attribution List for a specific contract the Consumer has to examine the ```Group.characterstic.valueReference``` element and compare the contract information.
+Consumer receives one or more Group Resources from the above API call(s). Each Group Resource represents a specific Member Attribution List between the Producer and the Consumer. To narrow down the specific Member Attribution List for a specific contract the Consumer has to examine the ```Group.identifier``` and ```Group.contractValidityPeriod``` element and compare the contract information.
 
 
 #### Consumer requests Member Attribution List from Producer's system (Member Attribution List Export Request - Bulk Data Request)

@@ -1,6 +1,16 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
 	<p>
-    Download the entire implementation guide <a href="full-ig.zip">here</a>
+    <b>Entire Implementation Guide :</b>Download the entire implementation guide <a href="full-ig.zip">here</a>
+    
+    </p>
+    <p>
+    The following package file includes an NPM package file used by many of the FHIR tools. 
+    It contains all the value sets, profiles, extensions, list of pages and urls in the IG, etc defined as part of this version of the Implementation Guide. 
+    This file should be the first choice whenever generating any implementation artifacts since it contains all of the rules about what makes the profiles valid. 
+    Implementers will still need to be familiar with the content of the specification and profiles that apply in order to make a conformant implementation.
+    <br/>
+    <a href="package.tgz">NPM Package</a>
+    
 	</p>
 	<table>
 		<tbody>
