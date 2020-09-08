@@ -130,6 +130,8 @@ The section outlines specific requirements that need to be followed in creating 
 
 * Producers SHALL create new versions of Group resource instances as data in the Group (Members, Attributed periods, coverage references, attributed providers) change. Producers may or may not retain older versions of the Group based on their instance version scheme. In some instances Producers may choose a version scheme based on agreements with Consumers. When queried by the Consumers, Producers SHALL return the latest version of the Group resource instance unless a specific version is queried.
 
+* Producers SHALL represent the validity period of the contract in the Group.contractValidityPeriod extension.
+
 
 #### Representing Plans and Coverage
 
@@ -146,7 +148,7 @@ The section outlines specific requirements that need to be followed in creating 
 * When Member Identifiers are present, Producers SHALL include the Member Identifier in the Coverage.identifier.
 
 
-#### Handling Attribution Period, Contract Period and Attributed Providers
+#### Handling Attribution Period and Attributed Providers
 
 * Producers SHALL include the attribution period in the Group.member.period data element. This indicates the period over which the member is attributed to the provider.
 
@@ -155,6 +157,17 @@ The section outlines specific requirements that need to be followed in creating 
 * When members are not attributed to a provider or an organization, Producers MAY attribute the member to the Settlement Entity organization which is responsible for the contract. Producers SHALL include the attribution period in the Group.member.period element. 
 
 * Producers SHALL include the contract validity period in Group.extension (membershipValidityPeriod) data element.
+
+* Producers SHALL set ```Group.member.inactive = true``` when the member is no longer attributed.
+
+* Producers SHALL set ```Group.member.extension.ext-changeType = dropped``` when the member is no longer attributed.
+
+* Producers SHALL set  ``Group.member.extension.ext-changeType = new``` when a member is added to the attribution list for the first time.
+
+* Producers SHOULD set  ``Group.member.extension.ext-changeType = changed``` when a members information has changed.
+
+* Producers SHOULD set  ``Group.member.extension.ext-changeType = nochange``` when a members information has not changed from the previous version of the attribution list.
+
 
 #### Security and Privacy considerations on Identifiers
 
