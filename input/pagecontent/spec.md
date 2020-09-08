@@ -232,7 +232,7 @@ GET <Server Base URL>/Group?name=myorg
 
 **Expected Result:**
 
-Consumer receives one or more Group Resources from the above API call(s). Each Group Resource represents a specific Member Attribution List between the Producer and the Consumer. To narrow down the specific Member Attribution List for a specific contract the Consumer has to examine the ```Group.identifier``` and ```Group.contractValidityPeriod``` element and compare the contract information.
+Consumer receives one or more Group Resources from the above API call(s). Each Group Resource represents a specific Member Attribution List between the Producer and the Consumer. To narrow down the specific Member Attribution List for a specific contract the Consumer has to examine the ```Group.identifier``` and ```Group.contractValidityPeriod``` element and compare the contract information. An example resource retrieved by the above discovery APIs can be found at [Group Example](Group-fullexample.html).
 
 
 #### Consumer requests Member Attribution List from Producer's system (Member Attribution List Export Request - Bulk Data Request)
@@ -257,7 +257,7 @@ GET or POST <Server Base URL>/Group/[Group id]/$export?_type=Patient,Practitione
 ```
 
 **Expected Results:**
-Request is accepted by the Producer and a Content Location is received as part of the Response. 
+Request is accepted by the Producer and a Content Location is received as part of the Response. Detailed examples for Bulk Data Request can be found in the Bulk Data IG.
 
 #### Consumer polls the Content Location for Request Completion and Member Attribution List data location (Member Attribution List Export Request Polling - Bulk Data Poll Request)
 
@@ -283,6 +283,7 @@ GET <Content Location from Member Attribution List Export Request>
 * The completion status of the Member Attribution List Export Request.
 * Once the request is completed, a 200 HTTP code is returned along with the Response Body containing the URLs for the files representing the Member Attribution List.
 * At least one URL is returned for each of the resource types specified using the _type parameter in the Member Attribution List Export Request which are Patient,Practitioner,PractitionerRole,Organization,Location,Coverage and RelatedPerson resources.
+* Detailed examples for content polling can be found in the Bulk Data IG.
 
 #### Consumer retrieves Member Attribution List from Producer (FHIR Request)
 
@@ -306,6 +307,7 @@ GET <File URL for each Resource identified in Member Attribution List Export Req
 
 * Retrieve the NDJSON files for each of the following resources.
 * One or more NDJSON files for Patient,Practitioner,PractitionerRole,Organization,Location,Coverage and RelatedPerson
+* Detailed examples for NDJSON file retrieval can be found in the Bulk Data IG.
 
 
  
