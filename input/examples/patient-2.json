@@ -1,0 +1,109 @@
+{
+	"resourceType": "Patient",
+	"id": "2",
+	"meta": {
+		"versionId": "2",
+		"lastUpdated": "2018-04-25T02:41:21.772-04:00",
+		"tag": [
+			{
+				"system": "https://smarthealthit.org/tags",
+				"code": "smart-7-2017"
+			}
+		]
+	},
+	"text": {
+		"status": "generated",
+		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Emilie407 Cole117</div>"
+	},
+	"identifier": [
+		{
+			"use": "official",
+			"type": {
+				"coding": [
+					{
+						"system": "http://hl7.org/fhir/v2/0203",
+						"code": "MR",
+						"display": "Medical Record Number"
+					}
+				],
+				"text": "Medical Record Number"
+			},
+			"system": "http://hospital.smarthealthit.org",
+			"value": "smart-8888804"
+		}
+	],
+	"active": true,
+	"name": [
+		{
+			"use": "official",
+			"family": "Cole117",
+			"given": [
+				"Emilie407"
+			]
+		}
+	],
+	"telecom": [
+		{
+			"system": "phone",
+			"value": "31612345678",
+			"use": "mobile"
+		},
+		{
+			"system": "phone",
+			"value": "31201234567",
+			"use": "home"
+		}
+	],
+	"gender": "male",
+	"birthDate": "1950-07-06",
+	"deceasedBoolean": false,
+	"address": [
+		{
+			"use": "home",
+			"line": [
+				"Bos en Lommerplein 280"
+			],
+			"city": "Amsterdam",
+			"state": "RJ",
+			"postalCode": "1055",
+			"country": "NLD"
+		}
+	],
+	"maritalStatus": {
+		"coding": [
+			{
+				"system": "http://snomed.info/sct",
+				"code": "36629006",
+				"display": "Legally married"
+			},
+			{
+				"system": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
+				"code": "M"
+			}
+		]
+	},
+	"communication": [
+		{
+			"language": {
+				"coding": [
+					{
+						"system": "urn:ietf:bcp:47",
+						"code": "nl",
+						"display": "Dutch"
+					}
+				],
+				"text": "Nederlands"
+			},
+			"preferred": true
+		}
+	],
+	"generalPractitioner": [
+		{
+			"reference": "Practitioner/2"
+		}
+	],
+	"managingOrganization": {
+		"reference": "Organization/2",
+		"display": "ACME Healthcare, Inc"
+	}
+}

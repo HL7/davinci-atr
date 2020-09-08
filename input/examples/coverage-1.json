@@ -1,0 +1,71 @@
+{
+	"resourceType": "Coverage",
+	"id": "1",
+	"meta": {
+		"versionId": "1",
+		"lastUpdated": "2019-06-06T03:04:12.348-04:00"
+	},
+	"text": {
+		"status": "generated",
+		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">A human-readable rendering of the coverage</div>"
+	},
+	"identifier": [
+		{
+			"use": "official",
+			"type": {
+				"coding": [
+					{
+						"system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+						"code": "MB",
+						"display": "Member Number"
+					}
+				]
+			},
+			"system": "https://sitenv.org",
+			"value": "123456"
+		}
+	],
+	"status": "active",
+	"policyHolder": {
+		"reference": "RelatedPerson/1"
+	},
+	"subscriber": {
+		"reference": "Patient/4"
+	},
+	"subscriberId": "AB3658",
+	"beneficiary": {
+		"reference": "Patient/4"
+	},
+	"dependent": "0",
+	"relationship": {
+		"coding": [
+			{
+				"system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+				"code": "self",
+				"display": "Self"
+			}
+		]
+	},
+	"period": {
+		"start": "2011-05-23",
+		"end": "2012-05-23"
+	},
+	"payor": [
+		{
+			"reference": "Organization/2"
+		}
+	],
+	"class": [
+		{
+			"type": {
+				"coding": [
+					{
+						"system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+						"code": "plan"
+					}
+				]
+			},
+			"value": "B37FC"
+		}
+	]
+}

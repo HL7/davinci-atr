@@ -50,6 +50,8 @@ This section maps the Member Attribution List data to FHIR resources to introduc
 </figure>
 {::options parse_block_html="true" /}
 
+
+
 <br/>
 
 Implementers should familiarize themselves with the FHIR resources used within the guide based on the above data model.

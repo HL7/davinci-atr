@@ -1,0 +1,126 @@
+<Group xmlns="http://hl7.org/fhir">
+   <id value="fullexample"></id>
+   <meta>
+      <versionId value="1"></versionId>
+      <lastUpdated value="2019-06-06T03:04:12.348-04:00"></lastUpdated>
+   </meta>
+   <text>
+      <status value="additional"></status>
+      <div xmlns="http://www.w3.org/1999/xhtml"> 
+         <p>Selected Patients</p> 
+         <ul> 
+            <li>Patient Donald DUCK @ Acme Healthcare, Inc. MR = 654321</li> 
+            <li>Patient Donald D DUCK @ Acme Healthcare, Inc. MR = 123456</li> 
+            <li>Patient Simon Notsowell @ Acme Healthcare, Inc. MR = 123457, DECEASED</li> 
+            <li>Patient Sandy Notsowell @ Acme Healthcare, Inc. MR = 123458, DECEASED</li> 
+         </ul> 
+      </div>
+   </text>
+   <extension url="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-membershipValidityPeriod">
+      <valuePeriod>
+         <start value="2020-07-25"></start>
+         <end value="2021-06-24"></end>
+      </valuePeriod>
+   </extension>
+   <identifier>
+      <use value="official"></use>
+      <type>
+         <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/v2-0203"></system>
+            <code value="NPI"></code>
+            <display value="National Provider Identifier"></display>
+         </coding>
+      </type>
+      <system value="https://sitenv.org"></system>
+      <value value="1316206220"></value>
+   </identifier>
+   <identifier>
+      <use value="official"></use>
+      <type>
+         <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/v2-0203"></system>
+            <code value="TAX"></code>
+            <display value="Tax ID Number"></display>
+         </coding>
+      </type>
+      <system value="https://sitenv.org"></system>
+      <value value="789456231"></value>
+   </identifier>
+   <active value="true"></active>
+   <type value="person"></type>
+   <actual value="true"></actual>
+   <name value="Test Group 3"></name>
+   <managingEntity>
+      <reference value="Organzation/1"></reference>
+      <display value="Healthcare related organization"></display>
+   </managingEntity>
+   <member>
+      <extension url="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-changeType">
+         <valueCode value="add"></valueCode>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-coverageReference">
+         <valueReference>
+            <reference value="Coverage/1"></reference>
+         </valueReference>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-attributedProvider">
+         <valueReference>
+            <reference value="Organzation/2"></reference>
+         </valueReference>
+      </extension>
+      <entity>
+         <reference value="Patient/1"></reference>
+      </entity>
+      <period>
+         <start value="2014-10-08"></start>
+         <end value="2020-10-08"></end>
+      </period>
+      <inactive value="false"></inactive>
+   </member>
+   <member>
+      <extension url="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-changeType">
+         <valueCode value="add"></valueCode>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-coverageReference">
+         <valueReference>
+            <reference value="Coverage/2"></reference>
+         </valueReference>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-attributedProvider">
+         <valueReference>
+            <reference value="Practitioner/1"></reference>
+         </valueReference>
+      </extension>
+      <entity>
+         <reference value="Patient/2"></reference>
+      </entity>
+      <period>
+         <start value="2015-04-02"></start>
+         <end value="2021-12-12"></end>
+      </period>
+      <inactive value="false"></inactive>
+   </member>
+   <member>
+      <extension url="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-changeType">
+         <valueCode value="add"></valueCode>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-coverageReference">
+         <valueReference>
+            <reference value="Coverage/3"></reference>
+         </valueReference>
+      </extension>
+      <extension url="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-attributedProvider">
+         <valueReference>
+            <reference value="PractitionerRole/1"></reference>
+         </valueReference>
+      </extension>
+      <entity>
+         <reference value="Patient/3"></reference>
+      </entity>
+      <period>
+         <start value="2016-09-02"></start>
+         <end value="2022-05-10"></end>
+      </period>
+      <inactive value="false"></inactive>
+   </member>
+</Group>
