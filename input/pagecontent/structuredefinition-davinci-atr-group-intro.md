@@ -1,6 +1,6 @@
 ### Introduction
 
-This profile represents an instance of Member Attribution List. The resource instance contain information related to members who are attributed to a specific individual provider or a provider organization. The instance may also contains information about the contract, settlement entity details. In addition, NPI and TIN of the consumer (provider) organization may be contained within the instance. Attribution information such as the attributed period, attributed provider is also contained within the group resource. Members may be added or removed from the member attribution list.
+This profile represents an instance of Member Attribution List. The resource instance contain information related to members who are attributed to a specific individual provider or a provider organization. The instance may also contains information about the contract, settlement entity details. In addition, NPI and TIN of the consumer (provider) organization may be contained within the instance. Attribution information such as the attributed period, attributed provider is also contained within the group resource. Members may be added or removed from the member attribution list. Group.member has a cardinality of 0..* because  Groups may have zero members when they are initially created and members get added at a later point in time. The Group.member.inactive flag is used to indicate that the patient is no longer part of the Member Attribution List.
 
 
 **Implementation Requirements**
