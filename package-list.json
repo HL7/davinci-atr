@@ -1,6 +1,6 @@
 {
  "package-id" : "hl7.fhir.us.davinci-atr",
- "title" : "Risk Based Contracts Member Attribution (ATR) List FHIR IG", 
+ "title" : "Member Attribution (ATR) List FHIR IG", 
  "canonical" : "http://hl7.org/fhir/us/davinci-atr", 
  "introduction" : "The FHIR IG enables exchanging rosters of patients between Payers and Providers.",
  "list" : [

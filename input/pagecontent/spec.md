@@ -1,4 +1,4 @@
-This section of the implementation guide defines the specific conformance requirements for systems wishing to conform to this Risk Based Contracts Member Attribution List Exchange implementation guide.  The bulk of it focuses on the implementation of  the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/index.html) to meet attribution list use-cases.  It also describes the use of [SMART on FHIR Backend Services Authorization](http://hl7.org/fhir/uv/bulkdata/authorization/index.html) and provides guidance on privacy, security and other implementation requirements.
+This section of the implementation guide defines the specific conformance requirements for systems wishing to conform to this Member Attribution List  implementation guide.  The bulk of it focuses on the implementation of  the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/index.html) to meet attribution list use-cases.  It also describes the use of [SMART on FHIR Backend Services Authorization](http://hl7.org/fhir/uv/bulkdata/authorization/index.html) and provides guidance on privacy, security and other implementation requirements.
 
 
 ### Context

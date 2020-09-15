@@ -45,9 +45,12 @@ This implementation guide supports [FHIR R4]({{site.data.fhir.path}}index.html) 
 This section maps the Member Attribution List data to FHIR resources to introduce resources that will be used in the implementation guide. 
 
 {::options parse_block_html="false" /}
-<figure>
-  <img height="300px" src="mal-data.png" alt="Member Attribution List Data mapped to FHIR resources"/>
-</figure>
+
+<object type="image/svg+xml" data="mal-data.svg" alt="Member Attribution List Data Model">
+    <!-- Your fall back here -->
+    <img src="mal-data.svg" />
+</object>
+
 {::options parse_block_html="true" /}
 
 

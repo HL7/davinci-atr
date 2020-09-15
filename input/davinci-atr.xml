@@ -2,9 +2,9 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas-r5/fhir-single.xsd">  
   <id value="davinci-atr"/>
   <url value="http://hl7.org/fhir/us/davinci-atr/ImplementationGuide/davinci-atr"/>
-  <version value="0.1.0"/>
-  <name value="RiskBasedContractsMemberAttributionList"/>
-  <title value="Da Vinci - Risk Based Contracts Member Attribution (ATR) List"/>
+  <version value="current"/>
+  <name value="MemberAttributionList"/>
+  <title value="Da Vinci - Member Attribution (ATR) List"/>
   <status value="draft"/>
   <experimental value="false"/>
   <publisher value="HL7 International - Financial Management Work Group"/>
