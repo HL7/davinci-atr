@@ -30,19 +30,19 @@
 		"reference": "RelatedPerson/2"
 	},
 	"subscriber": {
-		"reference": "Patient/5"
+		"reference": "RelatedPerson/2"
 	},
 	"subscriberId": "AB3999",
 	"beneficiary": {
-		"reference": "Patient/5"
+		"reference": "Patient/2"
 	},
-	"dependent": "0",
+	"dependent": "01",
 	"relationship": {
 		"coding": [
 			{
 				"system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
-				"code": "self",
-				"display": "Self"
+				"code": "spouse",
+				"display": "Spouse"
 			}
 		]
 	},
@@ -65,7 +65,7 @@
 					}
 				]
 			},
-			"value": "B37FC"
+			"value": "HMO"
 		}
 	]
 }

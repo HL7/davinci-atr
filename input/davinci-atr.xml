@@ -138,11 +138,18 @@
       <reference>
         <reference value="RelatedPerson/1"/>
       </reference>
-      <name value="Related Person used as a Subscriber in Coverage : Example"/>
+      <name value="Related Person (1) used as a Subscriber in Coverage"/>
       <description value="An example showing a Related Person as a subscriber"/>
       <exampleBoolean value="true"/>
     </resource>
-  
+    <resource>
+      <reference>
+        <reference value="RelatedPerson/2"/>
+      </reference>
+      <name value="Related Person (2) used as a Subscriber in Coverage"/>
+      <description value="An example showing a Related Person as a subscriber"/>
+      <exampleBoolean value="true"/>
+    </resource>
   
     <!-- You don't need to define any groupings.  The IGPublisher will define them for you.  You only need to do so if your IG is 'special' and it's
       inappropriate to use the defaults.  Feel free to provide feedback about the defaults... -->

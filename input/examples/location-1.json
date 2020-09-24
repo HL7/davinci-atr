@@ -69,10 +69,5 @@
 	},
 	"managingOrganization": {
 		"reference": "Organization/1"
-	},
-	"endpoint": [
-		{
-			"reference": "Endpoint/example"
-		}
-	]
+	}
 }

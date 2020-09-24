@@ -16,7 +16,7 @@
          </ul> 
       </div>
    </text>
-   <extension url="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-membershipValidityPeriod">
+   <extension url="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-contractValidityPeriod">
       <valuePeriod>
          <start value="2020-07-25"></start>
          <end value="2021-06-24"></end>
@@ -51,7 +51,7 @@
    <actual value="true"></actual>
    <name value="Test Group 3"></name>
    <managingEntity>
-      <reference value="Organzation/1"></reference>
+      <reference value="Organization/1"></reference>
       <display value="Healthcare related organization"></display>
    </managingEntity>
    <member>
@@ -65,7 +65,7 @@
       </extension>
       <extension url="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-attributedProvider">
          <valueReference>
-            <reference value="Organzation/2"></reference>
+            <reference value="Organization/2"></reference>
          </valueReference>
       </extension>
       <entity>

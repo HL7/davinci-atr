@@ -27,16 +27,16 @@
 	],
 	"status": "active",
 	"policyHolder": {
-		"reference": "RelatedPerson/1"
+		"reference": "Patient/1"
 	},
 	"subscriber": {
-		"reference": "Patient/4"
+		"reference": "Patient/1"
 	},
 	"subscriberId": "AB3658",
 	"beneficiary": {
-		"reference": "Patient/4"
+		"reference": "Patient/1"
 	},
-	"dependent": "0",
+	"dependent": "00",
 	"relationship": {
 		"coding": [
 			{
@@ -65,7 +65,7 @@
 					}
 				]
 			},
-			"value": "B37FC"
+			"value": "PPO"
 		}
 	]
 }
