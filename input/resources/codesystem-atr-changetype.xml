@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeSystem xmlns="http://hl7.org/fhir">
-  <id value="davinci-atr-changetype"/>
-  <url value="http://hl7.org/fhir/us/davinci-atr/CodeSystem/davinci-atr-changetype"/>
+  <id value="atr-changetype"/>
+  <url value="http://hl7.org/fhir/us/davinci-atr/CodeSystem/atr-changetype"/>
   <version value="1.0.0"/>
   <name value="DaVinciAtrChangeTypeCodes"/>
   <title value="Davinci ATR Change Type Codes"/>
@@ -16,7 +16,7 @@
     </coding>
   </jurisdiction>
   <caseSensitive value="true"/>
-  <valueSet value="http://hl7.org/fhir/us/davinci-atr/ValueSet/davinci-atr-changetype"/>
+  <valueSet value="http://hl7.org/fhir/us/davinci-atr/ValueSet/atr-changetype"/>
   <content value="complete"/>
   <count value="5"/>
   <concept>
@@ -36,12 +36,12 @@
   </concept>
   <concept>
     <code value="nochange"/>
-    <display value="Member Infomration has not changed."/>
+    <display value="Member Information has not changed."/>
     <definition value="Member information is same as the information in the last version of the Member Attribution List"/>
   </concept>
     <concept>
     <code value="cancelled"/>
-    <display value="Member Infomration has been cancelled as it was added in error."/>
-    <definition value="Member information is removed from the attribution list as it was added errorneously in the previous version."/>
+    <display value="Member Information has been cancelled as it was added in error."/>
+    <definition value="Member information is cancelled from the attribution list as it was added errorneously in the previous version."/>
   </concept>
  </CodeSystem>

@@ -9,7 +9,7 @@
   <Author>Grahame</Author>
   <LastAuthor>Microsoft Office User</LastAuthor>
   <Created>2012-03-19T11:12:07Z</Created>
-  <LastSaved>2020-09-02T14:31:51Z</LastSaved>
+  <LastSaved>2020-09-24T06:40:10Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
@@ -18,8 +18,8 @@
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
   <WindowHeight>16940</WindowHeight>
   <WindowWidth>27640</WindowWidth>
-  <WindowTopX>2500</WindowTopX>
-  <WindowTopY>4180</WindowTopY>
+  <WindowTopX>4300</WindowTopX>
+  <WindowTopY>2760</WindowTopY>
   <ActiveSheet>2</ActiveSheet>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
@@ -954,7 +954,7 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">published.structure</Data></Cell>
-    <Cell ss:StyleID="s77"><Data ss:Type="String">davinci-atr-coverage</Data></Cell>
+    <Cell ss:StyleID="s77"><Data ss:Type="String">atr-coverage</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">extension.uri</Data></Cell>
@@ -997,17 +997,17 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>19</ActiveRow>
+     <ActiveRow>11</ActiveRow>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
  </Worksheet>
- <Worksheet ss:Name="davinci-atr-coverage">
+ <Worksheet ss:Name="atr-coverage">
   <Names>
-   <NamedRange ss:Name="_FilterDatabase"
-    ss:RefersTo="='davinci-atr-coverage'!R1C1:R83C25" ss:Hidden="1"/>
+   <NamedRange ss:Name="_FilterDatabase" ss:RefersTo="='atr-coverage'!R1C1:R83C25"
+    ss:Hidden="1"/>
   </Names>
   <Table ss:ExpandedColumnCount="25" ss:ExpandedRowCount="84" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s82" ss:DefaultColumnWidth="65"
@@ -1416,7 +1416,8 @@
     <Cell ss:StyleID="s105"><Data ss:Type="String">0..1</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s105"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s105"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s105"><Data ss:Type="String">Reference(Patient){http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-patient} | Reference(RelatedPerson){http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-relatedperson} | Reference(Organization){http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-organization}</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s105"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s105"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -1446,7 +1447,8 @@
     <Cell ss:StyleID="s105"><Data ss:Type="String">0..1</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s105"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s105"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s105"><Data ss:Type="String">Reference(Patient){http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-patient} | Reference(RelatedPerson){http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-relatedperson}</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s105"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s105"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -1505,7 +1507,7 @@
     <Cell ss:StyleID="s105"><Data ss:Type="String">1..1</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s105"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">Reference(Patient){http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-patient}</Data><NamedCell
+    <Cell ss:StyleID="s105"><Data ss:Type="String">Reference(Patient){http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-patient}</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s105"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -1626,7 +1628,8 @@
     <Cell ss:StyleID="s105"><Data ss:Type="String">1..1</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s105"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s105"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s105"><Data ss:Type="String">Reference(Patient){http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-patient} | Reference(RelatedPerson){http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-relatedperson} | Reference(Organization){http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-organization}</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s105"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s105"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -3426,7 +3429,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveCol>0</ActiveCol>
+     <ActiveRow>18</ActiveRow>
+     <ActiveCol>7</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

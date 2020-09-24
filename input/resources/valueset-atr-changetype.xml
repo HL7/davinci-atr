@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ValueSet xmlns="http://hl7.org/fhir">
-  <id value="davinci-atr-changetype"/>
-  <url value="http://hl7.org/fhir/us/davinci-atr/ValueSet/davinci-atr-changetype"/>
+  <id value="atr-changetype"/>
+  <url value="http://hl7.org/fhir/us/davinci-atr/ValueSet/atr-changetype"/>
   <version value="1.0.0"/>
   <name value="DaVinciAtrChangeType"/>
   <title value="Da Vinci ATR Change Types"/>
@@ -24,7 +24,7 @@
   </jurisdiction>
   <compose>
     <include>
-      <system value="http://hl7.org/fhir/us/davinci-atr/CodeSystem/davinci-atr-changetype"/>
+      <system value="http://hl7.org/fhir/us/davinci-atr/CodeSystem/atr-changetype"/>
     </include>
   </compose>
 </ValueSet>

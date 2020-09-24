@@ -1,6 +1,6 @@
 ### Introduction
 
-This profile is used to represent a subscriber to a plan due to which a member gets their Coverage as a dependent.
+This profile is used to represent a subscriber to a plan due to which a member gets their Coverage as a dependent. 
 
 
 **Implementation Requirements**

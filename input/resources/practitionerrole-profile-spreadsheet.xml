@@ -9,17 +9,17 @@
   <Author>Grahame</Author>
   <LastAuthor>Microsoft Office User</LastAuthor>
   <Created>2012-03-19T11:12:07Z</Created>
-  <LastSaved>2020-09-02T15:44:06Z</LastSaved>
+  <LastSaved>2020-09-24T05:43:40Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>15440</WindowHeight>
-  <WindowWidth>26440</WindowWidth>
-  <WindowTopX>5500</WindowTopX>
-  <WindowTopY>4260</WindowTopY>
+  <WindowHeight>14440</WindowHeight>
+  <WindowWidth>25640</WindowWidth>
+  <WindowTopX>6300</WindowTopX>
+  <WindowTopY>5260</WindowTopY>
   <ActiveSheet>2</ActiveSheet>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
@@ -932,7 +932,7 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">published.structure</Data></Cell>
-    <Cell ss:StyleID="s77"><Data ss:Type="String">davinci-atr-practitionerrole</Data></Cell>
+    <Cell ss:StyleID="s77"><Data ss:Type="String">atr-practitionerrole</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">extension.uri</Data></Cell>
@@ -971,17 +971,17 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>6</ActiveRow>
+     <ActiveRow>11</ActiveRow>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
  </Worksheet>
- <Worksheet ss:Name="davinci-atr-practitionerrole">
+ <Worksheet ss:Name="atr-practitionerrole">
   <Names>
    <NamedRange ss:Name="_FilterDatabase"
-    ss:RefersTo="='davinci-atr-practitionerrole'!R1C1:R74C25" ss:Hidden="1"/>
+    ss:RefersTo="='atr-practitionerrole'!R1C1:R74C25" ss:Hidden="1"/>
   </Names>
   <Table ss:ExpandedColumnCount="25" ss:ExpandedRowCount="75" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s81" ss:DefaultColumnWidth="65"
@@ -1190,9 +1190,10 @@
     <Cell ss:StyleID="s104"><Data ss:Type="String">1..1</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s104"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s104"><Data ss:Type="String">Reference(Practitioner){http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-practitioner}</Data><NamedCell
+    <Cell ss:StyleID="s104"><Data ss:Type="String">Reference(Practitioner){http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-practitioner}</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s104"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s104"><Data ss:Type="String">Y</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s104"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s104"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s104"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -1220,9 +1221,10 @@
     <Cell ss:StyleID="s104"><Data ss:Type="String">1..1</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s104"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s104"><Data ss:Type="String">Reference(Organization){http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-organization}</Data><NamedCell
+    <Cell ss:StyleID="s104"><Data ss:Type="String">Reference(Organization){http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-organization}</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s104"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s104"><Data ss:Type="String">Y</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s104"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s104"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s104"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -1250,7 +1252,7 @@
     <Cell ss:StyleID="s104"><Data ss:Type="String">0..1</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s104"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s104"><Data ss:Type="String">Reference(Location){http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-location}</Data><NamedCell
+    <Cell ss:StyleID="s104"><Data ss:Type="String">Reference(Location){http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-location}</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s104"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -3142,7 +3144,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveCol>0</ActiveCol>
+     <ActiveRow>5</ActiveRow>
+     <ActiveCol>8</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

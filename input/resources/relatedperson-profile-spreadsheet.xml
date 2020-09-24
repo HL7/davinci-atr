@@ -9,17 +9,17 @@
   <Author>Grahame</Author>
   <LastAuthor>Microsoft Office User</LastAuthor>
   <Created>2012-03-19T11:12:07Z</Created>
-  <LastSaved>2019-11-13T13:24:29Z</LastSaved>
+  <LastSaved>2020-09-24T05:37:24Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>16940</WindowHeight>
-  <WindowWidth>27640</WindowWidth>
-  <WindowTopX>4300</WindowTopX>
-  <WindowTopY>2760</WindowTopY>
+  <WindowHeight>13940</WindowHeight>
+  <WindowWidth>25240</WindowWidth>
+  <WindowTopX>6700</WindowTopX>
+  <WindowTopY>5760</WindowTopY>
   <ActiveSheet>2</ActiveSheet>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
@@ -932,7 +932,7 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">published.structure</Data></Cell>
-    <Cell ss:StyleID="s77"><Data ss:Type="String">davinci-atr-relatedperson</Data></Cell>
+    <Cell ss:StyleID="s77"><Data ss:Type="String">atr-relatedperson</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">extension.uri</Data></Cell>
@@ -971,17 +971,17 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>7</ActiveRow>
+     <ActiveRow>11</ActiveRow>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
  </Worksheet>
- <Worksheet ss:Name="davinci-atr-relatedperson">
+ <Worksheet ss:Name="atr-relatedperson">
   <Names>
    <NamedRange ss:Name="_FilterDatabase"
-    ss:RefersTo="='davinci-atr-relatedperson'!R1C1:R60C25" ss:Hidden="1"/>
+    ss:RefersTo="='atr-relatedperson'!R1C1:R60C25" ss:Hidden="1"/>
   </Names>
   <Table ss:ExpandedColumnCount="25" ss:ExpandedRowCount="61" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s81" ss:DefaultColumnWidth="65"
@@ -1191,7 +1191,7 @@
     <Cell ss:StyleID="s104"><Data ss:Type="String">1..1</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s104"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s104"><Data ss:Type="String">Reference(Patient){http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-atr-patient}</Data><NamedCell
+    <Cell ss:StyleID="s104"><Data ss:Type="String">Reference(Patient){http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-patient}</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s104"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -2750,7 +2750,7 @@
    <SplitHorizontal>1</SplitHorizontal>
    <TopRowBottomPane>1</TopRowBottomPane>
    <SplitVertical>4</SplitVertical>
-   <LeftColumnRightPane>10</LeftColumnRightPane>
+   <LeftColumnRightPane>4</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
    <Panes>
     <Pane>
@@ -2765,7 +2765,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveCol>0</ActiveCol>
+     <ActiveRow>4</ActiveRow>
+     <ActiveCol>7</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

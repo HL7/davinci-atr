@@ -33,7 +33,7 @@ The requirements and expectations described here are not intended to be exhausti
 
 #### Claiming Conformance 
 
-Producers and Consumers asserting conformance to this implementation guide have to implement the requirements outlines in [Producer Capability Statement](CapabilityStatement-davinci-atr-producer.html) and [Consumer Capability Statement](CapabilityStatement-davinci-atr-consumer.html) respectively. The following definition of MUST SUPPORT is to be used in the implementation of the requirements.
+Producers and Consumers asserting conformance to this implementation guide have to implement the requirements outlines in [Producer Capability Statement](CapabilityStatement-atr-producer.html) and [Consumer Capability Statement](CapabilityStatement-atr-consumer.html) respectively. The following definition of MUST SUPPORT is to be used in the implementation of the requirements.
 
 ##### MUST SUPPORT Definition
 
@@ -105,13 +105,13 @@ This section lists the capability statements for Producer and Consumer systems.
 
 ##### Producer Systems
 
-The Producer specific requirements for REST interactions, operations, profiles and search parameters to be supported are outlined in the [Producer Capability Statement](CapabilityStatement-davinci-atr-producer.html). 
+The Producer specific requirements for REST interactions, operations, profiles and search parameters to be supported are outlined in the [Producer Capability Statement](CapabilityStatement-atr-producer.html). 
 
 
 
 ##### Consumer Systems
 
-The Consumer specific requirements for REST interactions, operations, profiles and search parameters to be supported are outlined in the [Consumer Capability Statement](CapabilityStatement-davinci-atr-consumer.html).
+The Consumer specific requirements for REST interactions, operations, profiles and search parameters to be supported are outlined in the [Consumer Capability Statement](CapabilityStatement-atr-consumer.html).
 
 
 ### Member Attribution List Data Model requirements
