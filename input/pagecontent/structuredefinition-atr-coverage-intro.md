@@ -11,5 +11,5 @@ Implementers are advised to read [Data Model Requirements](spec.html#member-attr
 
 **APIs : Retrieval of Coverage Resource Instance:**
 
-The Coverage instance is retrieved as part of the Bulk API request on the Group resource representing the Member Attribution List.
+The Coverage instance is retrieved as part of the Bulk API request on the Group resource representing the Member Attribution List. 
 
