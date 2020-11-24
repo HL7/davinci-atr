@@ -33,7 +33,7 @@ The requirements and expectations described here are not intended to be exhausti
 
 #### Claiming Conformance 
 
-Producers and Consumers asserting conformance to this implementation guide have to implement the requirements outlines in [Producer Capability Statement](CapabilityStatement-atr-producer.html) and [Consumer Capability Statement](CapabilityStatement-atr-consumer.html) respectively. The following definition of MUST SUPPORT is to be used in the implementation of the requirements.
+Producers and Consumers asserting conformance to this implementation guide have to implement the requirements outlined in [Producer Capability Statement](CapabilityStatement-atr-producer.html) and [Consumer Capability Statement](CapabilityStatement-atr-consumer.html) respectively. The following definition of MUST SUPPORT is to be used in the implementation of the requirements.
 
 ##### MUST SUPPORT Definition
 
@@ -44,7 +44,7 @@ Producers and Consumers asserting conformance to this implementation guide have 
 
 
 #### Profiles
-This specification makes significant use of [FHIR profiles]({{site.data.fhir.path}}profiling.html), search parameter definitions and terminology artifacts to describe the content to be shared as part of Member Attribution List interactions. The implementation guide supports two versions of FHIR: [STU3](http://hl7.org/fhir/STU3) and [R4]({{site.data.fhir.path}}) and profiles for both are listed for each interaction.  This version of the specification does not (yet) provide guidance for DSTU2 resources.
+This specification makes significant use of [FHIR profiles]({{site.data.fhir.path}}profiling.html), search parameter definitions and terminology artifacts to describe the content to be shared as part of Member Attribution List interactions. The implementation guide is based on FHIR [R4]({{site.data.fhir.path}}) and profiles are listed for each interaction. 
 
 The full set of profiles defined in this implementation guide can be found by following the links on the [FHIR Artifacts](artifacts.html) page.
 
