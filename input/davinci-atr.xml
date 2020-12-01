@@ -28,9 +28,14 @@
     <packageId value="hl7.fhir.us.core"/>
     <version value="3.1.0"/>
   </dependsOn>
+  <dependsOn id="pdexPlanNet">
+    <uri value="http://hl7.org/fhir/us/davinci-pdex-plan-net/ImplementationGuide/hl7.fhir.us.davinci-pdex-plan-net"/>
+    <packageId value="hl7.fhir.us.davinci-pdex-plan-net"/>
+    <version value="current"/>
+  </dependsOn>
   
   <!--  Add this as needed in the future -->
-  <!--  
+<!--
   <dependsOn id="bulkdataR4">
     <uri value="http://hl7.org/fhir/uv/bulkdata/ImplementationGuide/hl7.fhir.uv.bulkdata"/>
     <packageId value="hl7.fhir.uv.bulkdata"/>

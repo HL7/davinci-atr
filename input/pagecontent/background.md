@@ -47,12 +47,10 @@ This section maps the Member Attribution List data to FHIR resources to introduc
 {::options parse_block_html="false" /}
 
 <object type="image/svg+xml" data="mal-data.svg" alt="Member Attribution List Data Model">
-    <!-- Your fall back here -->
-    <img src="mal-data.svg" />
+
 </object>
 
 {::options parse_block_html="true" /}
-
 
 
 <br/>
