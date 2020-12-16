@@ -1,8 +1,5 @@
 == Suppressed Messages ==
 
-# The following two types of errors in /Users/nbashyam/git/davinci-atr/input/davinci-atr.xml are due to the HL7 FHIR IG Template.
-# These errors will be fixed in the template by Lloyd or Grahame based on their timelines post ballot publishing.
-ERROR : The extension http://hl7.org/fhir/StructureDefinition/igpublisher-spreadsheet is unknown, and not allowed here
-ERROR : The value provided ('autoload-resources') is not in the value set http://hl7.org/fhir/ValueSet/guide-parameter-code|4.0.1 (http://hl7.org/fhir/ValueSet/guide-parameter-code, and a code is required from this value set) (error message = Unknown Code http://hl7.org/fhir/guide-parameter-code#autoload-resources in http://hl7.org/fhir/guide-parameter-code)
-
+# Add warning and/or information messages here after you've confirmed that they aren't really a problem
+# (And include comments like this justifying why)
 
