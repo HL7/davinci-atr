@@ -13,7 +13,7 @@ Additional information about Da Vinci, its members, the use cases and the implem
 ### Systems
 The implementation guide defines the responsibilities of the two types of systems involved in an ATR solution:
 
-**Producer systems** are typically Payer systems but could theoretically be any system responsible for producing a Member Attribution List. These systems typically act as servers. 
+**Producer systems** are typically Payer systems but could theoretically be any system responsible for producing a Member Attribution List.These systems typically act as servers. 
 
 **Consumer systems** are typically Provider systems that act on behalf of provider organizations who retrieve the attribution list from Producer. These systems typically act as clients.
 
