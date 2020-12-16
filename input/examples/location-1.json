@@ -2,7 +2,11 @@
 	"resourceType": "Location",
 	"id": "1",
 	"meta": {
-		"versionId": "3"
+		"versionId": "3",
+		"lastUpdated": "2019-06-06T03:04:12.348-04:00",
+		"profile" : [
+            "http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-location"
+        ]
 	},
 	"identifier": [
 		{

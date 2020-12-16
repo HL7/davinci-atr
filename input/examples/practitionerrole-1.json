@@ -1,6 +1,13 @@
 {
 	"resourceType": "PractitionerRole",
 	"id": "1",
+	"meta": {
+		"versionId": "3",
+		"lastUpdated": "2019-06-06T03:04:12.348-04:00",
+		"profile" : [
+            "http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-practitionerrole"
+            ]
+	},
 	"text": {
 		"status": "generated",
 		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t<p>\n\t\t\t\tDr Adam Careful is a Referring Practitioner for Acme Hospital from 1-Jan 2012 to 31-Mar\n\t\t\t\t2012\n\t\t\t</p>\n\t\t</div>"

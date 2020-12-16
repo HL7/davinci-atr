@@ -3,6 +3,7 @@
    <meta>
       <versionId value="1"></versionId>
       <lastUpdated value="2019-06-06T03:04:12.348-04:00"></lastUpdated>
+      <profile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-group"/>
    </meta>
    <text>
       <status value="additional"></status>

@@ -2,18 +2,17 @@
 	"resourceType": "Organization",
 	"id": "1",
 	"meta": {
-		"versionId": "3"
+		"versionId": "3",
+		"lastUpdated": "2019-06-06T03:04:12.348-04:00",
+		"profile" : [
+            "http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-organization"
+        ]
 	},
 	"text": {
 		"status": "generated",
-		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      Health Level Seven International\n      <br/>\n\t\t\t\t3300 Washtenaw Avenue, Suite 227\n      <br/>\n\t\t\t\tAnn Arbor, MI 48104\n      <br/>\n\t\t\t\tUSA\n      <br/>\n\t\t\t\t(+1) 734-677-7777 (phone)\n      <br/>\n\t\t\t\t(+1) 734-677-6622 (fax)\n      <br/>\n\t\t\t\tE-mail:  \n      <a href=\"mailto:hq@HL7.org\">hq@HL7.org</a>\n    \n    </div>"
+		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n Example Organization\n      <br/>\n\t\t\t\t3300 Washtenaw Avenue, Suite 227\n      <br/>\n\t\t\t\tAnn Arbor, MI 48104\n      <br/>\n\t\t\t\tUSA\n      <br/>\n\t\t\t\t(+1) 734-677-7777 (phone)\n      <br/>\n\t\t\t\t(+1) 734-677-6622 (fax)\n      <br/>\n\t\t\t\tE-mail:  \n      <a href=\"mailto:hq@HL7.org\">hq@HL7.org</a>\n    \n    </div>"
 	},
-	"identifier": [
-		{
-			"system": "http://www.acme.org.au/units",
-			"value": "ClinLab"
-		}
-	],
+	
 	"active": true,
 	"type": [
 		{
@@ -26,9 +25,9 @@
 			]
 		}
 	],
-	"name": "Health Level Seven International",
+	"name": "Example Organization",
 	"alias": [
-		"HL7 International"
+		"My Organization"
 	],
 	"telecom": [
 		{

@@ -3,12 +3,29 @@
 	"id": "2",
 	"meta": {
 		"versionId": "1",
-		"lastUpdated": "2019-04-06T03:04:12.348-04:00"
+		"lastUpdated": "2019-04-06T03:04:12.348-04:00",
+		"profile" : [
+            "http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-coverage"
+            ]
 	},
 	"text": {
 		"status": "generated",
 		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">A human-readable rendering of the coverage</div>"
 	},
+	"extension" : [
+    {
+      "url" : "http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-insuranceProductType",
+      "valueCodeableConcept" : {
+                "coding" : [
+                  {
+                    "system" : "http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/InsuranceProductTypeCS",
+                    "code" : "mediadv",
+                    "display" : "Medicare Advantage"
+                  }
+                ]
+      }
+    }
+    ],
 	"identifier": [
 		{
 			"use": "official",
