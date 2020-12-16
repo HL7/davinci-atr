@@ -19,7 +19,7 @@
   "date" : "2021-01-01",
   "desc" : "STU 1 for Publication",
   "changes" : "Ballot reconciliation completed, profiles updated and APIs updated.",
-  "path" : "http://hl7.org/fhir/us/davinci-atr/",
+  "path" : "http://hl7.org/fhir/us/davinci-atr",
   "status" : "trial-use",
   "sequence" : "STU 1",
   "fhirversion" : "4.0.1"
