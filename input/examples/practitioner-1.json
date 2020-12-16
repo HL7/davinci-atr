@@ -3,13 +3,7 @@
 	"id": "1",
 	"meta": {
 		"versionId": "3",
-		"lastUpdated": "2019-03-06T03:07:57.933-05:00",
-		"tag": [
-			{
-				"system": "https://smarthealthit.org/tags",
-				"code": "smart-7-2017"
-			}
-		]
+		"lastUpdated": "2019-03-06T03:07:57.933-05:00"
 	},
 	"text": {
 		"status": "generated",
@@ -21,7 +15,7 @@
 			"type": {
 				"coding": [
 					{
-						"system": "http://hl7.org/fhir/identifier-type",
+						"system": "http://terminology.hl7.org/CodeSystem/v2-0203",
 						"code": "SB",
 						"display": "Social Beneficiary Identifier"
 					}

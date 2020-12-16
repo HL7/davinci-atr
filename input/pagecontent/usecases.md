@@ -90,17 +90,7 @@ Addition of patients to the attribution list.
 Deletion of patients to the attribution list. 
 Changes in attribution list data. 
 
-
-
-{::options parse_block_html="false" /}
-
-<object type="image/svg+xml" data="workflow.svg" alt="Member Attribution List Exchange Workflow">
-    <!-- Your fall back here -->
-    <img src="workflow.svg" />
-</object>
-
-{::options parse_block_html="true" /}
-
+{% include img.html img="workflow.svg" caption="Figure 2: Member Attribution List Exchange Workflow" %}
 
 The following is a brief description of the workflow steps with a Payer representing the Producer and a Provider Organization representing the Consumer. 
 
@@ -133,24 +123,9 @@ Every change that is made to the list may be available to the Consumer based on 
 
 The section takes the workflow described above and identifies the different types of exchange patterns that are currently used. Although each of the patterns identified below are used in the real world, the initial version of the Implementation Guide will focus on the exchange mechanisms identified in pattern #2.
 
-{::options parse_block_html="false" /}
+{% include img.html img="exchange.svg" caption="Figure 3: Member Attribution List Exchange Patterns" %}
 
-<object type="image/svg+xml" data="exchange.svg" alt="Member Attribution List Exchange Patterns">
-    <!-- Your fall back here -->
-    <img src="exchange.svg" />
-</object>
-{::options parse_block_html="true" /}
-
-<br/>
-
-{::options parse_block_html="false" /}
-
-<object type="image/svg+xml" data="exchange-2.svg" alt="Member Attribution List Exchange Patterns">
-    <!-- Your fall back here -->
-    <img src="exchange-2.svg" />
-</object>
-{::options parse_block_html="true" /}
-
+{% include img.html img="exchange2.svg" caption="Figure 4: Member Attribution List Exchange Patterns Continued" %}
 
 The following are brief descriptions of the Member Attribution List Exchange patterns.
 

@@ -26,17 +26,12 @@
 	"telecom": [
 		{
 			"system": "phone",
-			"value": "2390",
-			"use": "work"
-		},
-		{
-			"system": "fax",
-			"value": "2329",
+			"value": "8167892390",
 			"use": "work"
 		},
 		{
 			"system": "email",
-			"value": "second wing admissions"
+			"value": "secondflooradmissions@hospital.smarthealthit.org"
 		},
 		{
 			"system": "url",
