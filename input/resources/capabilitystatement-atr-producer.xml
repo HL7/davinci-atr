@@ -164,10 +164,10 @@
           </tbody>
         </table>
       </div>
-      <p>
+      
         <h3>FHIR Operations summary</h3>
         <p>The following FHIR operations SHALL be supported by the Producer.</p>
-      </p>
+      
       <ul>
         <li>
           <a href="http://hl7.org/fhir/uv/bulkdata/OperationDefinition-group-export.html">Group Export</a>
@@ -554,10 +554,10 @@
           <valueCode value="SHALL"/>
         </extension>
         <name value="identifier"/>
-        <definition value="{{site.data.fhir.path}}search.html#token"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Group-identifier"/>
         <type value="token"/>
       </searchParam>
-      <searchParam>
+  <!--          <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <valueCode value="SHALL"/>
         </extension>
@@ -576,7 +576,7 @@
       <operation>
       	<name value="export"/>
       	<definition value="http://hl7.org/fhir/uv/bulkdata/OperationDefinition-group-export.html"/>
-      </operation>
+      </operation> -->
     </resource>
     <resource>
       <type value="Location"/>

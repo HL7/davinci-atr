@@ -35,7 +35,7 @@
   </dependsOn>
   
   <!--  Add this as needed in the future -->
-<!--
+<!-- 
   <dependsOn id="bulkdataR4">
     <uri value="http://hl7.org/fhir/uv/bulkdata/ImplementationGuide/hl7.fhir.uv.bulkdata"/>
     <packageId value="hl7.fhir.uv.bulkdata"/>
