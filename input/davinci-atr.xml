@@ -49,7 +49,7 @@
       </reference>
       <name value="Group Member Attribution List example"/>
       <description value="An example showing a fully populated Member Attribution List"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-group"/>
     </resource>
     <resource>
       <reference>
@@ -57,7 +57,7 @@
       </reference>
       <name value="Payer Organization Example"/>
       <description value="An example showing a Payer Organization"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-organization"/>
     </resource>
     <resource>
       <reference>
@@ -73,7 +73,7 @@
       </reference>
       <name value="Coverage For Patient 1 - Example"/>
       <description value="An example showing a Coverage for a Patient"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-coverage"/>
     </resource>
     <resource>
       <reference>
@@ -97,7 +97,7 @@
       </reference>
       <name value="Patient 1 - Example"/>
       <description value="An example showing a Patient"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-patient"/>
     </resource>
     <resource>
       <reference>
@@ -121,7 +121,7 @@
       </reference>
       <name value="Practitioner - Example"/>
       <description value="An example showing a Practitioner"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-practitioner"/>
     </resource>
     <resource>
       <reference>
@@ -129,7 +129,7 @@
       </reference>
       <name value="PractitionerRole - Example"/>
       <description value="An example showing a PractitionerRole"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-practitionerrole"/>
     </resource>
         <resource>
       <reference>
@@ -137,7 +137,7 @@
       </reference>
       <name value="Location - Example"/>
       <description value="An example showing a Location used in Practitioner Role"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-location"/>
     </resource>
     <resource>
       <reference>
@@ -145,7 +145,7 @@
       </reference>
       <name value="Related Person (1) used as a Subscriber in Coverage"/>
       <description value="An example showing a Related Person as a subscriber"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-relatedperson"/>
     </resource>
     <resource>
       <reference>
