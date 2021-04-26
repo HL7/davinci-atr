@@ -192,11 +192,11 @@ Note: Producers and Consumers MAY have a predetermined cadence on exchanging mem
 
 ```
 
-GET <Server Base URL>/Group?identifier=http://terminology.hl7.org/CodeSystem/v2-0203|NPI|<ExampleNPI>&identifier=http://terminology.hl7.org/CodeSystem/v2-0203|TAX|<ExampleTIN>
+GET <Server Base URL>/Group?identifier:of-type=http://terminology.hl7.org/CodeSystem/v2-0203|NPI|<ExampleNPI>&identifier:of-type=http://terminology.hl7.org/CodeSystem/v2-0203|TAX|<ExampleTIN>
 
 ```
 
-In the above API, notice the use of "oftype" modifier on the search to allow searching based on type which includes a CodeSystem and a Value. In addition the “<ExampleNPI>" and "<ExampleTIN>” will be substituted with the values that represent the Consumer organization.
+In the above API, notice the use of "of-type" modifier on the search to allow searching based on type which includes a CodeSystem and a Value. In addition the “<ExampleNPI>" and "<ExampleTIN>” will be substituted with the values that represent the Consumer organization.
 
 The Producer verifies the client credentials according to the SMART Backend Services Authorization protocols and in addition verifies that the Consumer is allowed to access the specific Member Attribution List and returns one or more Group Resources representing the Member Attribution Lists for each contract between the Producer and the Consumer.
 
