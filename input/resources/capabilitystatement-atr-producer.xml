@@ -79,9 +79,13 @@
                 <a title="Allows review of changes to a Group over time" href="#Group-history-instance">SHOULD</a>
               </td>
               <td/>
+              <td>
+                <a title="Allows creation of a Group" href="#Group-create">SHOULD</a>
+              </td>
               <td/>
-              <td/>
-              <td/>
+              <td>
+                <a title="Allows deletion of a Group" href="#Group-delete">SHOULD</a>
+              </td>
             </tr>  
             <tr>
               <th>Location (<a href="StructureDefinition-atr-location.html">Profile</a>)</th>
@@ -105,9 +109,13 @@
               <td/>
               <td/>
               <td/>
+              <td>
+                <a title="Allows creation of a Organization" href="#Organization-create">SHOULD</a>
+              </td>
               <td/>
-              <td/>
-              <td/>
+              <td>
+                <a title="Allows deletion of a Organization" href="#Organization-delete">SHOULD</a>
+              </td>
             </tr>    
             <tr>
             <th>Patient (<a href="StructureDefinition-atr-patient.html">Profile</a>)</th>
@@ -118,9 +126,13 @@
               <td/>
               <td/>
               <td/>
+			  <td>
+                <a title="Allows creation of a Patient" href="#Patient-create">SHOULD</a>
+              </td>
               <td/>
-              <td/>
-              <td/>
+              <td>
+                <a title="Allows deletion of a Patient" href="#Patient-delete">SHOULD</a>
+              </td>
             </tr>
             <tr>
             <th>Practitioner (<a href="StructureDefinition-atr-practitioner.html">Profile</a>)</th>
@@ -131,9 +143,13 @@
               <td/>
               <td/>
               <td/>
+			  <td>
+                <a title="Allows creation of a Practitioner" href="#Practitioner-create">SHOULD</a>
+              </td>
               <td/>
-              <td/>
-              <td/>
+              <td>
+                <a title="Allows deletion of a Practitioner" href="#Practitioner-delete">SHOULD</a>
+              </td>
             </tr>
             <tr>
             <th>PractitionerRole (<a href="StructureDefinition-atr-practitionerrole.html">Profile</a>)</th>
@@ -144,9 +160,13 @@
               <td/>
               <td/>
               <td/>
+              <td>
+                <a title="Allows creation of a PractitionerRole" href="#PractitionerRole-create">SHOULD</a>
+              </td>
               <td/>
-              <td/>
-              <td/>
+              <td>
+                <a title="Allows deletion of a PractitionerRole" href="#PractitionerRole-delete">SHOULD</a>
+              </td>
             </tr>
             <tr>
             <th>RelatedPerson (<a href="StructureDefinition-atr-relatedperson.html">Profile</a>)</th>
@@ -171,6 +191,12 @@
       <ul>
         <li>
           <a href="http://hl7.org/fhir/uv/bulkdata/OperationDefinition-group-export.html">Group Export</a>
+        </li>
+        <li>
+          <a href="OperationDefinition-member-add.html">Member Add</a>
+        </li>
+        <li>
+          <a href="OperationDefinition-member-remove.html">Member Remove</a>
         </li>
       </ul>
       <br/>
@@ -253,6 +279,24 @@
               </th>
               <td>
                 <p>Allows review of changes to a Group over time</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a name="Group-create"> </a>
+                <span>create</span>
+              </th>
+              <td>
+                <p>Allows creation of a Group.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a name="Group-delete"> </a>
+                <span>delete</span>
+              </th>
+              <td>
+                <p>Allows deletion of a Group.</p>
               </td>
             </tr>
           </tbody>
@@ -345,7 +389,24 @@
                 <p>Allows retrieval of a specific known Organization Resource</p>
               </td>
             </tr>
-             
+             <tr>
+              <th>
+                <a name="Organization-create"> </a>
+                <span>create</span>
+              </th>
+              <td>
+                <p>Allows creation of a Organization.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a name="Organization-delete"> </a>
+                <span>delete</span>
+              </th>
+              <td>
+                <p>Allows deletion of a Organization.</p>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -376,7 +437,24 @@
                 <p>Allows retrieval of a specific known Patient Resource</p>
               </td>
             </tr>
-              
+              <tr>
+              <th>
+                <a name="Patient-create"> </a>
+                <span>create</span>
+              </th>
+              <td>
+                <p>Allows creation of a Patient.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a name="Patient-delete"> </a>
+                <span>delete</span>
+              </th>
+              <td>
+                <p>Allows deletion of a Patient.</p>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -407,7 +485,24 @@
                 <p>Allows retrieval of a specific known Practitioner Resource</p>
               </td>
             </tr>
-              
+             <tr>
+              <th>
+                <a name="Practitioner-create"> </a>
+                <span>create</span>
+              </th>
+              <td>
+                <p>Allows creation of a Practitioner.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a name="Practitioner-delete"> </a>
+                <span>delete</span>
+              </th>
+              <td>
+                <p>Allows deletion of a Practitioner.</p>
+              </td>
+            </tr> 
           </tbody>
         </table>
       </div>
@@ -438,7 +533,24 @@
                 <p>Allows retrieval of a specific known PractitionerRole Resource</p>
               </td>
             </tr>
-               
+               <tr>
+              <th>
+                <a name="PractitionerRole-create"> </a>
+                <span>create</span>
+              </th>
+              <td>
+                <p>Allows creation of a PractitionerRole.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a name="PractitionerRole-delete"> </a>
+                <span>delete</span>
+              </th>
+              <td>
+                <p>Allows deletion of a PractitionerRole.</p>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -549,6 +661,20 @@
         <code value="history-instance"/>
         <documentation value="Allows review of changes to a Group Resource over time"/>
       </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="create"/>
+        <documentation value="Allows creation of a Group"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="delete"/>
+        <documentation value="Allows deletion of a Group"/>
+      </interaction>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <valueCode value="SHALL"/>
@@ -615,6 +741,21 @@
         <code value="history-instance"/>
         <documentation value="Allows review of changes to a Organization Instance over time"/>
       </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="create"/>
+        <documentation value="Allows creation of an Organization"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="history-instance"/>
+        <documentation value="Allows deletion of an Organization"/>
+      </interaction>
+      
     </resource>
     <resource>
       <type value="Patient"/>
@@ -634,6 +775,22 @@
         <code value="history-instance"/>
         <documentation value="Allows review of changes to a Patient Instance over time"/>
       </interaction>
+      
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="create"/>
+        <documentation value="Allows creation of a Patient"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="history-instance"/>
+        <documentation value="Allows deletion of a Patient"/>
+      </interaction>
+      
     </resource>
     <resource>
       <type value="Practitioner"/>
@@ -653,6 +810,22 @@
         <code value="history-instance"/>
         <documentation value="Allows review of changes to a Practitioner Instance over time"/>
       </interaction>
+      
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="create"/>
+        <documentation value="Allows creation of a Practitioner"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="history-instance"/>
+        <documentation value="Allows deletion of a Practitioner"/>
+      </interaction>
+      
     </resource>
     <resource>
       <type value="PractitionerRole"/>
@@ -672,6 +845,22 @@
         <code value="history-instance"/>
         <documentation value="Allows review of changes to a PractitionerRole Instance over time"/>
       </interaction>
+      
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="create"/>
+        <documentation value="Allows creation of a PractitionerRole"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="history-instance"/>
+        <documentation value="Allows deletion of a PractitionerRole"/>
+      </interaction>
+      
     </resource>
     <resource>
       <type value="RelatedPerson"/>

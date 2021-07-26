@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OperationDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+  <id value="member-remove"/>
+  <url value="http://hl7.org/fhir/us/davinci-atr/OperationDefinition/member-remove"/>
+  <name value="MemberRemove"/>
+  <title value="Member Remove"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <date value="2021-07-22T21:48:56+10:00"/>
+  <publisher value="HL7 International - Financial Management"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description value="Removes a member from the Group based on existing attribution."/>
+  <code value="member-remove"/>
+  <resource value="Group"/>
+  <system value="false"/>
+  <type value="false"/>
+  <instance value="true"/>
+  <parameter>
+    <name value="memberId"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="The MemberId of the member to be removed to the Group."/>
+    <type value="Identifier"/>
+  </parameter>
+  <parameter>
+    <name value="providerNpi"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="The Provider to whom the member has been attributed to."/>
+    <type value="Identifier"/>
+  </parameter>
+  <parameter>
+    <name value="patientReference"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="The reference of the member to be removed from the Group."/>
+    <type value="Reference"/>
+  </parameter>
+  <parameter>
+    <name value="providerReference"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="The reference to the Provider to whom the member has been attributed to."/>
+    <type value="Reference"/>
+  </parameter>
+  <parameter>
+    <name value="coverageReference"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="The reference to the coverage based on which the attribution has to be removed."/>
+    <type value="Reference"/>
+  </parameter>
+</OperationDefinition>
