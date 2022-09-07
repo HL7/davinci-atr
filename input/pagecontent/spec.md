@@ -58,11 +58,19 @@ Where US Core profiles do not yet exist (e.g. for Coverage, Group), profiles hav
 #### Bulk Data IG 
 This section outlines how the Bulk Data IG will be leveraged by this implementation guide. 
 
-Producer systems SHALL support the ```[base]/Group/[id]/$export``` operation for member attribution list implementation. 
+Producer systems SHALL support the ```[base]/Group/[id]/$atr-export``` operation for member attribution list implementation. 
 
 Producer systems SHALL support the reading and searching of Group resources per the capability statement expectations outlined below.
 
-Producer systems SHALL support ```Patient, Related Person, Practitioner, PractitionerRole, Location, Organization, Coverage, Group``` resource types for the ```[base]/Group/[id]/$export?_type``` parameter.
+Producer systems SHALL support ```Group, Patient, Related Person, Practitioner, PractitionerRole, Location, Organization, Coverage, Group``` resource types for the ```[base]/Group/[id]/$export?_type``` parameter. The producer SHALL create NDJSON files for each of the resources that are linked to the member to create an attribution list. 
+The resource list includes
+ 
+	The Patient who is the member.
+	The Coverage which resulted in the Patient being a member of the Group
+	The Organization to which the Patient is attributed to as part of the attribution list.
+	The Practitioner or PractititonerRole that the patient is attributed to as part of the attribution list
+	The RelatedPerson who may be the Subscriber of the Coverage. 
+	The Group itself which contains the list of members and their relationship to the other members.  
 
 Producer systems SHALL support the Bulk Data Kick-off Request as defined in the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
 
@@ -92,7 +100,7 @@ Consumer systems SHALL share their JWKS with the Producer systems using URLs as 
 
 Consumer systems SHALL obtain the access token as defined in the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
 
-Producer systems SHALL support ```system/Patient.read, system/Practitioner.read, system/PractitionerRole.read, system/Coverage.read, system/Organization.read, system/RelatedPerson.read, system/Location.read, system/Group.read``` scopes.
+Producer systems SHALL support ```system/Group.read, system/Patient.read, system/Practitioner.read, system/PractitionerRole.read, system/Coverage.read, system/Organization.read, system/RelatedPerson.read, system/Location.read, system/Group.read``` scopes.
 
 During Consumer registration, the Producer system  MAY collect the NPI and Tax Identification Numbers applicable for a specific contract along with the specific contract information. This information MAY be used by the Producer to create the necessary Member Attribution List and provide an API that will allow the Consumer to retrieve the Member Attribution List. Producers MAY follow other OAuth best practices for Consumer registration.
 
@@ -192,7 +200,7 @@ Note: Producers and Consumers MAY have a predetermined cadence on exchanging mem
 
 ```
 
-GET <Server Base URL>/Group?identifier:of-type=http://terminology.hl7.org/CodeSystem/v2-0203|NPI|<ExampleNPI>&identifier:of-type=http://terminology.hl7.org/CodeSystem/v2-0203|TAX|<ExampleTIN>
+GET <Server Base URL>/Group?identifier:of-type=http://terminology.hl7.org/CodeSystem/v2-0203|NPI|<ExampleNPI>&identifier:of-type=http://terminology.hl7.org/CodeSystem/v2-0203|TAX|<ExampleTIN>&_summary=true
 
 ```
 
@@ -200,12 +208,14 @@ In the above API, notice the use of "of-type" modifier on the search to allow se
 
 The Producer verifies the client credentials according to the SMART Backend Services Authorization protocols and in addition verifies that the Consumer is allowed to access the specific Member Attribution List and returns one or more Group Resources representing the Member Attribution Lists for each contract between the Producer and the Consumer.
 
+NOTE: In order to avoid issues with servers, clients and networks when Group resources are large, Consumers **SHOULD** include the _summary=true parameter in all Group search and read operations. Servers **SHOULD** support the _summary parameter and provide only the Group summary without the member data as per the resource definition.  
+
 **API: Discover Group using NPI or TIN**
 
 
 ```
 
-GET <Server Base URL>/Group?identifier=http://terminology.hl7.org/CodeSystem/v2-0203|<NPI or TAX>|<ExampleNPI or ExampleTIN>
+GET <Server Base URL>/Group?identifier=http://terminology.hl7.org/CodeSystem/v2-0203|<NPI or TAX>|<ExampleNPI or ExampleTIN>&_summary=true
 
 ```
 
@@ -215,7 +225,7 @@ GET <Server Base URL>/Group?identifier=http://terminology.hl7.org/CodeSystem/v2-
 
 ```
 
-GET <Server Base URL>/Group?identifier=http://example.org|<Identifier Value>
+GET <Server Base URL>/Group?identifier=http://example.org|<Identifier Value>&_summary=true
 
 ```
 
@@ -225,7 +235,7 @@ GET <Server Base URL>/Group?identifier=http://example.org|<Identifier Value>
 
 ```
 
-GET <Server Base URL>/Group?name=myorg
+GET <Server Base URL>/Group?name=myorg&_summary=true
 
 ```
 
@@ -251,7 +261,7 @@ Provider Organization knows the specific Group Resource for the specific contrac
 
 ```
 
-GET or POST <Server Base URL>/Group/[Group id]/$export?_type=Patient,Practitioner,PractitionerRole,Organization,Location,Coverage,RelatedPerson
+GET or POST <Server Base URL>/Group/[Group id]/$atr-export?_type=GRoup,Patient,Practitioner,PractitionerRole,Organization,Location,Coverage,RelatedPerson
 
 
 ```
@@ -306,7 +316,7 @@ GET <File URL for each Resource identified in Member Attribution List Export Req
 **Expected Results:**
 
 * Retrieve the NDJSON files for each of the following resources.
-* One or more NDJSON files for Patient,Practitioner,PractitionerRole,Organization,Location,Coverage and RelatedPerson
+* One or more NDJSON files for Group, Patient,Practitioner,PractitionerRole,Organization,Location,Coverage and RelatedPerson
 * Detailed examples for NDJSON file retrieval can be found in the Bulk Data IG.
 
 

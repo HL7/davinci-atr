@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OperationDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+  <id value="atr-export"/>
+  <url value="http://hl7.org/fhir/us/davinci-atr/OperationDefinition/atr-export"/>
+  <name value="AtrExport"/>
+  <title value="ATR Export"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <date value="2021-07-22T21:48:56+10:00"/>
+  <publisher value="HL7 International - Financial Management"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description value="Exports data about members of the Group"/>
+  <code value="atr-export"/>
+  <base value="http://hl7.org/fhir/us/davinci-atr/OperationDefinition/atr-export"/>
+  <resource value="Group"/>
+  <system value="false"/>
+  <type value="false"/>
+  <instance value="true"/>
+  <parameter>
+    <name value="memberReference"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="The Members whose data has to be exported, when omitted the data about all members will be exported. The references are 
+    pointing to resources in the FHIR Server supporting the export operation."/>
+    <type value="Reference"/>
+  </parameter>
+  <parameter>
+    <name value="exportType"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="The code that indicates the type of export to be performed. For e.g hl7.fhir.us.davinci-atr to indicate Member Attribution export, 
+    and hl7.fhir.us.davinci-pdex for a PDex Export. Servers are supposed to provide the export guidance in the individual IGs."/>
+    <type value="url"/>
+  </parameter>
+  <parameter>
+    <name value="extractionPeriod"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="The period over which the data has to be exported. When omitted, the Server is free to export all data for the members."/>
+    <type value="Period"/>
+  </parameter>
+  <parameter>
+    <name value="resourceTypes"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="The resources that need to be extracted for the patients."/>
+    <type value="string"/>
+  </parameter>
+</OperationDefinition>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="atr-patient-list"/>
+    <meta>
+        <versionId value="3"/>
+        <lastUpdated value="2021-08-13T05:43:12.456+00:00"/>
+        <source value="#op9qv8RqccCL7zOB"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-patient-list"/>
+    <version value="0.1.0"/>
+    <name value="AtrPatientList"/>
+    <title value="ATR Patient List"/>
+    <status value="draft"/>
+    <experimental value="false"/>
+    <date value="2019-09-01"/>
+    <publisher value="HL7 International - Financial Management"/>
+    <contact>
+        <telecom>
+            <system value="url"/>
+            <value value="http://hl7.org/Special/committees/fm"/>
+        </telecom>
+    </contact>
+    <description value="Group Resource profile for exchanging a Patient List."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+        </coding>
+    </jurisdiction>
+    <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Group"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Group"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Group">
+            <path value="Group"/>
+            <short value="ATR Patient List"/>
+            <definition value="Sets expectations for supported capabilities of a Group resource for Patient List."/>
+        </element>
+        <element id="Group.extension:intendedRecipientIdentifier">
+            <path value="Group.extension"/>
+            <sliceName value="intendedRecipientIdentifier"/>
+            <min value="0"/>
+            <max value="*"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-intended-recipient-identifier-extension"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Group.identifier">
+            <path value="Group.identifier"/>
+            <min value="0"/>
+            <max value="*"/>
+            <type>
+                <code value="Identifier"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Group.active">
+            <path value="Group.active"/>
+            <min value="0"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Group.type">
+            <path value="Group.type"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="code"/>
+            </type>
+            <fixedCode value="person"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Group.actual">
+            <path value="Group.actual"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="boolean"/>
+            </type>
+            <fixedCode value="true"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Group.name">
+            <path value="Group.name"/>
+            <min value="0"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Group.quantity">
+            <path value="Group.quantity"/>
+            <min value="0"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Group.managingEntity">
+            <path value="Group.managingEntity"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-organization"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Group.characteristic">
+            <path value="Group.characteristic"/>
+            <min value="0"/>
+            <max value="*"/>
+            <mustSupport value="false"/>
+        </element>
+        <element id="Group.characteristic.code">
+            <path value="Group.characteristic.code"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Group.characteristic.value[x]">
+            <path value="Group.characteristic.value[x]"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Group.member">
+            <path value="Group.member"/>
+            <min value="0"/>
+            <max value="*"/>
+            <mustSupport value="false"/>
+        </element>
+        <element id="Group.member.extension:associatedData">
+            <path value="Group.member.extension"/>
+            <sliceName value="associatedData"/>
+            <min value="0"/>
+            <max value="*"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-any-resource-extension"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Group.member.entity">
+            <path value="Group.member.entity"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-patient"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Group.member.period">
+            <path value="Group.member.period"/>
+            <min value="0"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Group.member.inactive">
+            <path value="Group.member.inactive"/>
+            <min value="0"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+    </differential>
+</StructureDefinition>
