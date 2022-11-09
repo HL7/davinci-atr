@@ -26,8 +26,8 @@
     <use value="in"/>
     <min value="0"/>
     <max value="*"/>
-    <documentation value="The Members whose data has to be exported, when omitted the data about all members will be exported. The references are 
-    pointing to resources in the FHIR Server supporting the export operation."/>
+    <documentation value="The Members whose data has to be exported, when omitted the data about all members in the Group be exported. The references are 
+    pointing to resources in the FHIR Server supporting the atr-export operation."/>
     <type value="Reference"/>
   </parameter>
   <parameter>
@@ -37,7 +37,7 @@
     <max value="1"/>
     <documentation value="The code that indicates the type of export to be performed. For e.g hl7.fhir.us.davinci-atr to indicate Member Attribution export, 
     and hl7.fhir.us.davinci-pdex for a PDex Export. Servers are supposed to provide the export guidance in the individual IGs."/>
-    <type value="url"/>
+    <type value="canonical"/>
   </parameter>
   <parameter>
     <name value="extractionPeriod"/>
@@ -53,6 +53,14 @@
     <min value="0"/>
     <max value="*"/>
     <documentation value="The resources that need to be extracted for the patients."/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="filterQueries"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="The list of Queries that need to be executed for the resources to be exported. This will allow the consumer to limit the data being exported."/>
     <type value="string"/>
   </parameter>
 </OperationDefinition>

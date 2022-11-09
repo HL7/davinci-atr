@@ -19,7 +19,7 @@ The implementation guide defines the responsibilities of the two types of system
 
 ### Underlying Specifications
 
-This guide is based on the [HL7 FHIR]({{site.data.fhir.path}}index.html) standard, as well as the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/index.html) and [SMART on FHIR Backend Services Authorization](http://hl7.org/fhir/uv/bulkdata/authorization/index.html) specifications which build additional capabilities on top of FHIR.  This architecture is intended to maximize the number of clinical systems that conform to this guide as well as to allow for easy growth and extensibility of system capabilities in the future.
+This guide is based on the [HL7 FHIR]({{site.data.fhir.path}}index.html) standard, as well as the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/index.html) and [SMART on FHIR Backend Services Authorization]({{site.data.fhir.ver.smartapplaunch}}/index.html) specifications which build additional capabilities on top of FHIR.  This architecture is intended to maximize the number of clinical systems that conform to this guide as well as to allow for easy growth and extensibility of system capabilities in the future.
 
 Implementers of this specification therefore need to understand some basic information about these specifications.
 
@@ -73,7 +73,7 @@ Implementers should familiarize themselves with the FHIR resources used within t
 This implementation guide also builds on the US Core Implementation Guide where profiles exist for the resources identified in the data model above and implementers need to familiarize themselves with these profiles in those Implementation Guides.
 <table>
   <tr>
-    <td><a href="{{site.data.fhir.uscoreR4}}/index.html">US Core 3.1.0 - FHIR R4 based IG</a></td>
+    <td><a href="{{site.data.fhir.ver.uscoreR4}}/index.html">US Core 3.1.1 - FHIR R4 based IG</a></td>
   </tr>
 </table>
 

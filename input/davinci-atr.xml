@@ -2,7 +2,7 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas-r5/fhir-single.xsd">  
   <id value="davinci-atr"/>
   <url value="http://hl7.org/fhir/us/davinci-atr/ImplementationGuide/davinci-atr"/>
-  <version value="1.0.0"/>
+  <version value="2.0.0"/>
   <name value="MemberAttributionList"/>
   <title value="Da Vinci - Member Attribution (ATR) List"/>
   <status value="active"/>
@@ -23,24 +23,31 @@
   </jurisdiction>
   <packageId value="hl7.fhir.us.davinci-atr"/>
   <fhirVersion value="4.0.1"/>
+  
    <dependsOn id="uscoreR4">
     <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core"/>
     <packageId value="hl7.fhir.us.core"/>
-    <version value="3.1.0"/>
+    <version value="3.1.1"/>
   </dependsOn>
+  
+  <dependsOn id="bulkig">
+    <uri value="http://hl7.org/fhir/uv/bulkdata/ImplementationGuide/hl7.fhir.uv.bulkdata"/>
+    <packageId value="hl7.fhir.uv.bulkdata"/>
+    <version value="1.0.1"/>
+  </dependsOn>
+  
+  <dependsOn id="smartapplaunch">
+    <uri value="http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch"/>
+    <packageId value="hl7.fhir.uv.smart-app-launch"/>
+    <version value="2.0.0"/>
+  </dependsOn>
+  
   <dependsOn id="pdexPlanNet">
     <uri value="http://hl7.org/fhir/us/davinci-pdex-plan-net/ImplementationGuide/hl7.fhir.us.davinci-pdex-plan-net"/>
     <packageId value="hl7.fhir.us.davinci-pdex-plan-net"/>
     <version value="1.0.0"/>
   </dependsOn>
   
-  <!--  Add this as needed in the future -->
-<!-- 
-  <dependsOn id="bulkdataR4">
-    <uri value="http://hl7.org/fhir/uv/bulkdata/ImplementationGuide/hl7.fhir.uv.bulkdata"/>
-    <packageId value="hl7.fhir.uv.bulkdata"/>
-    <version value="1.0.0"/>
-  </dependsOn> -->
   <definition>
     
     <resource>
@@ -211,7 +218,7 @@
     <!-- releaselabel should be the ballot status for HL7-published IGs. -->
     <parameter>
       <code value="releaselabel"/>
-      <value value="STU 1 Publication"/>
+      <value value="STU 2 Publication"/>
     </parameter>
     <parameter>
       <code value="find-other-resources"/>

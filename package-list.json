@@ -11,7 +11,7 @@
   "path" : "http://build.fhir.org/ig/HL7/davinci-atr",
   "status" : "ci-build",
   "current" : "true",
-  "sequence" : "STU 1",
+  "sequence" : "STU 2",
   "fhirversion" : "4.0.1"
  },
  {

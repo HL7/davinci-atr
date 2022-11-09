@@ -1,3 +1,6 @@
+{:.stu-note}
+This is new content for the STU 2 ballot. 
+
 ### Introduction
 
 This operation is used to add a member along with the attributed provider to the Member Attribution List.

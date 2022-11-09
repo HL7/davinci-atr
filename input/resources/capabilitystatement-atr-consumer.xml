@@ -170,7 +170,7 @@
       
       <ul>
         <li>
-          <a href="http://hl7.org/fhir/uv/bulkdata/OperationDefinition-group-export.html">Group Export</a>
+          <a href="OperationDefinition-atr-export.html">ATR Export</a>
         </li>
       </ul>
       <br/>
@@ -576,7 +576,7 @@
       </searchParam>
       <operation>
       	<name value="export"/>
-      	<definition value="http://hl7.org/fhir/uv/bulkdata/OperationDefinition-group-export.html"/>
+      	<definition value="http://hl7.org/fhir/us/davinci-atr/OperationDefinition/atr-export"/>
       </operation> -->
     </resource>
     <resource>

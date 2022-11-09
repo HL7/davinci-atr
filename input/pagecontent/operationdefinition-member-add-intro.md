@@ -1,3 +1,7 @@
+{:.stu-note}
+This is new content for the STU 2 ballot. 
+
+
 ### Introduction
 
 This operation is used to remove a member along with the attributed provider from the Member Attribution List.

@@ -1,4 +1,4 @@
-This section of the implementation guide defines the specific conformance requirements for systems wishing to conform to this Member Attribution List  implementation guide.  The bulk of it focuses on the implementation of  the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/index.html) to meet attribution list use-cases.  It also describes the use of [SMART on FHIR Backend Services Authorization](http://hl7.org/fhir/uv/bulkdata/authorization/index.html) and provides guidance on privacy, security and other implementation requirements.
+This section of the implementation guide defines the specific conformance requirements for systems wishing to conform to this Member Attribution List  implementation guide.  The bulk of it focuses on the implementation of  the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/index.html) to meet attribution list use-cases.  It also describes the use of [SMART on FHIR Backend Services Authorization]({{site.data.fhir.ver.smartapplaunch}}/index.html) and provides guidance on privacy, security and other implementation requirements.
 
 
 ### Context
@@ -50,19 +50,30 @@ The full set of profiles defined in this implementation guide can be found by fo
 
 
 #### US Core
-This implementation guide also leverages the [US Core](http://hl7.org/fhir/us/core) set of profiles defined by HL7 for sharing non-veterinary EMR individual health data in the U.S.  Where US Core profiles exist, this Guide either leverages them directly or uses them as a base for any additional constraints needed to support the member attribution list use cases.  If no constraints are needed, this IG doesn't define any profiles.
+This implementation guide also leverages the [US Core]({{site.data.fhir.ver.uscoreR4}}/index.html) set of profiles defined by HL7 for sharing non-veterinary EMR individual health data in the U.S.  Where US Core profiles exist, this Guide either leverages them directly or uses them as a base for any additional constraints needed to support the member attribution list use cases.  If no constraints are needed, this IG doesn't define any profiles.
 
 Where US Core profiles do not yet exist (e.g. for Coverage, Group), profiles have been created that try to align with existing US Core profiles in terms of elements exposed and terminologies used.
 
+<div class="bg-success" markdown="1">
 
-#### Bulk Data IG 
-This section outlines how the Bulk Data IG will be leveraged by this implementation guide. 
+#### Requirements for Implementation of the $atr-export operation
+ 
+The Bulk Data Export async pattern is used by this IG for the implementation of the atr-export operation. The actual Bulk Data export operation is not directly used in this IG.
 
-Producer systems SHALL support the ```[base]/Group/[id]/$atr-export``` operation for member attribution list implementation. 
+Producer systems SHALL support the ```[$atr-export operation](OperationDefinition-atr-export.html)`` operation for member attribution list implementation. 
+
+Producer systems SHALL support the exportType of ```hl7.fhir.us.davinci-atr``` for implementing Member Attribution List IG.
+
+Producer systems SHALL export only the patients contained in the identified group if a list of member references are supplied as part of the ```[$atr-export operation](OperationDefinition-atr-export.html)`` operation.
+
+When member references are not supplied, the Producer systems SHALL export data for all members contained in the Member Attribution List. 
 
 Producer systems SHALL support the reading and searching of Group resources per the capability statement expectations outlined below.
 
-Producer systems SHALL support ```Group, Patient, Related Person, Practitioner, PractitionerRole, Location, Organization, Coverage, Group``` resource types for the ```[base]/Group/[id]/$export?_type``` parameter. The producer SHALL create NDJSON files for each of the resources that are linked to the member to create an attribution list. 
+Producer systems SHALL support ```Group, Patient, Related Person, Practitioner, PractitionerRole, Location, Organization, Coverage, Group``` resource types for the ```[base]/Group/[id]/$atr-export?_type``` parameter for the exportType of ```hl7.fhir.us.davinci-atr```. 
+
+* The producer SHALL create NDJSON files for each of the resources that are linked to the member to create an attribution list as outlined below 
+
 The resource list includes
  
 	The Patient who is the member.
@@ -72,39 +83,47 @@ The resource list includes
 	The RelatedPerson who may be the Subscriber of the Coverage. 
 	The Group itself which contains the list of members and their relationship to the other members.  
 
-Producer systems SHALL support the Bulk Data Kick-off Request as defined in the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
+Producer systems SHALL support the Bulk Data Kick-off Request for the ```[$atr-export operation](OperationDefinition-atr-export.html)``` as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/export/index.html) specification.
 
-Producer systems MAY support the Bulk Data Delete Request as defined in the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
+Producer systems MAY support the Bulk Data Delete Request for the ```[$atr-export operation](OperationDefinition-atr-export.html)``` as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/export/index.html) specification.
 
-Producer systems SHALL support the Bulk Data Status Request as defined in the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
+Producer systems SHALL support the Bulk Data Status Request for the ```[$atr-export operation](OperationDefinition-atr-export.html)``` as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/export/index.html) specification.
 
-Producer systems SHALL set the requireAccessToken to ```true``` within the Bulk Data Status Request response body as defined in the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
+Producer systems SHALL set the requireAccessToken to ```true``` within the Bulk Data Status Request response body as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/export/index.html) specification.
 
 Producer systems SHALL require Consumer systems to provide valid ```access token``` to access the member attribution list files. 
 
-Producer systems SHALL support the Bulk Data File Request as defined in the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
+Producer systems SHALL support the Bulk Data File Request for the ```[$atr-export operation](OperationDefinition-atr-export.html)``` as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/export/index.html) specification.
 
 When the Consumer systems do not have appropriate authorization to the data requested, the Producer systems SHALL return OperationOutcome with appropriate error message.
 
 When the Consumer systems do not have appropriate access token to access the data requested, the Producer systems SHALL return OperationOutcome with appropriate error message.
 
 
+
+</div>
+
+
 #### SMART on FHIR Backend Services Authorization
-This section outlines how the SMART on FHIR Backend Services Authorization guide will be used by this implementation guide. 
 
-Producer systems SHALL advertise conformance to SMART Backend Services by hosting a Well-Known Uniform Resource Identifiers (URIs) as defined in the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
+This section outlines how the SMART on FHIR Backend Services Authorization will be used by this implementation guide. 
 
-Producer systems SHALL include token_endpoint, scopes_supported, token_endpoint_auth_methods_supported and token_endpoint_auth_signing_alg_values_supported as defined in the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
+Producer systems SHALL advertise conformance to SMART Backend Services by hosting a Well-Known Uniform Resource Identifiers (URIs) as defined in the [SMART on FHIR Backend Services Authorization]({{site.data.fhir.ver.smartapplaunch}}/backend-services.html) specification.
 
-Consumer systems SHALL share their JWKS with the Producer systems using URLs as defined in the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
+Producer systems SHALL include token_endpoint, scopes_supported, token_endpoint_auth_methods_supported and token_endpoint_auth_signing_alg_values_supported as defined in the [SMART on FHIR Backend Services Authorization]({{site.data.fhir.ver.smartapplaunch}}/backend-services.html) specification.
 
-Consumer systems SHALL obtain the access token as defined in the [Bulk Data IG](http://hl7.org/fhir/uv/bulkdata/export/index.html) specification.
+Consumer systems SHALL share their JWKS with the Producer systems using URLs as defined in the [SMART on FHIR Backend Services Authorization]({{site.data.fhir.ver.smartapplaunch}}/backend-services.html) specification.
 
-Producer systems SHALL support ```system/Group.read, system/Patient.read, system/Practitioner.read, system/PractitionerRole.read, system/Coverage.read, system/Organization.read, system/RelatedPerson.read, system/Location.read, system/Group.read``` scopes.
+Consumer systems SHALL obtain the access token as defined in the [SMART on FHIR Backend Services Authorization]({{site.data.fhir.ver.smartapplaunch}}/backend-services.html) specification.
+
+Producer systems SHALL support ```system/*.read`` scopes for Member Attribution List exchange.
+
+Producer systems supporting the creation and reconciliation of a Member Attribution List by Consumer systems SHOULD also support the ``system/*.write`` scope for Member Attribution List exchange.
 
 During Consumer registration, the Producer system  MAY collect the NPI and Tax Identification Numbers applicable for a specific contract along with the specific contract information. This information MAY be used by the Producer to create the necessary Member Attribution List and provide an API that will allow the Consumer to retrieve the Member Attribution List. Producers MAY follow other OAuth best practices for Consumer registration.
 
-When the Consumer is trying to discover the specific Group resource that represents the Member Attribution List for a specific contract, the Producer SHALL verify that the Consumer credentials provided allow the Consumer to access the requested specific Group Resource. 
+When the Consumer is trying to discover the specific Group resource that represents the Member Attribution List for a specific use case, the Producer SHALL verify that the Consumer credentials provided allow the Consumer to access the requested specific Group Resource. 
+
 **NOTE:** This verification is for a specific Group instance and not just the Group Resource type which is controlled by the scopes.
 
 
@@ -320,8 +339,63 @@ GET <File URL for each Resource identified in Member Attribution List Export Req
 * Detailed examples for NDJSON file retrieval can be found in the Bulk Data IG.
 
 
- 
+<div class="bg-success" markdown="1">
+
+### Member Attribution List Reconciliation APIs
+
+#### Consumer requests addition of a member to the Member Attribution List 
+
+This interaction outlines the APIs for a Consumer (for example, Provider organization) to add a member to the Member Attribution List.
+
+**Precondition:**
+
+In order to add a member to the Member Attribution List, the Consumer should have successfully discovered the attribution list.
+The Consumer knows the MemberId and the AttributedProvider NPI or the references to the Member and the Attributed Provider in the Producer system. 
+
+**API: Add a member to the Member Attribution List**
+
+```
+
+POST [Base FHIR URL]/Group/[id]/$member-add
+
+The body will contain the parameters resources with 
+MemberId + ProviderNPI  + (optional Attribution Period)
+patientReference + providerReference + (optional Attribution Period) 
+
+```
 
 
+**Expected Results:**
+
+* Successful addition of the Patient to the Member Attribution List if the member and the provider is found in the system. 
+* An OperationOutcome if the Patient to be added is not found in the system. 
 
 
+#### Consumer requests removal of a member to the Member Attribution List 
+
+This interaction outlines the APIs for a Consumer (for example, Provider organization) to remove a member from the Member Attribution List.
+
+**Precondition:**
+
+In order to remove a member to the Member Attribution List, the Consumer should have successfully discovered the attribution list.
+The Consumer knows the MemberId and the AttributedProvider NPI or the references to the Member and the Attributed Provider in the Producer system. 
+
+**API: Remove a member to the Member Attribution List**
+
+```
+
+POST [Base FHIR URL]/Group/[id]/$member-remove
+
+The body will contain the parameters resources with 
+MemberId + ProviderNPI  + (optional Attribution Period)
+patientReference + providerReference + (optional Attribution Period) 
+
+```
+
+
+**Expected Results:**
+
+* Successful removal of the Patient from the Member Attribution List if the member and the provider is found in the system. 
+* An OperationOutcome if the Patient to be removed is not found in the system or the member attribution list.
+
+</div>
