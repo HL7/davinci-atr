@@ -60,11 +60,11 @@ Where US Core profiles do not yet exist (e.g. for Coverage, Group), profiles hav
  
 The Bulk Data Export async pattern is used by this IG for the implementation of the atr-export operation. The actual Bulk Data export operation is not directly used in this IG.
 
-Producer systems SHALL support the ```[$atr-export operation](OperationDefinition-atr-export.html)`` operation for member attribution list implementation. 
+Producer systems SHALL support the [$atr-export operation](OperationDefinition-atr-export.html) operation for member attribution list implementation. 
 
 Producer systems SHALL support the exportType of ```hl7.fhir.us.davinci-atr``` for implementing Member Attribution List IG.
 
-Producer systems SHALL export only the patients contained in the identified group if a list of member references are supplied as part of the ```[$atr-export operation](OperationDefinition-atr-export.html)`` operation.
+Producer systems SHALL export only the patients contained in the identified group if a list of member references are supplied as part of the [$atr-export operation](OperationDefinition-atr-export.html) operation.
 
 When member references are not supplied, the Producer systems SHALL export data for all members contained in the Member Attribution List. 
 
@@ -83,17 +83,17 @@ The resource list includes
 	The RelatedPerson who may be the Subscriber of the Coverage. 
 	The Group itself which contains the list of members and their relationship to the other members.  
 
-Producer systems SHALL support the Bulk Data Kick-off Request for the ```[$atr-export operation](OperationDefinition-atr-export.html)``` as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/export/index.html) specification.
+Producer systems SHALL support the Bulk Data Kick-off Request for the [$atr-export operation](OperationDefinition-atr-export.html) as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/export/index.html) specification.
 
-Producer systems MAY support the Bulk Data Delete Request for the ```[$atr-export operation](OperationDefinition-atr-export.html)``` as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/export/index.html) specification.
+Producer systems MAY support the Bulk Data Delete Request for the [$atr-export operation](OperationDefinition-atr-export.html) as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/export/index.html) specification.
 
-Producer systems SHALL support the Bulk Data Status Request for the ```[$atr-export operation](OperationDefinition-atr-export.html)``` as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/export/index.html) specification.
+Producer systems SHALL support the Bulk Data Status Request for the [$atr-export operation](OperationDefinition-atr-export.html) as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/export/index.html) specification.
 
 Producer systems SHALL set the requireAccessToken to ```true``` within the Bulk Data Status Request response body as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/export/index.html) specification.
 
 Producer systems SHALL require Consumer systems to provide valid ```access token``` to access the member attribution list files. 
 
-Producer systems SHALL support the Bulk Data File Request for the ```[$atr-export operation](OperationDefinition-atr-export.html)``` as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/export/index.html) specification.
+Producer systems SHALL support the Bulk Data File Request for the [$atr-export operation](OperationDefinition-atr-export.html) as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/export/index.html) specification.
 
 When the Consumer systems do not have appropriate authorization to the data requested, the Producer systems SHALL return OperationOutcome with appropriate error message.
 
