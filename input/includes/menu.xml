@@ -58,17 +58,14 @@
         <a target="_blank" href="{{site.data.fhir.uscoreR4}}/index.html">US Core STU3 (FHIR R4 version)<img src="external.png" style="text-align: baseline"/></a>
       </li>
       <li>
-        <a target="_blank" href="http://hl7.org/fhir/uv/bulkdata/index.html">Bulk Data IG<img src="external.png" style="text-align: baseline"/></a>
+        <a target="_blank" href="{{site.data.fhir.ver.bulkig}}/index.html">Bulk Data IG<img src="external.png" style="text-align: baseline"/></a>
       </li>
       <li>
         <a target="_blank" href="{{site.data.fhir.ver.smartapplaunch}}/index.html">SMART on FHIR Backend Services Authorization<img src="external.png" style="text-align: baseline"/></a>
       </li>
-      <li>
-        <a target="_blank" href="http://hl7.org/fhir/smart-app-launch/index.html">SMART on FHIR <img src="external.png" style="text-align: baseline"/></a>
-      </li>
     </ul>
   </li>
   <li>
-    <a href="{{site.data.info.assets}}history.html">History</a>
+    <a href="{{site.data.info.assets}}changes.html">Change History</a>
   </li>
 </ul>

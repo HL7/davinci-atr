@@ -1,0 +1,81 @@
+<Group xmlns="http://hl7.org/fhir">
+   <id value="davincipatientlistexample"></id>
+   <meta>
+      <versionId value="1"></versionId>
+      <lastUpdated value="2019-06-06T03:04:12.348-04:00"></lastUpdated>
+      <profile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-patient-list"/>
+   </meta>
+   <text>
+      <status value="additional"></status>
+      <div xmlns="http://www.w3.org/1999/xhtml"> 
+         <p>Patients in the patient list</p> 
+         <ul> 
+            <li>Patient Dominique Ledner</li>  
+            <li>Patient Cole Emilie</li> 
+            <li>Patient Erdman Malcolm</li> 
+         </ul> 
+      </div>
+   </text>
+   <extension url="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-intended-recipient-identifier-extension">
+      <valueIdentifier>
+         <system value="http://hl7.org/fhir/sid/us-npi"></system>
+      	<value value="9941339108"></value>
+      </valueIdentifier>
+   </extension>
+   <active value="true"></active>
+   <type value="person"></type>
+   <actual value="true"></actual>
+   <name value="Patient List Group"></name>
+   <managingEntity>
+      <reference value="Organization/1"></reference>
+      <display value="Healthcare Payer organization"></display>
+   </managingEntity>
+   <characteristic>
+      <code>
+         <coding>
+            <system value="http://hl7.org/fhir/us/davinci-atr/CodeSystem/davinci-group-characteristic-codes"></system>
+            <code value="attributed-to"></code>
+            <display value="Attributed to a specific Provider, Organization etc."></display>
+         </coding>
+      </code>
+      <valueReference>
+      	<reference value="Practitioner/1"></reference>
+      </valueReference>
+      <exclude value="true"/>
+   </characteristic>
+   <member>
+      <extension url="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-any-resource-extension">
+         <valueReference>
+            <reference value="Coverage/1"></reference>
+         </valueReference>
+      </extension>
+      <entity>
+         <reference value="Patient/1"></reference>
+      </entity>
+      <period>
+         <start value="2014-10-08"></start>
+         <end value="2020-10-08"></end>
+      </period>
+      <inactive value="false"></inactive>
+   </member>
+   <member>
+      <entity>
+         <reference value="Patient/2"></reference>
+      </entity>
+      <period>
+         <start value="2015-04-02"></start>
+         <end value="2021-12-12"></end>
+      </period>
+      <inactive value="false"></inactive>
+   </member>
+   <member>
+      <entity>
+         <reference value="Patient/3"></reference>
+      </entity>
+      <period>
+         <start value="2016-09-02"></start>
+         <end value="2022-05-10"></end>
+      </period>
+      <inactive value="false"></inactive>
+   </member>
+</Group>

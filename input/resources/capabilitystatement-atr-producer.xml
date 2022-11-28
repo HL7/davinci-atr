@@ -10,7 +10,7 @@
       <p>Published by: <b>HL7 International - Financial Management</b>
       </p>
       <p>This profile defines the expected capabilities of the <i>DaVinci ATR Producer </i> actor.  
-      This actor is responsible for producing the member attribution list for Risk Based Contracts. 
+      This actor is responsible for managing and sometimes producing the member attribution list. 
       Typically Payers are the producers of the member attribution list and Provider organization are consumers.</p>
       <h2>General</h2>
       <div class="table-wrapper">
@@ -28,12 +28,14 @@
         </table>
       </div>
       <h2>REST  behavior</h2>
-      <p>The primary focus of the Producer is to create the member attribution list and publish the member attribution list so that Consumers can download the member attribution list which is necessary for the implementation of other DaVinci use cases.</p>
+      <p>The primary focus of the Producer is to potentially create and manage the member attribution list and publish the member attribution list so that Consumers can download the member attribution list which is necessary for the implementation of other DaVinci use cases.</p>
       <p>
         <b>Security:</b>
       </p>
       <p>Implementations must meet the general security requirements documented in FHIR <a href="http://hl7.org/fhir/security.html">Security guidance</a>.</p>
       <p>In addition the Producer needs to meet the security requirements as outlined in the <a href="spec.html#smart-on-fhir-backend-services-authorization">Formal Specification - Security Section.</a></p>
+      <p>In cases where the Consumers create resources in Producer systems such as Groups (Attribution Lists), the Consumers SHOULD provide Provenance information using the X-Provenance Header as specified in 
+      <a href="http://hl7.org/fhir/provenance.html#header">Provenance Specification</a></p>
       <h3>Resource summary</h3>
       <div class="table-wrapper">
         <table class="grid">
@@ -190,7 +192,7 @@
       
       <ul>
         <li>
-          <a href="OperationDefinition-atr-export.html">ATR Export</a>
+          <a href="OperationDefinition-davinci-data-export.html">DaVinci Data Export</a>
         </li>
         <li>
           <a href="OperationDefinition-member-add.html">Member Add</a>
@@ -317,6 +319,11 @@
               <th>identifier</th>
               <td>token</td>
               <td>Search using identifiers which can be Consumer NPI, Consumer TIN, Settlement Entity Identifier, Contract Identifier. Combinations of AND/OR logic for the different identifiers are allowed according to the FHIR specification.</td>
+            </tr>
+            <tr>
+              <th>identifier:of-type</th>
+              <td>token</td>
+              <td>Search using identifiers using a combination of system|code|value, where the system and code refer to a Identifier.type.coding.system and .code, and match if any of the type codes match.</td>
             </tr>
             <tr>
               <th>name</th>
@@ -592,7 +599,7 @@
   <url value="http://hl7.org/fhir/us/davinci-atr/CapabilityStatement/atr-producer"/>
   <name value="DaVinciAtrProducer"/>
   <title value="DaVinci ATR Producer"/>
-  <status value="draft"/>
+  <status value="active"/>
   <date value="2014-07-06"/>
   <publisher value="HL7 International - Financial Management"/>
   <contact>
@@ -683,6 +690,14 @@
         <definition value="http://hl7.org/fhir/SearchParameter/Group-identifier"/>
         <type value="token"/>
       </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHALL"/>
+        </extension>
+        <name value="identifier:of-type"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Group-identifier"/>
+        <type value="token"/>
+      </searchParam>
   <!--          <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <valueCode value="SHALL"/>
@@ -701,7 +716,7 @@
       </searchParam>
       <operation>
       	<name value="export"/>
-      	<definition value="http://hl7.org/fhir/us/davinci-atr/OperationDefinition/atr-export"/>
+      	<definition value="http://hl7.org/fhir/us/davinci-atr/OperationDefinition/davinci-data-export"/>
       </operation> -->
     </resource>
     <resource>

@@ -10,7 +10,7 @@
       <p>Published by: <b>HL7 International - Financial Management</b>
       </p>
       <p>This profile defines the expected capabilities of the <i>DaVinci ATR Consumer </i> actor.  
-      This actor is responsible for consuming the member attribution list for Risk Based Contracts. 
+      This actor is responsible for consuming the member attribution list. 
       Typically Payers are the Producers of the member attribution list and Provider organization are consumers.</p>
       <h2>General</h2>
       <div class="table-wrapper">
@@ -34,6 +34,8 @@
       </p>
       <p>Implementations must meet the general security requirements documented in FHIR <a href="http://hl7.org/fhir/security.html">Security guidance</a>.</p>
       <p>In addition the Consumer needs to meet the security requirements as outlined in the <a href="spec.html#smart-on-fhir-backend-services-authorization">Formal Specification - Security Section.</a></p>
+      <p>In cases where the Consumers create resources in Producer systems such as Groups (Attribution Lists), the Consumers SHOULD provide Provenance information using the X-Provenance Header as specified in 
+      <a href="http://hl7.org/fhir/provenance.html#header">Provenance Specification</a></p>
       <h3>Resource summary</h3>
       <div class="table-wrapper">
         <table class="grid">
@@ -170,7 +172,7 @@
       
       <ul>
         <li>
-          <a href="OperationDefinition-atr-export.html">ATR Export</a>
+          <a href="OperationDefinition-davinci-data-export.html">ATR Export</a>
         </li>
       </ul>
       <br/>
@@ -480,7 +482,7 @@
   <url value="http://hl7.org/fhir/us/davinci-atr/CapabilityStatement/atr-consumer"/>
   <name value="DaVinciAtrConsumer"/>
   <title value="DaVinci ATR Consumer"/>
-  <status value="draft"/>
+  <status value="active"/>
   <date value="2014-07-06"/>
   <publisher value="HL7 International - Financial Management"/>
   <contact>
@@ -576,7 +578,7 @@
       </searchParam>
       <operation>
       	<name value="export"/>
-      	<definition value="http://hl7.org/fhir/us/davinci-atr/OperationDefinition/atr-export"/>
+      	<definition value="http://hl7.org/fhir/us/davinci-atr/OperationDefinition/davinci-data-export"/>
       </operation> -->
     </resource>
     <resource>

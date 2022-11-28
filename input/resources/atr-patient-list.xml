@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition
     xmlns="http://hl7.org/fhir">
-    <id value="atr-patient-list"/>
+    <id value="davinci-patient-list"/>
     <meta>
         <versionId value="3"/>
         <lastUpdated value="2021-08-13T05:43:12.456+00:00"/>
         <source value="#op9qv8RqccCL7zOB"/>
     </meta>
-    <url value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-patient-list"/>
+    <url value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-patient-list"/>
     <version value="0.1.0"/>
-    <name value="AtrPatientList"/>
-    <title value="ATR Patient List"/>
-    <status value="draft"/>
+    <name value="DaVinciPatientList"/>
+    <title value="DaVinci Patient List"/>
+    <status value="active"/>
     <experimental value="false"/>
     <date value="2019-09-01"/>
     <publisher value="HL7 International - Financial Management"/>
@@ -37,14 +37,14 @@
     <differential>
         <element id="Group">
             <path value="Group"/>
-            <short value="ATR Patient List"/>
+            <short value="DaVinci Patient List"/>
             <definition value="Sets expectations for supported capabilities of a Group resource for Patient List."/>
         </element>
         <element id="Group.extension:intendedRecipientIdentifier">
             <path value="Group.extension"/>
             <sliceName value="intendedRecipientIdentifier"/>
             <min value="0"/>
-            <max value="*"/>
+            <max value="1"/>
             <type>
                 <code value="Extension"/>
                 <profile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-intended-recipient-identifier-extension"/>
@@ -83,7 +83,7 @@
             <type>
                 <code value="boolean"/>
             </type>
-            <fixedCode value="true"/>
+            <fixedBoolean value="true"/>
             <mustSupport value="true"/>
         </element>
         <element id="Group.name">
@@ -119,6 +119,11 @@
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
+            <binding>
+                <strength value="extensible"/>
+                <description value="The set of characteristics shared by the members"/>
+                <valueSet value="http://hl7.org/fhir/us/davinci-atr/ValueSet/davinci-group-characteristic"/>
+            </binding>
         </element>
         <element id="Group.characteristic.value[x]">
             <path value="Group.characteristic.value[x]"/>
@@ -136,7 +141,7 @@
             <path value="Group.member.extension"/>
             <sliceName value="associatedData"/>
             <min value="0"/>
-            <max value="*"/>
+            <max value="1"/>
             <type>
                 <code value="Extension"/>
                 <profile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-any-resource-extension"/>

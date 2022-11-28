@@ -25,17 +25,28 @@ Using FHIR based APIs, providers and payers can exchange Member Attribution List
 #### Scenario 1
 Provider Organization A enters a risk-based contract with Payer B. As part of establishing the contract targets, specific measures and financial incentives are documented. Payer B uses historical claims and other information present about members to create a Member Attribution List for Provider Organization A. The Member Attribution List identifies the list of patients that Provider Organization A is responsible for as part of the contract. Payer B needs to exchange this list with Provider Organization A periodically to ensure that Provider Organization A is aware of the list of patients that it is responsible for as per the contract. Payer B could publish the list in standard way and Provider Organization A retrieves the list for use. Alternatively Provider Organization A may request for the list and Payer B provides the list once it is ready.
 
+<div class="bg-success" markdown="1">
+
 #### Scenario 2
-Provider Organization A enters a risk-based contract with Payer B. As part of establishing the contract targets, specific measures, financial incentives are documented. Payer B uses historical claims and other information present about members to create a Member Attribution List for Provider Organization A. The list is published by Payer B and Provider Organization A retrieves the list. Once Provider Organization A reconciles the list, it identifies a list of changes that need to be done to the list and notifies the Payer B about the changes. Payer B either accepts or rejects the changes and may modify the existing Member Attribution List. If the list is modified, Payer B notifies Provider Organization A of the changes. Provider Organization A retrieves the list and starts using the list for various business needs. 
+Provider Organization A enters a contract with Payer B. As part of establishing the contract targets, specific measures, financial incentives are documented. Provider Organization A assembles the list of members for whom they are responsible and uses the information to create an initial member attribution list and provides it to Payer B.  Payer B uses historical claims and other information present about members to update the provided Member Attribution List for Provider Organization A. The list is published by Payer B to Provider Organization A. Provider Organization A retrieves the list and identifies a list of changes that need to be done to the list and notifies the Payer B about the changes in terms of additions and removals. Payer B either accepts or rejects the changes and may modify the existing Member Attribution List. If the list is modified, Payer B notifies Provider Organization A of the changes. Provider Organization A and Payer B finally agree upon a member attribution list and starts using the list for various business needs. 
+
+</div>
 
 #### Use of Member Attribution List as part of the Data Exchange for Quality Measures and Care Gaps
 Member Attribution Lists are fundamental to closing care gaps and reporting on quality measures. Providers have to report on specific patients to payers on specific quality measures and close any care gap requirements that may exist. Providers and Payers agree upon the list of patients for whom reporting has to be performed on a regular basis. Similarly care gaps associated with these patients have to be closed to receive applicable financial incentives. In all these cases the agreement on what is the "list of patients" is critical. This function is served by the Member Attribution List. The Member Attribution List can be agreed upon between the Payers and Providers and exchanged on a regular cadence. Based on the patients attributed in the Member Attribution List Payers can request Providers for specific quality measure data, care gaps data. Similarly Providers can close care gaps for patients attributed to them via the Member Attribution List and can report quality data using the Data Exchange for Quality Measures Da Vinci implementation guide.
 
+<div class="bg-success" markdown="1">
+
 #### Use of Member Attribution List for CMS Data at Point of Care (DPC) use case
-The Centers for Medicare and Medicaid Services (CMS) Data at the Point of Care (DPC) API is currently in a pilot phase in which a limited number of users can access Medicare Fee-For-Service claims data through the API. This pilot program promotes the industry-standard HL7 Fast Healthcare Interoperability Resources (FHIR), specifically the Bulk FHIR specification. The mechanisms used by DPC program have been outlined in this implementation guide which includes creation of the Member Attribution List, requesting changes or updates to the Member Attribution List, requesting claims data using the Bulk Data operations specifically /Group/[id]/$atr-export operation.
+The Centers for Medicare and Medicaid Services (CMS) Data at the Point of Care (DPC) API is currently in a pilot phase in which a limited number of users can access Medicare Fee-For-Service claims data through the API. This pilot program promotes the industry-standard HL7 Fast Healthcare Interoperability Resources (FHIR), specifically the Bulk FHIR specification. The mechanisms used by DPC program have been outlined in this implementation guide which includes creation of the Member Attribution List, requesting changes or updates to the Member Attribution List, requesting claims data using the Bulk Data operations specifically /Group/[id]/$davinci-data-export operation.
 
 #### Use of Member Attribution List for CMS Beneficiary Claims Data API (BCDA) use case
-The Beneficiary Claims Data API (BCDA) is an Application Programming Interface (API) that enables Accountable Care Organizations (ACOs) to retrieve Medicare claims data for their beneficiaries. BCDA serves as direct pipeline from CMS to ACO systems to provide claims data on at a more timely cadence. This includes Medicare claims data for instances in which beneficiaries receive care outside of the ACO, allowing a full picture of patient care. The BCDA initiative provides claims data represented using Patient, Coverage and Explanation of Benefit FHIR resources to the ACOs. CMS ingests an attribution file to create the list of beneficiaries relevant to an ACO and uses the Group resource to represent the beneficiary list. The member attribution list is represented using the data model present in this Implementation Guide. The claims data can be accessed using the same /Group/[id]/$atr-export bulk data operation also specified in this Implementation Guide. 
+The Beneficiary Claims Data API (BCDA) is an Application Programming Interface (API) that enables Accountable Care Organizations (ACOs) to retrieve Medicare claims data for their beneficiaries. BCDA serves as direct pipeline from CMS to ACO systems to provide claims data on at a more timely cadence. This includes Medicare claims data for instances in which beneficiaries receive care outside of the ACO, allowing a full picture of patient care. The BCDA initiative provides claims data represented using Patient, Coverage and Explanation of Benefit FHIR resources to the ACOs. CMS ingests an attribution file to create the list of beneficiaries relevant to an ACO and uses the Group resource to represent the beneficiary list. The member attribution list is represented using the data model present in this Implementation Guide. The claims data can be accessed using the same /Group/[id]/$davinci-data-export bulk data operation also specified in this Implementation Guide. 
+
+#### Use of Member Attribution List for DaVinci Pdex use cases 
+The DaVinci Pdex use cases for Payer to Payer exchange have been identified as one of the use cases for using the DaVinci-data-export operation defined in the guide to exchange large amounts of data using the bulk data asynchronous pattern. The actual content to be exchanged will be defined in the Pdex IG in the future.
+
+</div>
 
 
 ### Member Attribution List workflows and definitions
@@ -127,14 +138,14 @@ Every change that is made to the list may be available to the Consumer based on 
 
 <div class="bg-success" markdown="1">
 
-### Member Attribution List Exchange for Scenario #2
+### Member Attribution List Exchange for Scenario #2 (STU2 Workflow)
 
 {% include img.html img="workflow-scenario2.png" caption="Figure 3: Member Attribution List Exchange Workflow for Scenario #2" %}
 
 The following is a brief description of the workflow steps with a Payer representing the Producer and a Provider Organization representing the Consumer. This workflow differs from the previous workflow in that the consumer is creating the Member Attribution List first and then providing the list to the Producer.
 
 **1. Payer (Producer) and Provider (Consumer) enter into a contract **<br/>
-Provider and a Payer enter into a contract with specific terms and conditions and decide on the need for a Member Attribution List. Payer internally creates the Member Attribution List using internal processes and existing data about the patients. 
+Provider and a Payer enter into a contract with specific terms and conditions and decide on the need for a Member Attribution List. Payer supports the capabilities required to create a Member Attribution List.
 
 **2. Provider (Consumer) creates the list in the Payer (Producer) system **<br/>
 In this step the Provider creates the member attribution list in the payer system.

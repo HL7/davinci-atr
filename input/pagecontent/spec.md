@@ -56,21 +56,25 @@ Where US Core profiles do not yet exist (e.g. for Coverage, Group), profiles hav
 
 <div class="bg-success" markdown="1">
 
-#### Requirements for Implementation of the $atr-export operation
+#### Requirements for Implementation of the $davinci-data-export operation
  
-The Bulk Data Export async pattern is used by this IG for the implementation of the atr-export operation. The actual Bulk Data export operation is not directly used in this IG.
+The Bulk Data Export async pattern is used by this IG for the implementation of the davinci-data-export operation. The actual Bulk Data export operation is not directly used in this IG.
 
-Producer systems SHALL support the [$atr-export operation](OperationDefinition-atr-export.html) operation for member attribution list implementation. 
+Producer systems SHALL support the [$davinci-data-export operation](OperationDefinition-davinci-data-export.html) operation for member attribution list implementation. 
 
 Producer systems SHALL support the exportType of ```hl7.fhir.us.davinci-atr``` for implementing Member Attribution List IG.
 
-Producer systems SHALL export only the patients contained in the identified group if a list of member references are supplied as part of the [$atr-export operation](OperationDefinition-atr-export.html) operation.
+Producer systems SHALL export only the patients contained in the identified group if a list of member references are supplied as part of the [$davinci-data-export operation](OperationDefinition-davinci-data-export.html) operation.
 
 When member references are not supplied, the Producer systems SHALL export data for all members contained in the Member Attribution List. 
 
 Producer systems SHALL support the reading and searching of Group resources per the capability statement expectations outlined below.
 
-Producer systems SHALL support ```Group, Patient, Related Person, Practitioner, PractitionerRole, Location, Organization, Coverage, Group``` resource types for the ```[base]/Group/[id]/$atr-export?_type``` parameter for the exportType of ```hl7.fhir.us.davinci-atr```. 
+Producer systems SHALL support ```Group,Patient,Coverage,Practitioner,Organization``` as resource types for the ```[base]/Group/[id]/$davinci-data-export?resourceTypes``` parameter for the exportType of ```hl7.fhir.us.davinci-atr```. 
+
+Producer systems SHOULD support ```Group, Patient, Related Person, Practitioner, PractitionerRole, Location, Organization, Coverage, Group``` resource types for the ```[base]/Group/[id]/$davinci-data-export?resourceTypes``` parameter for the exportType of ```hl7.fhir.us.davinci-atr```. 
+
+Producer systems SHALL reject requests that do not contain the minimum resource types of ```Group,Patient,Coverage,Practitioner,Organization``` as resource types for the ```[base]/Group/[id]/$davinci-data-export?resourceTypes``` parameter for the exportType of ```hl7.fhir.us.davinci-atr```.
 
 * The producer SHALL create NDJSON files for each of the resources that are linked to the member to create an attribution list as outlined below 
 
@@ -83,25 +87,23 @@ The resource list includes
 	The RelatedPerson who may be the Subscriber of the Coverage. 
 	The Group itself which contains the list of members and their relationship to the other members.  
 
-Producer systems SHALL support the Bulk Data Kick-off Request for the [$atr-export operation](OperationDefinition-atr-export.html) as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/export/index.html) specification.
+Producer systems SHALL support the Bulk Data Kick-off Request for the [$davinci-data-export operation](OperationDefinition-davinci-data-export.html) as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/index.html) export operation specification.
 
-Producer systems MAY support the Bulk Data Delete Request for the [$atr-export operation](OperationDefinition-atr-export.html) as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/export/index.html) specification.
+Producer systems MAY support the Bulk Data Delete Request for the [$davinci-data-export operation](OperationDefinition-davinci-data-export.html) as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/index.html) export operation specification.
 
-Producer systems SHALL support the Bulk Data Status Request for the [$atr-export operation](OperationDefinition-atr-export.html) as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/export/index.html) specification.
+Producer systems SHALL support the Bulk Data Status Request for the [$davinci-data-export operation](OperationDefinition-davinci-data-export.html) as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/index.html) export operation specification.
 
-Producer systems SHALL set the requireAccessToken to ```true``` within the Bulk Data Status Request response body as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/export/index.html) specification.
+Producer systems SHALL set the requireAccessToken to ```true``` within the Bulk Data Status Request response body as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/index.html) export operation specification.
 
 Producer systems SHALL require Consumer systems to provide valid ```access token``` to access the member attribution list files. 
 
-Producer systems SHALL support the Bulk Data File Request for the [$atr-export operation](OperationDefinition-atr-export.html) as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/export/index.html) specification.
+Producer systems SHALL support the Bulk Data File Request for the [$davinci-data-export operation](OperationDefinition-davinci-data-export.html) as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/index.html) export operation specification.
 
 When the Consumer systems do not have appropriate authorization to the data requested, the Producer systems SHALL return OperationOutcome with appropriate error message.
 
 When the Consumer systems do not have appropriate access token to access the data requested, the Producer systems SHALL return OperationOutcome with appropriate error message.
 
 
-
-</div>
 
 
 #### SMART on FHIR Backend Services Authorization
@@ -125,6 +127,9 @@ During Consumer registration, the Producer system  MAY collect the NPI and Tax I
 When the Consumer is trying to discover the specific Group resource that represents the Member Attribution List for a specific use case, the Producer SHALL verify that the Consumer credentials provided allow the Consumer to access the requested specific Group Resource. 
 
 **NOTE:** This verification is for a specific Group instance and not just the Group Resource type which is controlled by the scopes.
+
+
+</div>
 
 
 #### Capability Statements
@@ -280,10 +285,16 @@ Provider Organization knows the specific Group Resource for the specific contrac
 
 ```
 
-GET or POST <Server Base URL>/Group/[Group id]/$atr-export?_type=GRoup,Patient,Practitioner,PractitionerRole,Organization,Location,Coverage,RelatedPerson
+GET or POST <Server Base URL>/Group/[Group id]/$davinci-data-export?resourceTypes=GRoup,Patient,Practitioner,PractitionerRole,Organization,Location,Coverage,RelatedPerson&exportType=hl7.fhir.us.davinci-atr 
+
+OR 
+
+GET or POST <Server Base URL>/Group/[Group id]/$davinci-data-export?resourceTypes=GRoup,Patient,Practitioner,Organization,Coverage&exportType=hl7.fhir.us.davinci-atr
 
 
 ```
+
+NOTE: Any other combination of resourceTypes are not valid for the exportType of hl7.fhir.us.davinci-atr.
 
 **Expected Results:**
 Request is accepted by the Producer and a Content Location is received as part of the Response. Detailed examples for Bulk Data Request can be found in the Bulk Data IG.
@@ -311,7 +322,7 @@ GET <Content Location from Member Attribution List Export Request>
 
 * The completion status of the Member Attribution List Export Request.
 * Once the request is completed, a 200 HTTP code is returned along with the Response Body containing the URLs for the files representing the Member Attribution List.
-* At least one URL is returned for each of the resource types specified using the _type parameter in the Member Attribution List Export Request which are Patient,Practitioner,PractitionerRole,Organization,Location,Coverage and RelatedPerson resources.
+* At least one URL is returned for each of the resource types specified using the resourceTypes parameter in the Member Attribution List Export Request which are Patient,Practitioner,PractitionerRole,Organization,Location,Coverage and RelatedPerson resources.
 * Detailed examples for content polling can be found in the Bulk Data IG.
 
 #### Consumer retrieves Member Attribution List from Producer (FHIR Request)

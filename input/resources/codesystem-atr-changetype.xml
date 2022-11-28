@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeSystem xmlns="http://hl7.org/fhir">
   <id value="atr-changetype"/>
+  <meta>
+    <versionId value="1"/>
+    <lastUpdated value="2022-08-04T15:52:33.158+00:00"/>
+    <source value="#3Te0anOrvocKgcow"/>
+    <profile
+             value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/>
+  </meta>
   <url value="http://hl7.org/fhir/us/davinci-atr/CodeSystem/atr-changetype"/>
   <version value="1.0.0"/>
   <name value="DaVinciAtrChangeTypeCodes"/>
   <title value="Davinci ATR Change Type Codes"/>
   <status value="active"/>
+  <experimental value="true"/>
   <date value="2020-09-06"/>
   <description value="The Da Vinci Change Type CodeSystem is a &#39;starter set&#39; of codes supported for identifying changes in member attribution list."/>
   <jurisdiction>

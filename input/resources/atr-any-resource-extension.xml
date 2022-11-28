@@ -11,7 +11,7 @@
     <version value="0.1.0"/>
     <name value="AtrAnyResourceExtension"/>
     <title value="ATR Any Resource Extension"/>
-    <status value="draft"/>
+    <status value="active"/>
     <experimental value="false"/>
     <date value="2019-09-01"/>
     <publisher value="HL7 International - Financial Management"/>
@@ -58,7 +58,7 @@
             <min value="1"/>
             <max value="1"/>
             <type>
-                <code value="Reference"/>
+            	<code value="Reference"/>
             </type>
         </element>
     </differential>

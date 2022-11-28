@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OperationDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
-  <id value="atr-export"/>
-  <url value="http://hl7.org/fhir/us/davinci-atr/OperationDefinition/atr-export"/>
-  <name value="AtrExport"/>
-  <title value="ATR Export"/>
+  <id value="davinci-data-export"/>
+  <url value="http://hl7.org/fhir/us/davinci-atr/OperationDefinition/davinci-data-export"/>
+  <name value="DaVinciDataExport"/>
+  <title value="DaVinci Data Export"/>
   <status value="active"/>
   <kind value="operation"/>
   <date value="2021-07-22T21:48:56+10:00"/>
@@ -15,8 +15,8 @@
     </telecom>
   </contact>
   <description value="Exports data about members of the Group"/>
-  <code value="atr-export"/>
-  <base value="http://hl7.org/fhir/us/davinci-atr/OperationDefinition/atr-export"/>
+  <code value="davinci-data-export"/>
+  <base value="http://hl7.org/fhir/us/davinci-atr/OperationDefinition/davinci-data-export"/>
   <resource value="Group"/>
   <system value="false"/>
   <type value="false"/>
@@ -27,7 +27,7 @@
     <min value="0"/>
     <max value="*"/>
     <documentation value="The Members whose data has to be exported, when omitted the data about all members in the Group be exported. The references are 
-    pointing to resources in the FHIR Server supporting the atr-export operation."/>
+    pointing to resources in the FHIR Server supporting the davinci-data-export operation. The server will ignore the memberReference if it is not a valid reference."/>
     <type value="Reference"/>
   </parameter>
   <parameter>
@@ -51,16 +51,16 @@
     <name value="resourceTypes"/>
     <use value="in"/>
     <min value="0"/>
-    <max value="*"/>
-    <documentation value="The resources that need to be extracted for the patients."/>
+    <max value="1"/>
+    <documentation value="The resources that need to be extracted for the patients. This is similar to the _type parameter of the Bulk Data Export specification. This is a string of comma-delimited FHIR resource types."/>
     <type value="string"/>
   </parameter>
   <parameter>
     <name value="filterQueries"/>
     <use value="in"/>
     <min value="0"/>
-    <max value="*"/>
-    <documentation value="The list of Queries that need to be executed for the resources to be exported. This will allow the consumer to limit the data being exported."/>
+    <max value="1"/>
+    <documentation value="The list of Queries that need to be executed for the resources to be exported. This will allow the consumer to limit the data being exported. This is similar to the Bulk Data Export _typeFilter parameter. This is a string of comma delimited FHIR REST queries"/>
     <type value="string"/>
   </parameter>
 </OperationDefinition>

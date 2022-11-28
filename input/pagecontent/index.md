@@ -8,10 +8,10 @@ The following is the list of changes in STU2.
 
 <div class="bg-success" markdown="1">
 
-* New operation [atr-export](OperationDefinition-atr-export.html) has been added to provide a generic Bulk Export capability for the different DaVinci use cases. This operation will eventually be moved into the HRex Implementation Guide.
-* The [Attribution List profile](StructureDefinition-atr-patient-list.html) has been generalized to support multiple use cases which require Patient Lists. This profile will eventually be moved into HRex Implementation Guide.
-* Added the STU2 workflow diagram in the [use cases section](usecases.html#member-attribution-list-exchange-for-scenario-2)
-* Updated specification for usage of the [Bulk Data IG for atr-export operation](spec.html#requirements-for-implementation-of-the-atr-export-operation)
+* New operation [](OperationDefinition-davinci-data-export.html) has been added to provide a generic Bulk Export capability for the different DaVinci use cases. This operation will eventually be moved into the HRex Implementation Guide.
+* The [Attribution List profile](StructureDefinition-davinci-patient-list.html) has been generalized to support multiple use cases which require Patient Lists. This profile will eventually be moved into HRex Implementation Guide.
+* Added the STU2 workflow diagram in the [use cases section](usecases.html#member-attribution-list-exchange-for-scenario-2-stu2-workflow)
+* Updated specification for usage of the [Bulk Data IG for davinci-data-export operation](spec.html#requirements-for-implementation-of-the-davinci-data-export-operation)
 * Updated specification on the usage of the [reconciliation APIs](spec.html#member-attribution-list-reconciliation-apis) for member-add and member-remove
 * New operation [member-add](OperationDefinition-member-add.html) has been added to support the reconciliation of the attribution list.
 * New operation [member-remove](OperationDefinition-member-remove.html) has been added to support the reconciliation of the attribution list.

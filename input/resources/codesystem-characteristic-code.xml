@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="davinci-group-characteristic-codes"/>
+  <meta>
+    <versionId value="1"/>
+    <lastUpdated value="2022-08-04T15:52:33.158+00:00"/>
+    <source value="#3Te0anOrvocKgcow"/>
+    <profile
+             value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/>
+  </meta>
+  <url value="http://hl7.org/fhir/us/davinci-atr/CodeSystem/davinci-group-characteristic-codes"/>
+  <version value="1.0.0"/>
+  <name value="DaVinciGroupCharacteristicCodes"/>
+  <title value="Davinci Group Charactersitic Codes"/>
+  <status value="active"/>
+  <experimental value="true"/>
+  <date value="2022-12-06"/>
+  <description value="The DaVinci Group CharacteristicCodeSystem is a &#39;starter set&#39; of codes supported for identifying the characteristics shared by members of a group."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <caseSensitive value="true"/>
+  <valueSet value="http://hl7.org/fhir/us/davinci-atr/ValueSet/davinci-group-characteristic"/>
+  <content value="complete"/>
+  <count value="5"/>
+  <concept>
+    <code value="location"/>
+    <display value="Location"/>
+    <definition value="Members (Patients) whose care is at the location specified by the value which references the Location resource representing the physical structures managed/operated by an organization (e.g., a ward, building, clinic, etc)"/>
+  </concept>
+  <concept>
+    <code value="careteam"/>
+    <display value="CareTeam"/>
+    <definition value="Members (Patients) who are under the care of the care-team specified by the value which references the CareTeam resource representing the care-team. (e.g., Respiratory Therapy CareTeam, CareTeam blue , etc)"/>
+  </concept>
+  <concept>
+    <code value="Organization"/>
+    <display value="Organization"/>
+    <definition value="Members (Patients) whose care is at the organization specified by the value which references the Organization resource representing the organization. (e.g., Burgess Medical Group)"/>
+  </concept>
+  <concept>
+    <code value="practitioner"/>
+    <display value="Practitioner"/>
+    <definition value="Members (Patients) who are under the care of the practitioner specified by the value which references the Practitioner resource representing the practitioner. (e.g., Dr Leung)"/>
+  </concept>
+    <concept>
+    <code value="attributed-to"/>
+    <display value="Attributed to a specific Provider, Organization etc."/>
+    <definition value="Members (Patients) who are attributed to a specific Organization or Provider by the value which references the Practitioner or Organization resource (e.g., Neighborhood Hospitals or Dr Leung). This is different from the practitioner code which may be shared by patients for any reason beyond attribution such as PCP etc."/>
+  </concept>
+ </CodeSystem>

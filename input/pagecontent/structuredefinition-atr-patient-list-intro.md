@@ -17,7 +17,10 @@ Groups which have large number of members (for e.g > 100,000) end up consuming a
 
 	* All Group search operations or read operations should use the _summary=true parameter. This parameter will only return teh summary of the Group resource and does not include any members. This makes the operation light weight for clients and severs. 
 	
-	* Once the Group is received, the client can perform the atr-export operation on the Group resource which will create a NDJSON file for the Group itself. In this case the NDJSON file will only contain a single line with a large number of data based on the number of members present in the Group.
+	* Once the Group is received, the client can perform the davinci-data-export operation on the Group resource which will create a NDJSON file for the Group itself. In this case the NDJSON file will only contain a single line with a large number of data based on the number of members present in the Group.
 	
 	* NOTE: There is discussion on creating a new operation to page the Group resource based on the number of data elements. When this is made available, the IG will be revised to use the method for Group searches and reads without the _summary parameter. 
 
+** Using Sub Groups**
+
+A Group can contain other groups. This capability may be used by use cases where multiple characteristics have to be grouped into a composite group. For e.g if you want to create a group of patients attributed to an Organization (Say Org-AttributionList Group), which consists of a group of patients attributed to provider A (ProviderA-AttributionList) and Provider B (ProviderB-AttributionList). In this case the Org-AttributionList group may contain the sub-groups namely ProviderA-AttributionList and ProviderB-AttributionList. The existing DaVinci use cases do not require this level of complexity and hence it is not explicitly identifies as being required for DaVinci use cases.
