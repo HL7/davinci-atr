@@ -1,5 +1,5 @@
 {:.stu-note}
-This is new content for the STU 2 ballot. 
+This is new content for the STU 2 ballot.
 
 
 ### Introduction
@@ -23,3 +23,4 @@ The following combinations of parameters SHALL be supported by the server implem
 **APIs : Member Add :**
 
 POST [Base FHIR Url]/Group/[id]/$member-add
+

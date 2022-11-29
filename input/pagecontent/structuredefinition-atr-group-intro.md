@@ -1,3 +1,6 @@
+{:.stu-note}
+This is modified content for the STU 2 ballot where atr-group is derived from davinci-patient-list profile. 
+
 ### Introduction
 
 This profile represents an instance of Member Attribution List. The resource instance contain information related to members who are attributed to a specific individual provider or a provider organization. The instance may also contains information about the contract, settlement entity details. In addition, NPI and TIN of the consumer (provider) organization may be contained within the instance. Attribution information such as the attributed period, attributed provider is also contained within the group resource. Members may be added or removed from the member attribution list. Group.member has a cardinality of 0..* because  Groups may have zero members when they are initially created and members get added at a later point in time. The Group.member.inactive flag is used to indicate that the patient is no longer part of the Member Attribution List.
@@ -14,6 +17,7 @@ The Group instance is retrieved using search parameters outlined in the [Group d
 
 The retrieved Group resource instance which represents the Member Attribution List has member and other related resource references. In order to retrieve the complete Member Attribution List information including member, coverage, attributed provider information a Bulk API request is initiated on the retrieved Group resource. 
 
+
 **Handling Large Groups** 
 
 Groups which have large number of members (for e.g > 100,000) end up consuming a large number of resources on server, client and the network to retrieve the Group either using search mechanisms or read mechanisms. In order to limit the amount of data being returned by the server the following requirements are being levied.
@@ -24,3 +28,7 @@ Groups which have large number of members (for e.g > 100,000) end up consuming a
 	
 	* NOTE: There is discussion on creating a new operation to page the Group resource based on the number of data elements. When this is made available, the IG will be revised to use the method for Group searches and reads without the _summary parameter. 
 
+
+**Using Sub Groups**
+
+A Group can contain other groups. This capability may be used by use cases where multiple characteristics have to be grouped into a composite group. For e.g if you want to create a group of patients attributed to an Organization (Say Org-AttributionList Group), which consists of a group of patients attributed to provider A (ProviderA-AttributionList) and Provider B (ProviderB-AttributionList). In this case the Org-AttributionList group may contain the sub-groups namely ProviderA-AttributionList and ProviderB-AttributionList. The existing DaVinci use cases do not require this level of complexity and hence it is not explicitly identifies as being required for DaVinci use cases.

@@ -2,11 +2,11 @@
 
 The following is a list of all the changes from STU1 to STU2.
 
-#### New Additions
+#### New Additions for STU2
 
 1. [Addition of new scenario#2 (STU2 Workflow) user story for providers to create attribution lists in payers systems](usecases.html#member-attribution-list-exchange-for-scenario-2-stu2-workflow)
-2. [Added additional usage scenarios for Member Attribution List and Bulk Data Export in DPC, BCDA and Pdex initiatives](usecases.html#use-of-member-attribution-list-for-cms-data-at-point-of-care-dpc-use-case) 
-3. [Addition of a generalized DaVinci Data Export operation for enabling bulk data export across multiple use cases](OperationDefinition-davinci-data-export.html)
+2. Added additional usage scenarios for Member Attribution List and Bulk Data Export in DPC, BCDA and Pdex initiatives[Ticket #37764](usecases.html#use-of-member-attribution-list-for-cms-data-at-point-of-care-dpc-use-case) 
+3. Addition of a generalized DaVinci Data Export operation for enabling bulk data export across multiple use cases[Ticket #37764](OperationDefinition-davinci-data-export.html)
 4. [Addition of member-add operation](OperationDefinition-member-add.html)
 5. [Addition of member-remove operation](OperationDefinition-member-remove.html)
 6. [Added usage APIs for member-add and member-remove operations](spec.html#member-attribution-list-reconciliation-apis)
