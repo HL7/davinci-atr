@@ -55,6 +55,12 @@
   </dependsOn>
   
   <definition>
+   <resource>
+   	  <reference>
+        <reference value="SearchParameter/Group-characteristic-value-reference"/>
+      </reference>
+      <name value="Group Characteristic Value Reference Search Parameter"/>
+    </resource>
     <resource>
       <reference>
         <reference value="Group/davincipatientlistexample"/>

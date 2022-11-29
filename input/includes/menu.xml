@@ -55,7 +55,7 @@
         <a target="_blank" href="{{site.data.fhir.path}}index.html">FHIR R4 Spec <img src="external.png" style="text-align: baseline"/></a>
       </li>
       <li>
-        <a target="_blank" href="{{site.data.fhir.uscoreR4}}/index.html">US Core STU3 (FHIR R4 version)<img src="external.png" style="text-align: baseline"/></a>
+        <a target="_blank" href="{{site.data.fhir.ver.uscoreR4}}/index.html">US Core STU3 (FHIR R4 version)<img src="external.png" style="text-align: baseline"/></a>
       </li>
       <li>
         <a target="_blank" href="{{site.data.fhir.ver.bulkig}}/index.html">Bulk Data IG<img src="external.png" style="text-align: baseline"/></a>

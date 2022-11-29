@@ -1,0 +1,39 @@
+{
+    "resourceType": "SearchParameter",
+    "id": "Group-characteristic-value-reference",
+    "url": "http://hl7.org/fhir/us/davinci-atr/SearchParameter/Group-characteristic-value-reference",
+    "version": "4.0.1",
+    "name": "GroupCharacteristicValueReference",
+    "status": "active",
+    "experimental": false,
+    "date": "2022-11-14",
+    "publisher": "HL7 International - Financial Management",
+    "contact": [
+        {
+            "telecom": [
+                {
+                    "system": "url",
+                    "value": "http://www.hl7.org/Special/committees/fm"
+                }
+            ]
+        }
+    ],
+    "description": "Search a Group based on Characteristic.code and Characteristic.valueReference",
+    "code": "characteristic",
+    "base": [
+        "Group"
+    ],
+    "type": "composite",
+    "expression": "Group.characteristic",
+    "xpath": "f:Group/f:characteristic",
+    "xpathUsage": "normal",
+    "multipleOr": false,
+    "component" : [{
+        "definition" : "http://hl7.org/fhir/SearchParameter/Group-characteristic",
+        "expression" : "code"
+      },
+      {
+        "definition" : "http://hl7.org/fhir/SearchParameter/Group-characteristic-value",
+        "expression" : "value.as(Reference)"
+      }]
+}
