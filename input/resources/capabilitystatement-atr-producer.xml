@@ -34,8 +34,8 @@
       </p>
       <p>Implementations must meet the general security requirements documented in FHIR <a href="http://hl7.org/fhir/security.html">Security guidance</a>.</p>
       <p>In addition the Producer needs to meet the security requirements as outlined in the <a href="spec.html#smart-on-fhir-backend-services-authorization">Formal Specification - Security Section.</a></p>
-      <p>In cases where the Consumers create resources in Producer systems such as Groups (Attribution Lists), the Consumers SHOULD provide Provenance information using the X-Provenance Header as specified in 
-      <a href="http://hl7.org/fhir/provenance.html#header">Provenance Specification</a></p>
+      <p>In cases where the Consumers create resources in Producer systems such as Groups (Attribution Lists) and provide Provenance information using the X-Provenance Header as specified in 
+      <a href="http://hl7.org/fhir/provenance.html#header">Provenance Specification</a>, Producers SHOULD persist the Provenance information received.</p>
       <h3>Resource summary</h3>
       <div class="table-wrapper">
         <table class="grid">
