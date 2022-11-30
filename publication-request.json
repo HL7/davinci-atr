@@ -1,0 +1,10 @@
+{
+  "package-id" : "hl7.fhir.us.davinci-atr",
+  "version" : "2.0.0-ballot",
+  "path" : "http://hl7.org/fhir/us/davinci-atr/2.0.0-ballot",
+  "milestone" : "false",
+  "status" : "ballot",
+  "sequence" : "STU2 Release 1",
+  "desc" : "This release adds the generic patient lists, generic davinci bulk export and the ability for reconciling member attribution lists using member-add and member-remove operations.",
+  "changes" : "changes.html"
+}

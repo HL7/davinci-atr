@@ -2,7 +2,7 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas-r5/fhir-single.xsd">  
   <id value="davinci-atr"/>
   <url value="http://hl7.org/fhir/us/davinci-atr/ImplementationGuide/davinci-atr"/>
-  <version value="2.0.0"/>
+  <version value="2.0.0-ballot"/>
   <name value="MemberAttributionList"/>
   <title value="Da Vinci - Member Attribution (ATR) List"/>
   <status value="active"/>
@@ -232,7 +232,7 @@
     <!-- releaselabel should be the ballot status for HL7-published IGs. -->
     <parameter>
       <code value="releaselabel"/>
-      <value value="STU 2 Ballot"/>
+      <value value="STU 2.0.0"/>
     </parameter>
     <parameter>
       <code value="find-other-resources"/>

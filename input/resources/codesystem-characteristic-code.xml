@@ -38,7 +38,7 @@
     <definition value="Members (Patients) who are under the care of the care-team specified by the value which references the CareTeam resource representing the care-team. (e.g., Respiratory Therapy CareTeam, CareTeam blue , etc)"/>
   </concept>
   <concept>
-    <code value="Organization"/>
+    <code value="organization"/>
     <display value="Organization"/>
     <definition value="Members (Patients) whose care is at the organization specified by the value which references the Organization resource representing the organization. (e.g., Burgess Medical Group)"/>
   </concept>
