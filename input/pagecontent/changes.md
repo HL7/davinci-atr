@@ -15,7 +15,7 @@ The following is a list of all the changes from STU1 to STU2.
 9. Add CodeSystem and ValueSets for Characteristics.code for Davinci Patient List [Ticket #28806](ValueSet-davinci-group-characteristic.html)
 11. [Created Change Log.](changes.html)
 
-#### Changes to existing requirements
+#### Changes to existing IG
 
 1. [Use DaVinci Data Export instead of Bulk Data $export operation.](spec.html#requirements-for-implementation-of-the-davinci-data-export-operation)
 2. Add clarifications on APIs for DaVinci Data Export operation. [Ticket #36717](spec.html#requirements-for-implementation-of-the-davinci-data-export-operation)
@@ -27,6 +27,7 @@ The following is a list of all the changes from STU1 to STU2.
 8. Updated Examples to use proper code system for NPI [Ticket #34297]
 9. [Updated SMART on FHIR Guidance for authorization.](spec.html#smart-on-fhir-backend-services-authorization)
 10. [Updated Producer and Consumer capability statements to add X-Provenance Header support.](CapabilityStatement-atr-producer.html#rest-behavior)
+11. Updated FHIR Build template to use DaVinci template.
 
 
 
