@@ -13,7 +13,7 @@ The following is a list of all the changes from STU1 to STU2.
 7. [Addition of capability to create Groups, Patients, Practitioners by Consumer in the Producer system](CapabilityStatement-atr-producer.html#resource-summary)
 8. [Ability to provide provenance via X-Provenance-Header during POST and PUT operations for creation of data](CapabilityStatement-atr-producer.html#rest-behavior)
 9. Add CodeSystem and ValueSets for Characteristics.code for Davinci Patient List [Ticket #28806](ValueSet-davinci-group-characteristic.html)
-11. [Created Change Log.](changes.html)
+11. [Created Change Log](changes.html) and Publication Request for Ballot.
 
 #### Changes to existing IG
 
