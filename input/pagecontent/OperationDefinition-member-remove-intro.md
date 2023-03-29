@@ -1,10 +1,11 @@
 {:.stu-note}
-This is new content for the STU 2 ballot. 
+This is new content for the STU 2 ballot.
+
 
 ### Introduction
 
-This operation is used to add a member along with the attributed provider to the Member Attribution List.
-This allows the consumer (client) to add members to the Group during the reconciliation process.
+This operation is used to remove a member along with the attributed provider from the Member Attribution List.
+This allows the consumer (client) to remove members from the Group during the reconciliation process.
 
 
 **Implementation Requirements**
@@ -13,14 +14,13 @@ Implementers are advised to read [Data Model Requirements](spec.html#member-attr
 
 The following combinations of parameters SHALL be supported by the server implementing the operation.
 
-* MemberId only - (Removes all attributions for that Member) 
-* MemberId + ProviderNPI - (Removes all attributions for the combination of Member and Provider)
-* patientReference - (Removes all attributions for that Member) 
-* patientReference + providerReference - (Removes all attributions for the combination of Member and Provider)
-* patientReference + providerReference + coverageReference - (Removes the attribution for the combination of Member and Provider and Coverage resources)
+* MemberId + ProviderNPI - (Adds the member and the attributed provider to the Attribution List).
+* MemberId + ProviderNPI + attributionPeriod - (Adds the member, attributed provider and the attribution period to the Attribution List).
+* patientReference + providerReference - (Adds the member and the attributed provider to the Attribution List).
+* patientReference + providerReference + attributionPeriod - (Adds the member, attributed provider and the attribution period to the Attribution List). 
 
 
 **APIs : Member Add :**
 
-POST [Base FHIR Url]/Group/[id]/$member-remove
+POST [Base FHIR Url]/Group/[id]/$member-add
 
