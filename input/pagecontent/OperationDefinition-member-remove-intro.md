@@ -10,17 +10,16 @@ This allows the consumer (client) to remove members from the Group during the re
 
 **Implementation Requirements**
 
-Implementers are advised to read [Data Model Requirements](spec.html#member-attribution-list-data-model-requirements) to implement the Attribution list.
-
 The following combinations of parameters SHALL be supported by the server implementing the operation.
 
-* MemberId + ProviderNPI - (Adds the member and the attributed provider to the Attribution List).
-* MemberId + ProviderNPI + attributionPeriod - (Adds the member, attributed provider and the attribution period to the Attribution List).
-* patientReference + providerReference - (Adds the member and the attributed provider to the Attribution List).
-* patientReference + providerReference + attributionPeriod - (Adds the member, attributed provider and the attribution period to the Attribution List). 
+* MemberId only - (Removes all attributions for the Member specified by the MemberId) 
+* MemberId + ProviderNPI - (Removes all attributions for the combination of Member and Provider specified)
+* patientReference - (Removes all attributions for the Member) 
+* patientReference + providerReference - (Removes all attributions for the combination of Member and Provider specifeid)
+* patientReference + providerReference + coverageReference - (Removes the attribution for the combination of Member and Provider and Coverage resources)
 
 
-**APIs : Member Add :**
+**APIs : Member Remove :**
 
-POST [Base FHIR Url]/Group/[id]/$member-add
+POST [Base FHIR Url]/Group/[id]/$member-remove
 
