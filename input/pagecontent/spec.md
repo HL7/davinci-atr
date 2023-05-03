@@ -72,7 +72,7 @@ Producer systems SHALL support the reading and searching of Group resources per 
 
 Producer systems SHALL support ```Group,Patient,Coverage,Practitioner,Organization``` as resource types for the ```[base]/Group/[id]/$davinci-data-export?resourceTypes``` parameter for the exportType of ```hl7.fhir.us.davinci-atr```. 
 
-Producer systems SHOULD support ```Group, Patient, Related Person, Practitioner, PractitionerRole, Location, Organization, Coverage, Group``` resource types for the ```[base]/Group/[id]/$davinci-data-export?resourceTypes``` parameter for the exportType of ```hl7.fhir.us.davinci-atr```. 
+Producer systems SHOULD support ```Related Person, PractitionerRole, Location``` resource types for the ```[base]/Group/[id]/$davinci-data-export?resourceTypes``` parameter for the exportType of ```hl7.fhir.us.davinci-atr```. 
 
 Producer systems SHALL reject requests that do not contain the minimum resource types of ```Group,Patient,Coverage,Practitioner,Organization``` as resource types for the ```[base]/Group/[id]/$davinci-data-export?resourceTypes``` parameter for the exportType of ```hl7.fhir.us.davinci-atr```.
 
@@ -205,7 +205,7 @@ The section outlines specific requirements that need to be followed in creating 
 
 * Producers SHOULD exchange Provider NPI and TIN only as needed and when the NPIs and TINs belong to providers associated with the receiving organization.
 
-* Consumers SHOULD NOT be sharing the NPI and TIN information amongst providers unless required for PTO.
+* Consumers SHOULD NOT be sharing the NPI and TIN information amongst providers unless required for transactions related to Payments, Treatment and Operations (PTO).
 
 
 ### Member Attribution List Exchange Interactions Details and APIs
