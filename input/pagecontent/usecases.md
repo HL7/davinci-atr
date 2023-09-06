@@ -118,13 +118,13 @@ Provider and a Payer enter into a contract with specific terms and conditions an
 In this step the Payer informs the Provider about the list and makes it available to the Provider. The specific mechanism of how this exchange happens varies based on Payers and Providers. This implementation guide will specify standards for this interaction.
 
 **3a. Provider (Consumer) informs Payer (Payer) about changes **<br/>
-Once the Provider receives the list in Step 2, Provider reconciles the list with internal lists and data and in case changes are needed, notifies the Payer about specific changes. These changes could be to add additional patients, remove patients from the list etc. The specific mechanism of how this exchange happens varies based on Payers and Providers. Future versions of this implementation guide will specify standards for requesting and notifying of changes.
+Once the Provider receives the list in Step 2, Provider reconciles the list with internal lists and data and in case changes are needed, notifies the Payer about specific changes. These changes could be to add additional patients, remove patients from the list etc. The specific mechanism of how this exchange happens varies based on Payers and Providers. 
 If the Consumer has no changes, then Step 3a would not be executed and the Consumer has accepted the list for usage. 
 
 Note: Steps 2 and 3a may be repeated as many times as needed until the Producer and Consumer agree upon the member attribution list.
 
 **3b. Provider (Consumer) informs Payer (Producer) about no changes **<br/>
-Once the Provider receives the list in Step 2, Provider reconciles the list with internal lists and data and in case no changes are needed, notifies the Payer about finalizing the list. The specific mechanism of how this exchange happens varies based on Payers and Providers. Future versions of this implementation guide will specify standards for notifying of changes and no changes.
+Once the Provider receives the list in Step 2, Provider reconciles the list with internal lists and data and in case no changes are needed, notifies the Payer about finalizing the list. The specific mechanism of how this exchange happens varies based on Payers and Providers. 
 
 **4. Payer (Producer) makes list available to Provider (Consumer) at regular intervals **<br/>
 Once the list is finalized, the Payer and Provider agree to exchange the list periodically as required. The specific mechanism of how this exchange happens varies based on Payers and Providers. This implementation guide will specify standards for this interaction.
@@ -155,6 +155,7 @@ Once the Payer receives the list in Step 2, the Payer may reconcile the list int
 
 **4. Provider (Consumer) reconciles the list and requests additional changes to the list by adding and removing members **<br/>
 Providers reconcile the list internally and identify that there may be members who need to be added and members who need to be removed from the list. In order to do so, the Provider uses the member-add and member-remove APIs to add and remove members from the list.
+Payers (Producrers) can decide if the members need to be added or removed based on the request.
 
 **NOTE** Steps 3 and 4 can be repeated as many times as needed until the Producer and the Consumer agree upon a final list.
 

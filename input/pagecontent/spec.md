@@ -365,13 +365,24 @@ The Consumer knows the MemberId and the AttributedProvider NPI or the references
 
 **API: Add a member to the Member Attribution List**
 
+The following combinations of parameters **SHALL** be supported by the server implementing the operation.
+
+* MemberId + ProviderNPI - (Adds the member and the attributed provider to the Attribution List).
+* MemberId + ProviderNPI + attributionPeriod - (Adds the member, attributed provider and the attribution period to the Attribution List).
+* * patientReference + providerReference - (Adds the member and the attributed provider to the Attribution List).
+* patientReference + providerReference + attributionPeriod - (Adds the member, attributed provider and the attribution period to the Attribution List).
+
+
+* The Producers **MAY** decide to add the member based on the information provided and any additional information that is present in the Producer system. 
+* If the Producer's adjudication process results in the member not being added, the Producer **SHALL** return an OperationOutcome with a message indicating the reason why the addition was not performed.
+
+
 ```
 
 POST [Base FHIR URL]/Group/[id]/$member-add
 
-The body will contain the parameters resources with 
-MemberId + ProviderNPI  + (optional Attribution Period)
-patientReference + providerReference + (optional Attribution Period) 
+The body will contain the parameters resources with combinations specified above.
+
 
 ```
 
@@ -379,7 +390,8 @@ patientReference + providerReference + (optional Attribution Period)
 **Expected Results:**
 
 * Successful addition of the Patient to the Member Attribution List if the member and the provider is found in the system. 
-* An OperationOutcome if the Patient to be added is not found in the system. 
+* An OperationOutcome if the Patient to be added is not found in the system.
+* An OperationOutcome if the Producer does not add the member to the attribution list.
 
 
 #### Consumer requests removal of a member to the Member Attribution List 
@@ -393,13 +405,25 @@ The Consumer knows the MemberId and the AttributedProvider NPI or the references
 
 **API: Remove a member to the Member Attribution List**
 
+The following combinations of parameters **SHALL** be supported by the server implementing the operation.
+
+* MemberId only - (Removes all attributions for the Member specified by the MemberId)
+* MemberId + ProviderNPI - (Removes all attributions for the combination of Member and Provider specified)
+* patientReference - (Removes all attributions for the Member)
+* patientReference + providerReference - (Removes all attributions for the combination of Member and Provider specifeid)
+* patientReference + providerReference + coverageReference - (Removes the attribution for the combination of Member and Provider and Coverage resources)
+
+* The Producers **MAY** decide to remove the member based on the information provided and any additional information that is present in the Producer system. 
+* If the Producer's adjudication process results in the member not being removed, the Producer **SHALL** return an OperationOutcome with a message indicating the reason the removal was not performed.
+
+
+
 ```
 
 POST [Base FHIR URL]/Group/[id]/$member-remove
 
-The body will contain the parameters resources with 
-MemberId + ProviderNPI  + (optional Attribution Period)
-patientReference + providerReference + (optional Attribution Period) 
+The body will contain the parameters resources with combinations specified above.
+ 
 
 ```
 
@@ -407,6 +431,7 @@ patientReference + providerReference + (optional Attribution Period)
 **Expected Results:**
 
 * Successful removal of the Patient from the Member Attribution List if the member and the provider is found in the system. 
-* An OperationOutcome if the Patient to be removed is not found in the system or the member attribution list.
+* An OperationOutcome if the Patient to be removed is not found in the system or the member attribution list. 
+* An OperationOutcome is returned if the Producer decides not to remove the member.
 
 </div>
