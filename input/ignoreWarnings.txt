@@ -1,7 +1,4 @@
 == Suppressed Messages ==
 
-# Ignore Profile Validation Messages and Warnings.
-
-# Since Coverage and RelatedPerson profiles did not exist in US Core 3.1.1 on which the davinci-atr depends, we are suppressing the messages below. The reason for depending on the US Core 3.1.1 and Bulk Data IG 1.0.1 is to ensure compatibility with the US regulatory requirements.
-US FHIR Usage rules require that all profiles on Coverage derive from the core US profile
-US FHIR Usage rules require that all profiles on RelatedPerson derive from the core US profile
+# This errors have to be ignored because of the way the publisher tooling enables the dependency of the Backport Subsciptions IG for IGs based on FHIR R4.0.1
+The link 'http://hl7.org/fhir/R4B/extensibility.html#modifierExtension' for "definition of modifier extensions" cannot be resolved
