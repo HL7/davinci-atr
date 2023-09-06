@@ -25,7 +25,7 @@
     <use value="in"/>
     <min value="0"/>
     <max value="1"/>
-    <documentation value="The MemberId of the member to be added to the Group."/>
+    <documentation value="The MemberId of the member that needs to be added to the Group."/>
     <type value="Identifier"/>
   </parameter>
   <parameter>
@@ -33,7 +33,7 @@
     <use value="in"/>
     <min value="0"/>
     <max value="1"/>
-    <documentation value="The Provider to whom the member is being attributed to."/>
+    <documentation value="The Attributed Provider along with the MemberId who needs to be added to the Group."/>
     <type value="Identifier"/>
   </parameter>
   <parameter>
@@ -49,7 +49,7 @@
     <use value="in"/>
     <min value="0"/>
     <max value="1"/>
-    <documentation value="The reference to the Provider to whom the member is being attributed to."/>
+    <documentation value="The reference to the Attributed Provider along with the patient reference that needs to be added to the Group."/>
     <type value="Reference"/>
   </parameter>
   <parameter>
