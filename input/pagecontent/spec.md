@@ -354,6 +354,39 @@ GET <File URL for each Resource identified in Member Attribution List Export Req
 
 ### Member Attribution List Reconciliation APIs
 
+The following are the Member Attribution List Reconciliation APIs and their purpose
+
+* [member-add](OperationDefinition-member-add.html) - Used to request addition a member and their attributed provider to an Attribution List.
+* [member-remove](OperationDefinition-member-remove.html) - Used to request the removal of a member and their attributions from an Attribution List.
+* [confirm-attribution-list](OperationDefinition-confirm-attribution-list.html) - Used to confirm that the reconciliation process is complete and there are no pending changes from the Consumer.
+* [attribution-status](OperationDefinition-attribution-status.html) - Used to request attribution status for a specific member.
+
+#### Example Scenarios demonstrating the use of reconciliation APIs
+
+**Scenario 1** : A Consumer wants to add a specific patient to the Attribution List. 
+
+The Consumer determines the patient's memberId and the NPI of the attributed provider and uses the [member-add](OperationDefinition-member-add.html) operation on the specific Group instance to add the member.
+
+**Scenario 2** : A Consumer wants to remove a specific patient and their attributions from the Attribution List. 
+
+The Consumer determines the patient's memberId and uses the [member-remove](OperationDefinition-member-remove.html) operation on the specific Group instance to remove the member.
+
+**Scenario 3** : A Consumer wants to update the attribution associated with a specific patient 
+
+Step 1: The Consumer determines the patient's memberId and uses the [member-remove](OperationDefinition-member-remove.html) operation on the specific Group instance to remove the member.
+
+Step 2: Once the attributions are removed in Step 1, The Consumer determines the patient's memberId and the NPI of the attributed provider and uses the [member-add](OperationDefinition-member-add.html) operation on the specific Group instance to add the member.
+
+
+**Scenario 4** : A Consumer wants to confirm that the Attribution List is final
+
+The Consumer uses the [confirm-attribution-list](OperationDefinition-confirm-attribution-list.html) operation on the specific Group instance to indicate to the Producer that the list is final and no more changes will be requested by the Consumer.
+
+**Scenario 5** : A Consumer wants to determine the status of attribution for a specific member
+
+The Consumer determines the patient's memberId and uses the [attribution-status](OperationDefinition-attribution-status.html) operation on the specific Group instance to retrieve the attribution status of the patient.
+
+
 #### Consumer requests addition of a member to the Member Attribution List 
 
 This interaction outlines the APIs for a Consumer (for example, Provider organization) to add a member to the Member Attribution List.
