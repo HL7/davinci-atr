@@ -1,7 +1,7 @@
 
 ### Introduction
 
-This operation is used to retrieve the attribution status fr a specific member. 
+This operation is used to retrieve the attribution status for a specific member. 
 This allows the consumer (client) to retrieve member attribution status as part of work flows.
 
 

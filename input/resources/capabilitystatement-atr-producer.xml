@@ -201,6 +201,9 @@
           <a href="OperationDefinition-member-remove.html">Member Remove</a>
         </li>
         <li>
+          <a href="OperationDefinition-attribution-status.html">Retrieve Attribution Status for a Member</a>
+        </li>
+        <li>
           <a href="OperationDefinition-confirm-attribution-list.html">Confirm Attribution List</a>
         </li>
       </ul>

@@ -398,7 +398,7 @@ The body will contain the parameters resources with combinations specified above
 
 #### Consumer requests removal of a member to the Member Attribution List 
 
-This interaction outlines the APIs for a Consumer (for example, Provider organization) to remove a member from the Member Attribution List.
+This interaction outlines the APIs for a Consumer (for example, Provider organization) to remove a member from the Member Attribution List. The semantics of the member-remove operation based on the attribution list status is outlined at [Member Remove semantics.](OperationDefinition-member-remove.html)
 
 **Precondition:**
 
