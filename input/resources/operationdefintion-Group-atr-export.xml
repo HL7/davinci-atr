@@ -28,7 +28,7 @@
     <max value="*"/>
     <documentation value="The Members whose data has to be exported, when omitted the data about all members in the Group should  be exported. The references are 
     pointing to resources in the FHIR Server supporting the davinci-data-export operation. The server will ignore invalid references to patients or if the patients are not part of the Group.
-    For each member that is invalid or ignored an operation outcome has to be returned detailing the specific error.This parameter is exactly the same parameter defined in the latest Bulk Data Exprot operation."/>
+    For each member that is invalid or ignored an operation outcome has to be returned detailing the specific error.This parameter is exactly the same parameter defined in the latest Bulk Data Export operation."/>
     <type value="Reference"/>
   </parameter>
   <parameter>
@@ -45,7 +45,7 @@
     <use value="in"/>
     <min value="0"/>
     <max value="1"/>
-    <documentation value="Resources updated after the specified time will be included in the response. When omitted, the Server is free to export all data for the members. This parameter is exactly the same parameter defined in the Bulk Data Exprot operation."/>
+    <documentation value="Resources updated after the specified time will be included in the response. When omitted, the Server is free to export all data for the members. This parameter is exactly the same parameter defined in the Bulk Data Export operation."/>
     <type value="instant"/>
   </parameter>
   <parameter>
@@ -62,7 +62,7 @@
     <use value="in"/>
     <min value="0"/>
     <max value="1"/>
-    <documentation value="The resources that need to be extracted for the patients. This is a string of comma-delimited FHIR resource types. This is the same parameter defined in the Bulk Data Export operation specification. This parameter is exactly the same parameter defined in the Bulk Data Exprot operation."/>
+    <documentation value="The resources that need to be extracted for the patients. This is a string of comma-delimited FHIR resource types. This is the same parameter defined in the Bulk Data Export operation specification. This parameter is exactly the same parameter defined in the Bulk Data Export operation."/>
     <type value="string"/>
   </parameter>
   <parameter>
@@ -70,7 +70,7 @@
     <use value="in"/>
     <min value="0"/>
     <max value="1"/>
-    <documentation value="The list of Queries that need to be executed for the resources to be exported. This will allow the consumer to limit the data being exported. This is a string of comma delimited FHIR REST queries. This parameter is exactly the same parameter defined in the latest Bulk Data Exprot operation."/>
+    <documentation value="The list of Queries that need to be executed for the resources to be exported. This will allow the consumer to limit the data being exported. This is a string of comma delimited FHIR REST queries. This parameter is exactly the same parameter defined in the latest Bulk Data Export operation."/>
     <type value="string"/>
   </parameter>
 </OperationDefinition>
