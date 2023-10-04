@@ -127,10 +127,10 @@ Note: Steps 2 and 3a may be repeated as many times as needed until the Producer 
 Once the Provider receives the list in Step 2, Provider reconciles the list with internal lists and data and in case no changes are needed, notifies the Payer about finalizing the list. The specific mechanism of how this exchange happens varies based on Payers and Providers. 
 
 **4. Payer (Producer) makes list available to Provider (Consumer) **<br/>
-Once the list is finalized, the Payer and Provider agree to exchange the list periodically as required. The specific mechanism of how this exchange happens varies based on Payers and Providers. This implementation guide will specify standards for this interaction.
+Once the list is finalized, the Payer and Provider agree to exchange the list periodically as required. The specific mechanism of how this exchange happens varies based on Payers and Providers. This is accomplished by using the APIs specified by this implementation guide.
 
 **NOTE:** The above workflow is the normal scenario. In addition to the above workflow the Producer may change the list periodically based on additional data. As this happens the Producer may decide to redo Steps 2 through 4. In this version of the IG, there are no notification mechanisms created for a Producer to notify a consumer when the list changes. However there could be an agreed upon cadence between the Producer and the Consumer on how often the list is exchanged. 
-Every change that is made to the list may be available to the Consumer via APIs in real-time or at specified intervals. For example, if it is a monthly list, then as changes get made the updated list will be exchanged on a monthly basis. The change reconciliation process is out of scope for the current version of the IG as outlined in the above steps.
+Every change that is made to the list may be available to the Consumer via APIs in real-time or at specified intervals. For example, if it is a monthly list, then as changes get made the updated list will be exchanged on a monthly basis. The change reconciliation process is out of scope for the current version of the IG as outlined in the above steps. The Producer can make the attribution list retrieval APIs continuously and allow Consumers can retrieve the attribution list data at their convenience. 
 
 #### Considerations
 
