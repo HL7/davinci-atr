@@ -159,7 +159,7 @@ Payers (Producrers) can decide if the members need to be added or removed based 
 
 **NOTE** Steps 3 and 4 can be repeated as many times as needed until the Producer and the Consumer agree upon a final list.
 
-**5. Payer (Producer) and Provider (Consumer) agree upon a member attribution list for a specific use case **<br/>
-Providers and Payers agree upon a member attribution list and use it for different use cases as needed. 
+**5. Payer (Producer) and Provider (Consumer) agree upon a member attribution list for a specific use case when the Consumer indicates there are no more changes to be made **<br/>
+Consumer invokes the confirm-attribution-list operation to indicate there are no further changes to be made to the attribution list. Providers and Payers agree upon the finalized member attribution list for various use cases.
 
 </div>

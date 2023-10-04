@@ -11,11 +11,11 @@
   <url value="http://hl7.org/fhir/us/davinci-atr/CodeSystem/atr-changetype"/>
   <version value="1.0.0"/>
   <name value="DaVinciAtrChangeTypeCodes"/>
-  <title value="Davinci ATR Change Type Codes"/>
+  <title value="DaVinci ATR Change Type Codes"/>
   <status value="active"/>
   <experimental value="true"/>
   <date value="2020-09-06"/>
-  <description value="The Da Vinci Change Type CodeSystem is a &#39;starter set&#39; of codes supported for identifying changes in member attribution list."/>
+  <description value="The DaVinci Change Type CodeSystem is a &#39;starter set&#39; of codes supported for identifying changes in member attribution list."/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>

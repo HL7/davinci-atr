@@ -362,6 +362,7 @@ This interaction outlines the APIs for a Consumer (for example, Provider organiz
 
 In order to add a member to the Member Attribution List, the Consumer should have successfully discovered the attribution list.
 The Consumer knows the MemberId and the AttributedProvider NPI or the references to the Member and the Attributed Provider in the Producer system. 
+The attribution list status has to be "draft" for the reconciliation API of member-add to be allowed. 
 
 **API: Add a member to the Member Attribution List**
 
@@ -392,6 +393,7 @@ The body will contain the parameters resources with combinations specified above
 * Successful addition of the Patient to the Member Attribution List if the member and the provider is found in the system. 
 * An OperationOutcome if the Patient to be added is not found in the system.
 * An OperationOutcome if the Producer does not add the member to the attribution list.
+* An OperationOutcome if the Attribution List is in a status of final.
 
 
 #### Consumer requests removal of a member to the Member Attribution List 
@@ -402,6 +404,7 @@ This interaction outlines the APIs for a Consumer (for example, Provider organiz
 
 In order to remove a member to the Member Attribution List, the Consumer should have successfully discovered the attribution list.
 The Consumer knows the MemberId and the AttributedProvider NPI or the references to the Member and the Attributed Provider in the Producer system. 
+The attribution list status has to be "draft" for the reconciliation API to be allowed.
 
 **API: Remove a member to the Member Attribution List**
 
@@ -433,5 +436,42 @@ The body will contain the parameters resources with combinations specified above
 * Successful removal of the Patient from the Member Attribution List if the member and the provider is found in the system. 
 * An OperationOutcome if the Patient to be removed is not found in the system or the member attribution list. 
 * An OperationOutcome is returned if the Producer decides not to remove the member.
+* An OperationOutcome if the Attribution List is in a status of final.
+
+
+#### Consumer indicates to the Producer that the Consumer is done with the reconciliation  
+
+This interaction outlines the APIs for a Consumer to indicate to the Producer that the Consumer has finished the reconciliation process and has no pending changes. 
+
+**Precondition:**
+
+The Consumer and the Producer are already exchanging a specific Member Attribution List in draft form.
+
+**API: Confirm Attribution List**
+
+The operation does not require any parameters.
+
+* The Producer **SHALL** return a status of 201 Accepted when the API is invoked. 
+
+* The Producers **SHOULD** change the attribution list status to final from draft.
+
+* Prior to changing the attribution list status to final, the Producer **MAY** make changes to the attribution list based on internal business processes and information.
+
+
+```
+
+POST [Base FHIR URL]/Group/[id]/$confirm-attribution-list
+
+There are no parameters for the operation.
+ 
+
+```
+
+
+**Expected Results:**
+
+* Successful acceptance of the operation with a HTTP status code of 201 Accepted. 
+* Change the list status to final eventually by the Producer. 
+
 
 </div>

@@ -21,7 +21,7 @@
             <value value="http://hl7.org/Special/committees/fm"/>
         </telecom>
     </contact>
-    <description value="Specifies the Identifier of the entity that is going to be using the group."/>
+    <description value="Specifies the Identifier of the entity that is going to be using the Group Resource."/>
     <jurisdiction>
         <coding>
             <system value="urn:iso:std:iso:3166"/>
