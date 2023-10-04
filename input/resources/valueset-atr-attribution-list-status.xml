@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="atr-attribution-list-status"/> 
+  <meta>
+    <versionId value="1"/>
+    <lastUpdated value="2022-08-04T15:52:33.158+00:00"/>
+    <source value="#3Te0anOrvocKgcow"/>
+    <profile
+             value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+  </meta>
+  <url value="http://hl7.org/fhir/us/davinci-atr/ValueSet/atr-attribution-list-status"/>
+  <version value="1.0.0"/>
+  <name value="DaVinciAttributionListStatus"/>
+  <title value="DaVinci Attribution List Status"/>
+  <status value="active"/>
+  <experimental value="true"/>
+  <date value="2020-09-06"/>
+  <publisher value="HL7 Financial Management"/>
+	<contact>
+		<telecom>
+			<system value="other"/>
+			<value value="http://hl7.org/fhir"/>
+		</telecom>
+	</contact>
+  <description value="The DaVinci Attribution List Status CodeSystem is a &#39;starter set&#39; of codes supported for identifying the status of the member attribution list."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="http://hl7.org/fhir/us/davinci-atr/CodeSystem/atr-attribution-list-status"/>
+    </include>
+  </compose>
+</ValueSet>
+

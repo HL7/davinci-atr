@@ -107,7 +107,7 @@ Changes in attribution list data.
 
 ### Member Attribution List Exchange for Scenario #1
 
-{% include img.html img="workflow.svg" caption="Figure 2: Member Attribution List Exchange Workflow for Scenario #1" %}
+{% include img.html img="workflow.jpg" caption="Figure 2: Member Attribution List Exchange Workflow for Scenario #1" %}
 
 The following is a brief description of the workflow steps with a Payer representing the Producer and a Provider Organization representing the Consumer. 
 
@@ -126,11 +126,11 @@ Note: Steps 2 and 3a may be repeated as many times as needed until the Producer 
 **3b. Provider (Consumer) informs Payer (Producer) about no changes **<br/>
 Once the Provider receives the list in Step 2, Provider reconciles the list with internal lists and data and in case no changes are needed, notifies the Payer about finalizing the list. The specific mechanism of how this exchange happens varies based on Payers and Providers. 
 
-**4. Payer (Producer) makes list available to Provider (Consumer) at regular intervals **<br/>
+**4. Payer (Producer) makes list available to Provider (Consumer) **<br/>
 Once the list is finalized, the Payer and Provider agree to exchange the list periodically as required. The specific mechanism of how this exchange happens varies based on Payers and Providers. This implementation guide will specify standards for this interaction.
 
 **NOTE:** The above workflow is the normal scenario. In addition to the above workflow the Producer may change the list periodically based on additional data. As this happens the Producer may decide to redo Steps 2 through 4. In this version of the IG, there are no notification mechanisms created for a Producer to notify a consumer when the list changes. However there could be an agreed upon cadence between the Producer and the Consumer on how often the list is exchanged. 
-Every change that is made to the list may be available to the Consumer based on the cadence. In other words if it is a monthly list, then as changes get made the updated list will be exchanged on a monthly basis. The change reconciliation process is out of scope for the current version of the IG as outlined in the above steps.
+Every change that is made to the list may be available to the Consumer via APIs in real-time or at specified intervals. For example, if it is a monthly list, then as changes get made the updated list will be exchanged on a monthly basis. The change reconciliation process is out of scope for the current version of the IG as outlined in the above steps.
 
 #### Considerations
 
