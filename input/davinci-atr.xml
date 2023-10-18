@@ -77,6 +77,14 @@
     </resource>
     <resource>
       <reference>
+        <reference value="Subscription/atr-list-change-subscription-example"/>
+      </reference>
+      <name value="Member Attribution List Subscription example"/>
+      <description value="An example showing a Subscription to be created by a Consumer on Group instance identified by MyGroup1234."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-list-change-subscription"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="Group/fullexample"/>
       </reference>
       <name value="Group Member Attribution List example"/>
@@ -213,6 +221,11 @@
       <page>
         <nameUrl value="spec.html"/>
         <title value="Detailed Specification"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="subscription.html"/>
+        <title value="Subscription Requirements"/>
         <generation value="markdown"/>
       </page>
       <page>

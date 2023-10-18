@@ -183,6 +183,26 @@
               <td/>
               <td/>
             </tr>
+            <tr>
+              <th>Subscription (<a href="StructureDefinition-atr-list-change-subscription.html">Profile</a>)</th>
+              <td>
+              </td>
+              <td>
+              </td>
+              <td>
+              </td>
+              <td>
+              </td>
+              <td/>
+              <td>
+                <a title="Allows creation of a Subscription" href="#Subscription-create">SHOULD</a>
+              </td>
+              <td>
+              	<a title="Allows updating of a Subscription" href="#Subscription-update">SHOULD</a>
+              </td>
+              <td>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -609,6 +629,44 @@
         </table>
       </div>
       
+      <h3>
+        <a href="{{site.data.fhir.path}}subscription.html">Subscription</a>
+      </h3>
+      <p>Profile: <a href="StructureDefinition-atr-list-change-subscription.html">http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-list-change-subscription</a>
+      </p>
+      <h4>Interactions</h4>
+      <div class="table-wrapper">
+        <table class="list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                <a name="Subscription-create"> </a>
+                <span>create</span>
+              </th>
+              <td>
+                <p>Allows creation of a Subscription</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a name="Subscription-update"> </a>
+                <span>update</span>
+              </th>
+              <td>
+                <p>Allows updates to a Subscription</p>
+              </td>
+            </tr>
+                 
+          </tbody>
+        </table>
+      </div>
+      
     </div>
   </text>
   
@@ -927,6 +985,24 @@
         </extension>
         <code value="history-instance"/>
         <documentation value="Allows review of changes to a RelatedPerson Instance over time"/>
+      </interaction>
+    </resource>
+    <resource>
+      <type value="Subscription"/>
+      <supportedProfile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-list-change-subscription"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="create"/>
+        <documentation value="Allows creation of a specific Subscription Resource"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="update"/>
+        <documentation value="Allows update to a Subscription instance"/>
       </interaction>
     </resource>
   </rest>

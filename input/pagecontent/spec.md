@@ -507,4 +507,10 @@ There are no parameters for the operation.
 * Change the list status to final eventually by the Producer. 
 
 
+#### Use of Subscriptions for notification of changes between Producer and Consumer
+
+The requirements and mechanisms to use Subscriptions for notifications is outlined in [Subscriptions Requirements](subscription.html).
+
+ 
+
 </div>
