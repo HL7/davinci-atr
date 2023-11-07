@@ -42,7 +42,7 @@
         <element id="Extension">
             <path value="Extension"/>
             <short value="ATR Any Resource Extension"/>
-            <definition value="Specifies a resource that are associated with the member of the Group."/>
+            <definition value="Specifies a resource that is associated with the member of the Group."/>
             <min value="0"/>
             <max value="1"/>
         </element>

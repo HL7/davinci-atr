@@ -11,7 +11,7 @@
   <url value="http://hl7.org/fhir/us/davinci-atr/CodeSystem/davinci-group-characteristic-codes"/>
   <version value="1.0.0"/>
   <name value="DaVinciGroupCharacteristicCodes"/>
-  <title value="Davinci Group Charactersitic Codes"/>
+  <title value="Davinci Group Characteristic Codes"/>
   <status value="active"/>
   <experimental value="true"/>
   <date value="2022-12-06"/>

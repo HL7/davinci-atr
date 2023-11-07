@@ -28,14 +28,14 @@
         </table>
       </div>
       <h2>REST  behavior</h2>
-      <p>The primary focus of the Producer is to potentially create and manage the member attribution list and publish the member attribution list so that Consumers can download the member attribution list which is necessary for the implementation of other DaVinci use cases.</p>
+      <p>The primary focus of the Producer is to potentially create and manage the Member Attribution List and publish the Member Attribution List so that Consumers can download the Member Attribution List which is necessary for the implementation of other DaVinci use cases.</p>
       <p>
         <b>Security:</b>
       </p>
-      <p>Implementations must meet the general security requirements documented in FHIR <a href="http://hl7.org/fhir/security.html">Security guidance</a>.</p>
-      <p>In addition the Producer needs to meet the security requirements as outlined in the <a href="spec.html#smart-on-fhir-backend-services-authorization">Formal Specification - Security Section.</a></p>
+      <p>Implementations must meet the general security requirements documented in the FHIR <a href="http://hl7.org/fhir/security.html">Security guidance</a>.</p>
+      <p>In addition the Producer **SHOULD** meet the security requirements as outlined in the <a href="spec.html#smart-on-fhir-backend-services-authorization">Formal Specification - Security Section.</a></p>
       <p>In cases where the Consumers create resources in Producer systems such as Groups (Attribution Lists) and provide Provenance information using the X-Provenance Header as specified in 
-      <a href="http://hl7.org/fhir/provenance.html#header">Provenance Specification</a>, Producers SHOULD persist the Provenance information received.</p>
+      <a href="http://hl7.org/fhir/provenance.html#header">Provenance Specification</a>, Producers **SHOULD** persist the Provenance information received.</p>
       <h3>Resource summary</h3>
       <div class="table-wrapper">
         <table class="grid">
@@ -344,7 +344,7 @@
             <tr>
               <th>identifier</th>
               <td>token</td>
-              <td>Search using identifiers which can be Consumer NPI, Consumer TIN, Settlement Entity Identifier, Contract Identifier. Combinations of AND/OR logic for the different identifiers are allowed according to the FHIR specification.</td>
+              <td>Search using identifiers which can be the Consumer NPI, Consumer TIN, Settlement Entity Identifier, Contract Identifier. Combinations of AND/OR logic for the different identifiers are allowed according to the FHIR specification.</td>
             </tr>
             <tr>
               <th>identifier:of-type</th>

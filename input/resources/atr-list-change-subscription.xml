@@ -40,6 +40,7 @@
             <short value="Member Attribution List Change Subscription Topic URL"/>
             <definition value="Defines a Member Attribution List Change Subscription Topic."/>
             <patternString value="http://hl7.org/fhir/us/davinci-atr/SubscriptionTopic/atr-list-change"/>
+            <mustSupport value="true"/>
         </element>
         <element id="Subscription.criteria.extension:filterCriteria">
             <path value="Subscription.criteria.extension"/>
@@ -49,6 +50,7 @@
      		<type>
 		        <code value="Extension"/>
 		    </type>
+		    <mustSupport value="true"/>
         </element>
         <element id="Subscription.criteria.extension:filterCriteria.url">
             <path value="Subscription.criteria.extension.url"/>
@@ -58,6 +60,7 @@
 		        <code value="uri"/>
 		    </type>
 		    <fixedUri value="http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-filter-criteria"/>
+		    <mustSupport value="true"/>
         </element>
         <element id="Subscription.criteria.extension:filterCriteria.value[x]">
             <path value="Subscription.criteria.extension.value[x]"/>
@@ -66,6 +69,7 @@
      		<type>
 		        <code value="string"/>
 		    </type>
+		    <mustSupport value="true"/>
         </element>
         <element id="Subscription.channel.type">
             <path value="Subscription.channel.type"/>
@@ -75,6 +79,7 @@
 		        <code value="code"/>
 		    </type>
 		    <fixedCode value="rest-hook"/>
+		    <mustSupport value="true"/>
         </element>
     </differential>
 </StructureDefinition>

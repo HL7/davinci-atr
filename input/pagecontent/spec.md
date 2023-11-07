@@ -1,4 +1,4 @@
-This section of the implementation guide defines the specific conformance requirements for systems wishing to conform to this Member Attribution List  implementation guide.  The bulk of it focuses on the implementation of  the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/index.html) to meet attribution list use-cases.  It also describes the use of [SMART on FHIR Backend Services Authorization]({{site.data.fhir.ver.smartapplaunch}}/index.html) and provides guidance on privacy, security and other implementation requirements.
+This section of the implementation guide defines the specific conformance requirements for systems wishing to conform to this Member Attribution List  implementation guide.  The bulk of it focuses on the implementation of  the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/index.html) to meet Member Attribution List use-cases.  It also describes the use of [SMART on FHIR Backend Services Authorization]({{site.data.fhir.ver.smartapplaunch}}/index.html) and provides guidance on privacy, security and other implementation requirements.
 
 
 ### Context
@@ -8,7 +8,7 @@ Before reading this formal specification, implementers should first familiarize 
 
 * The [Use Cases & Overview](usecases.html) page provides context for what this formal specification is trying to accomplish and will give a sense of both the business context and general process flow enabled by the formal specification below.
 
-* The [Technical Background](background.html) page provides information about the underlying specifications and indicates what portions of them should be read and understood to have necessary foundation to understand the constraints and usage guidance described here.
+* The [Technical Background](background.html) page provides information about the underlying specifications and indicates what portions of them should be read and understood to have the necessary foundation to understand the constraints and usage guidance described here.
 
 
 #### Conventions
@@ -18,7 +18,7 @@ This implementation guide uses specific terminology to flag statements that have
 
 * **SHOULD** indicates behaviors that are strongly recommended (and which may result in interoperability issues or sub-optimal behavior if not adhered to), but which do not, for this version of the specification, affect the determination of specification conformance.
 
-* **MAY** describes optional behaviors that are free to consider but where the is no recommendation for or against adoption.
+* **MAY** describes optional behaviors that are free to consider but where there is no recommendation for or against adoption.
 
 
 #### Systems
@@ -27,7 +27,7 @@ This implementation guide sets expectations for two types of systems:
 
 * **Producer systems** are typically Payer systems but could theoretically be any system responsible for producing a Member Attribution List. These systems typically act as servers. 
 
-* **Consumer systems** are typically Provider systems that act on behalf of provider organizations who retrieve the attribution list from Producer. These systems typically act as clients.
+* **Consumer systems** are typically Provider systems that act on behalf of provider organizations who retrieve the Member Attribution List from Producer. These systems typically act as clients.
 
 The requirements and expectations described here are not intended to be exhaustive. Producers and Consumers could potentially support additional resources and extensions, etc.  The purpose of this implementation guide is to establish a baseline of expected behavior and data elements that communication partners can rely on and then build from.  Future versions of this specification will evolve based on implementer feedback.
 
@@ -37,10 +37,10 @@ Producers and Consumers asserting conformance to this implementation guide have 
 
 ##### MUST SUPPORT Definition
 
-* Producers SHALL be capable of populating all data elements as specified by the profiles and are returned using the specified APIs in the capability statement.
-* Consumers SHALL be capable of processing resource instances containing the MUST SUPPPORT data elements without generating an error or causing the application to fail. In other words Consumers SHOULD be capable of displaying the data elements for human use or storing it for other purposes.
-* In situations where information on a particular data element is not present and the reason for absence is unknown, Producers SHALL NOT include the data elements in the resource instance returned from executing the API requests.
-* When accessing Member Attribution Lists, Consumers SHALL interpret missing data elements within resource instances as data not present in the Producer's system.
+* Producers **SHALL** be capable of populating all data elements as specified by the profiles and are returned using the specified APIs in the capability statement.
+* Consumers **SHALL** be capable of processing resource instances containing the MUST SUPPPORT data elements without generating an error or causing the application to fail. In other words Consumers **SHOULD** be capable of displaying the data elements for human use or storing it for other purposes.
+* In situations where information on a particular data element is not present and the reason for absence is unknown, Producers **SHALL NOT** include the data elements in the resource instance returned from executing the API requests.
+* When accessing Member Attribution Lists, Consumers **SHALL** interpret missing data elements within resource instances as data not present in the Producer's system.
 
 
 #### Profiles
@@ -50,7 +50,7 @@ The full set of profiles defined in this implementation guide can be found by fo
 
 
 #### US Core
-This implementation guide also leverages the [US Core]({{site.data.fhir.ver.uscoreR4}}/index.html) set of profiles defined by HL7 for sharing non-veterinary EMR individual health data in the U.S.  Where US Core profiles exist, this Guide either leverages them directly or uses them as a base for any additional constraints needed to support the member attribution list use cases.  If no constraints are needed, this IG doesn't define any profiles.
+This implementation guide also leverages the [US Core]({{site.data.fhir.ver.uscoreR4}}/index.html) set of profiles defined by HL7 for sharing non-veterinary EMR individual health data in the U.S.  Where US Core profiles exist, this Guide either leverages them directly or uses them as a base for any additional constraints needed to support the Member Attribution List use cases.  If no constraints are needed, this IG doesn't define any profiles.
 
 Where US Core profiles do not yet exist (e.g. for Coverage, Group), profiles have been created that try to align with existing US Core profiles in terms of elements exposed and terminologies used.
 
@@ -60,44 +60,44 @@ Where US Core profiles do not yet exist (e.g. for Coverage, Group), profiles hav
  
 The Bulk Data Export async pattern is used by this IG for the implementation of the davinci-data-export operation. The actual Bulk Data export operation is not directly used in this IG.
 
-Producer systems SHALL support the [$davinci-data-export operation](OperationDefinition-davinci-data-export.html) operation for member attribution list implementation. 
+Producer systems SHALL support the [$davinci-data-export](OperationDefinition-davinci-data-export.html) operation for Member Attribution List implementation. 
 
-Producer systems SHALL support the exportType of ```hl7.fhir.us.davinci-atr``` for implementing Member Attribution List IG.
+Producer systems SHALL support the exportType of ```hl7.fhir.us.davinci-atr``` for implementing the Member Attribution List IG.
 
-Producer systems SHALL export only the patients contained in the identified group if a list of member references are supplied as part of the [$davinci-data-export operation](OperationDefinition-davinci-data-export.html) operation.
+Producer systems SHALL export only the patients contained in the identified group if a list of member references are supplied as part of the [$davinci-data-export](OperationDefinition-davinci-data-export.html) operation.
 
 When member references are not supplied, the Producer systems SHALL export data for all members contained in the Member Attribution List. 
 
 Producer systems SHALL support the reading and searching of Group resources per the capability statement expectations outlined below.
 
-Producer systems SHALL support ```Group,Patient,Coverage,Practitioner,Organization``` as resource types for the ```[base]/Group/[id]/$davinci-data-export?resourceTypes``` parameter for the exportType of ```hl7.fhir.us.davinci-atr```. 
+Producer systems SHALL support ```Group,Patient,Coverage,Practitioner,Organization``` as resource types for the ```[base]/Group/[id]/$davinci-data-export?_type``` parameter for the exportType of ```hl7.fhir.us.davinci-atr```. 
 
-Producer systems SHOULD support ```Related Person, PractitionerRole, Location``` resource types for the ```[base]/Group/[id]/$davinci-data-export?resourceTypes``` parameter for the exportType of ```hl7.fhir.us.davinci-atr```. 
+Producer systems SHOULD support ```Related Person, PractitionerRole, Location``` resource types for the ```[base]/Group/[id]/$davinci-data-export?_type``` parameter for the exportType of ```hl7.fhir.us.davinci-atr```. 
 
-Producer systems SHALL reject requests that do not contain the minimum resource types of ```Group,Patient,Coverage,Practitioner,Organization``` as resource types for the ```[base]/Group/[id]/$davinci-data-export?resourceTypes``` parameter for the exportType of ```hl7.fhir.us.davinci-atr```.
+Producer systems SHALL reject requests that do not contain the minimum resource types of ```Group,Patient,Coverage,Practitioner,Organization``` as resource types for the ```[base]/Group/[id]/$davinci-data-export?_type``` parameter for the exportType of ```hl7.fhir.us.davinci-atr```.
 
-* The producer SHALL create NDJSON files for each of the resources that are linked to the member to create an attribution list as outlined below 
+* The producer SHALL create NDJSON files for each of the resources that are linked to the member to create an Member Attribution List as outlined below 
 
 The resource list includes
  
 	The Patient who is the member.
 	The Coverage which resulted in the Patient being a member of the Group
-	The Organization to which the Patient is attributed to as part of the attribution list.
-	The Practitioner or PractititonerRole that the patient is attributed to as part of the attribution list
+	The Organization to which the Patient is attributed to as part of the Member Attribution List.
+	The Practitioner or PractitionerRole that the patient is attributed to as part of the Member Attribution List
 	The RelatedPerson who may be the Subscriber of the Coverage. 
-	The Group itself which contains the list of members and their relationship to the other members.  
+	The Group itself contains the list of members and their relationship to the other members.  
 
-Producer systems SHALL support the Bulk Data Kick-off Request for the [$davinci-data-export operation](OperationDefinition-davinci-data-export.html) as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/index.html) export operation specification.
+Producer systems SHALL support the Bulk Data Kick-off Request for the [$davinci-data-export](OperationDefinition-davinci-data-export.html) as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/index.html) export operation specification.
 
-Producer systems MAY support the Bulk Data Delete Request for the [$davinci-data-export operation](OperationDefinition-davinci-data-export.html) as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/index.html) export operation specification.
+Producer systems MAY support the Bulk Data Delete Request for the [$davinci-data-export](OperationDefinition-davinci-data-export.html) as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/index.html) export operation specification.
 
-Producer systems SHALL support the Bulk Data Status Request for the [$davinci-data-export operation](OperationDefinition-davinci-data-export.html) as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/index.html) export operation specification.
+Producer systems SHALL support the Bulk Data Status Request for the [$davinci-data-export](OperationDefinition-davinci-data-export.html) as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/index.html) export operation specification.
 
 Producer systems SHALL set the requireAccessToken to ```true``` within the Bulk Data Status Request response body as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/index.html) export operation specification.
 
-Producer systems SHALL require Consumer systems to provide valid ```access token``` to access the member attribution list files. 
+Producer systems SHALL require Consumer systems to provide valid ```access token``` to access the Member Attribution List files. 
 
-Producer systems SHALL support the Bulk Data File Request for the [$davinci-data-export operation](OperationDefinition-davinci-data-export.html) as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/index.html) export operation specification.
+Producer systems SHALL support the Bulk Data File Request for the [$davinci-data-export](OperationDefinition-davinci-data-export.html) as defined in the [Bulk Data IG]({{site.data.fhir.ver.bulkig}}/index.html) export operation specification.
 
 When the Consumer systems do not have appropriate authorization to the data requested, the Producer systems SHALL return OperationOutcome with appropriate error message.
 
@@ -194,18 +194,18 @@ The section outlines specific requirements that need to be followed in creating 
 
 * Producers SHALL set ```Group.member.extension.ext-changeType = dropped``` when the member is no longer attributed.
 
-* Producers SHALL set  ``Group.member.extension.ext-changeType = new``` when a member is added to the attribution list for the first time.
+* Producers SHALL set  ``Group.member.extension.ext-changeType = new``` when a member is added to the Member Attribution List for the first time.
 
-* Producers SHOULD set  ``Group.member.extension.ext-changeType = changed``` when a members information has changed.
+* Producers SHOULD set  ``Group.member.extension.ext-changeType = changed``` when a member's information has changed.
 
-* Producers SHOULD set  ``Group.member.extension.ext-changeType = nochange``` when a members information has not changed from the previous version of the attribution list.
+* Producers SHOULD set  ``Group.member.extension.ext-changeType = nochange``` when a member's information has not changed from the previous version of the Member Attribution List.
 
 
 #### Security and Privacy considerations on Identifiers
 
 * Producers SHOULD exchange Provider NPI and TIN only as needed and when the NPIs and TINs belong to providers associated with the receiving organization.
 
-* Consumers SHOULD NOT be sharing the NPI and TIN information amongst providers unless required for transactions related to Payments, Treatment and Operations (PTO).
+* Consumers SHOULD NOT be sharing the NPI and TIN information amongst providers unless required for transactions related to Payment, Treatment and Operations (PTO).
 
 
 ### Member Attribution List Exchange Interactions Details and APIs
@@ -218,7 +218,7 @@ For example, Multicare a Provider Organization would like to identify the Member
 **Precondition:**
 
 In order to discover the appropriate Group Resource (Member Attribution List) the Consumer is expected to know its own NPI and/or Tax Identification Number or Contract Identifier or Settlement Entity Identifiers. Producers and Consumers may exchange this information during the contract establishment. Similarly Producers may provide the name of the Group resource representing the Member Attribution List that can be retrieved by the Consumer. 
-Note: Producers and Consumers MAY have a predetermined cadence on exchanging member attribution lists and this API could be invoked based on the cadence.
+Note: Producers and Consumers MAY have a predetermined cadence on exchanging Member Attribution Lists and this API could be invoked based on the cadence.
 
 **API: Discover Group using NPI and TIN**
 
@@ -393,18 +393,18 @@ This interaction outlines the APIs for a Consumer (for example, Provider organiz
 
 **Precondition:**
 
-In order to add a member to the Member Attribution List, the Consumer should have successfully discovered the attribution list.
+In order to add a member to the Member Attribution List, the Consumer should have successfully discovered the Member Attribution List.
 The Consumer knows the MemberId and the AttributedProvider NPI or the references to the Member and the Attributed Provider in the Producer system. 
-The attribution list status has to be "draft" for the reconciliation API of member-add to be allowed. 
+The Member Attribution List status has to be "draft" for the reconciliation API of member-add to be allowed. 
 
 **API: Add a member to the Member Attribution List**
 
 The following combinations of parameters **SHALL** be supported by the server implementing the operation.
 
-* MemberId + ProviderNPI - (Adds the member and the attributed provider to the Attribution List).
-* MemberId + ProviderNPI + attributionPeriod - (Adds the member, attributed provider and the attribution period to the Attribution List).
-* * patientReference + providerReference - (Adds the member and the attributed provider to the Attribution List).
-* patientReference + providerReference + attributionPeriod - (Adds the member, attributed provider and the attribution period to the Attribution List).
+* memberId + providerNpi: Adds the member and the attributed provider to the Attribution List.
+* memberId + providerNpi + attributionPeriod: Adds the member, attributed provider and the attribution period to the Attribution List.
+* patientReference + providerReference: Adds the member and the attributed provider to the Attribution List.
+* patientReference + providerReference + attributionPeriod: Adds the member, attributed provider and the attribution period to the Attribution List.
 
 
 * The Producers **MAY** decide to add the member based on the information provided and any additional information that is present in the Producer system. 
@@ -423,31 +423,31 @@ The body will contain the parameters resources with combinations specified above
 
 **Expected Results:**
 
-* Successful addition of the Patient to the Member Attribution List if the member and the provider is found in the system. 
-* An OperationOutcome if the Patient to be added is not found in the system.
-* An OperationOutcome if the Producer does not add the member to the attribution list.
-* An OperationOutcome if the Attribution List is in a status of final.
+* Successful addition of the member to the Member Attribution List if the member and the provider are found in the Member Attribution List. 
+* An OperationOutcome of error if the member to be added is not found in the Member Attribution List.
+* An OperationOutcome of error if the Producer does not add the member to the Member Attribution List.
+* An OperationOutcome of error if the Member Attribution List is in a status of final.
 
 
-#### Consumer requests removal of a member to the Member Attribution List 
+#### Consumer requests removal of a member from the Member Attribution List 
 
-This interaction outlines the APIs for a Consumer (for example, Provider organization) to remove a member from the Member Attribution List. The semantics of the member-remove operation based on the attribution list status is outlined at [Member Remove semantics.](OperationDefinition-member-remove.html)
+This interaction outlines the APIs for a Consumer (for example, Provider organization) to remove a member from the Member Attribution List. The semantics of the member-remove operation based on the Member Attribution List status is outlined at [Member Remove semantics.](OperationDefinition-member-remove.html)
 
 **Precondition:**
 
-In order to remove a member to the Member Attribution List, the Consumer should have successfully discovered the attribution list.
-The Consumer knows the MemberId and the AttributedProvider NPI or the references to the Member and the Attributed Provider in the Producer system. 
-The attribution list status has to be "draft" for the reconciliation API to be allowed.
+To remove a member from the Member Attribution List, the Consumer should have successfully discovered the Member Attribution List.
+The Consumer knows the MemberId and the Attributed Provider's NPI or the references to the Member and the Attributed Provider in the Producer system. 
+The [Member Attribution List status](StructureDefinition-ext-attributionListStatus.html) has to be "draft" for the reconciliation API to be allowed.
 
-**API: Remove a member to the Member Attribution List**
+**API: Remove a member from the Member Attribution List**
 
 The following combinations of parameters **SHALL** be supported by the server implementing the operation.
 
-* MemberId only - (Removes all attributions for the Member specified by the MemberId)
-* MemberId + ProviderNPI - (Removes all attributions for the combination of Member and Provider specified)
-* patientReference - (Removes all attributions for the Member)
-* patientReference + providerReference - (Removes all attributions for the combination of Member and Provider specifeid)
-* patientReference + providerReference + coverageReference - (Removes the attribution for the combination of Member and Provider and Coverage resources)
+* memberId only: Removes all attributions for the Member specified by the MemberId
+* memberId + providerNpi: Removes all attributions for the combination of Member and Provider specified
+* patientReference: Removes all attributions for the Member
+* patientReference + providerReference: Removes all attributions for the combination of Member and Provider specified
+* patientReference + providerReference + coverageReference: Removes the attribution for the combination of Member and Provider and Coverage resources
 
 * The Producers **MAY** decide to remove the member based on the information provided and any additional information that is present in the Producer system. 
 * If the Producer's adjudication process results in the member not being removed, the Producer **SHALL** return an OperationOutcome with a message indicating the reason the removal was not performed.
@@ -466,10 +466,10 @@ The body will contain the parameters resources with combinations specified above
 
 **Expected Results:**
 
-* Successful removal of the Patient from the Member Attribution List if the member and the provider is found in the system. 
-* An OperationOutcome if the Patient to be removed is not found in the system or the member attribution list. 
-* An OperationOutcome is returned if the Producer decides not to remove the member.
-* An OperationOutcome if the Attribution List is in a status of final.
+* Successful removal of the member from the Member Attribution List if the member and the provider are found in the Member Attribution List. 
+* An OperationOutcome indicating an error if the member to be removed is not found in the Member Attribution List. 
+* An OperationOutcome indicating an error is returned if the Producer decides not to remove the member.
+* An OperationOutcome indicating an error if the Member Attribution List is in a status of final.
 
 
 #### Consumer indicates to the Producer that the Consumer is done with the reconciliation  
@@ -486,9 +486,9 @@ The operation does not require any parameters.
 
 * The Producer **SHALL** return a status of 201 Accepted when the API is invoked. 
 
-* The Producers **SHOULD** change the attribution list status to final from draft.
+* The Producers **SHOULD** change the Member Attribution List status to final from draft.
 
-* Prior to changing the attribution list status to final, the Producer **MAY** make changes to the attribution list based on internal business processes and information.
+* Prior to changing the Member Attribution List status to final, the Producer **MAY** make changes to the Member Attribution List based on internal business processes and information.
 
 
 ```
@@ -507,7 +507,7 @@ There are no parameters for the operation.
 * Change the list status to final eventually by the Producer. 
 
 
-#### Use of Subscriptions for notification of changes between Producer and Consumer
+### Use of Subscriptions for notification of changes between Producer and Consumer
 
 The requirements and mechanisms to use Subscriptions for notifications is outlined in [Subscriptions Requirements](subscription.html).
 

@@ -21,6 +21,9 @@
          <end value="2021-06-24"></end>
       </valuePeriod>
    </extension>
+   <extension url="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-attributionListStatus">
+      <valueCode value="final"/>
+   </extension>
    <identifier>
       <use value="official"></use>
       <type>
