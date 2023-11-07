@@ -151,7 +151,7 @@ The following is a brief description of the workflow steps with a Payer represen
 Provider and a Payer enter into a contract with specific terms and conditions and decide on the need for a Member Attribution List. Payer supports the capabilities required to create a Member Attribution List.
 
 **2. Provider (Consumer) creates the list in the Payer (Producer) system **<br/>
-In this step the Provider creates the Member Attribution List in the payer system.
+In this step the Provider creates the Member Attribution List in the payer system. The detailed steps to create a Memeber Attribution List in the Producer's systems is outlined in the [Formal Specification](spec.html).
 
 **3. Payer (Producer) reconciles the list internally and notifies Provider (Consumer) of changes **<br/>
 Once the Payer receives the list in Step 2, the Payer may reconcile the list internally, modify it and then notify the Provider of the changes. 

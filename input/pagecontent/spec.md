@@ -339,6 +339,15 @@ GET <File URL for each Resource identified in Member Attribution List Export Req
 
 <div class="bg-success" markdown="1">
 
+### Creation of a Member Attribution List 
+
+Member Attribution List are typically created by the Producer and published for use by the Consumer. However as described in the [Use Cases section](usecases.html) the Consumer could create a Member Attribution List in the Producer's system. In order to accomplish this the following API's are expected to be used by the Consumer. 
+
+* To create the initial Member Attribution List, a POST on the Group resource is used with no members. This is an empty Member Attribution List.
+* Subsequently, the Consumer is expected to add different members to the list using the member-add operation.
+* Once the members have been added, the Consumer can invoke the davinci-data-export operation to retrieve the data associated with the Member Attribution List.
+* Consumers may also remove members from the Member Attribution List using the member-remove operation. 
+
 ### Member Attribution List Reconciliation APIs
 
 The following are the Member Attribution List Reconciliation APIs and their purpose
