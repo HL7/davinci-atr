@@ -70,11 +70,11 @@ When member references are not supplied, the Producer systems SHALL export data 
 
 Producer systems SHALL support the reading and searching of Group resources per the capability statement expectations outlined below.
 
-Producer systems SHALL support ```Group,Patient,Coverage,Practitioner,Organization``` as resource types for the ```[base]/Group/[id]/$davinci-data-export?_type``` parameter for the exportType of ```hl7.fhir.us.davinci-atr```. 
+Producer systems SHALL support ```Group,Patient,Coverage``` as resource types for the ```[base]/Group/[id]/$davinci-data-export?_type``` parameter for the exportType of ```hl7.fhir.us.davinci-atr```. 
 
-Producer systems SHOULD support ```Related Person, PractitionerRole, Location``` resource types for the ```[base]/Group/[id]/$davinci-data-export?_type``` parameter for the exportType of ```hl7.fhir.us.davinci-atr```. 
+Producer systems SHOULD support ```RelatedPerson, Practitioner, PractitionerRole, Organization, Location``` resource types for the ```[base]/Group/[id]/$davinci-data-export?_type``` parameter for the exportType of ```hl7.fhir.us.davinci-atr```. 
 
-Producer systems SHALL reject requests that do not contain the minimum resource types of ```Group,Patient,Coverage,Practitioner,Organization``` as resource types for the ```[base]/Group/[id]/$davinci-data-export?_type``` parameter for the exportType of ```hl7.fhir.us.davinci-atr```.
+Producer systems SHALL reject requests that do not contain the minimum resource types of ```Group,Patient,Coverage``` as resource types for the ```[base]/Group/[id]/$davinci-data-export?_type``` parameter for the exportType of ```hl7.fhir.us.davinci-atr```.
 
 * The producer SHALL create NDJSON files for each of the resources that are linked to the member to create an Member Attribution List as outlined below 
 
