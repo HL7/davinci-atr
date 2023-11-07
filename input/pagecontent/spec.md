@@ -218,28 +218,15 @@ For example, Multicare a Provider Organization would like to identify the Member
 **Precondition:**
 
 In order to discover the appropriate Group Resource (Member Attribution List) the Consumer is expected to know its own NPI and/or Tax Identification Number or Contract Identifier or Settlement Entity Identifiers. Producers and Consumers may exchange this information during the contract establishment. Similarly Producers may provide the name of the Group resource representing the Member Attribution List that can be retrieved by the Consumer. 
-Note: Producers and Consumers MAY have a predetermined cadence on exchanging Member Attribution Lists and this API could be invoked based on the cadence.
-
-**API: Discover Group using NPI and TIN**
-
-```
-
-GET <Server Base URL>/Group?identifier:of-type=http://terminology.hl7.org/CodeSystem/v2-0203|NPI|<ExampleNPI>&identifier:of-type=http://terminology.hl7.org/CodeSystem/v2-0203|TAX|<ExampleTIN>&_summary=true
-
-```
-
-In the above API, notice the use of "of-type" modifier on the search to allow searching based on type which includes a CodeSystem and a Value. In addition the “<ExampleNPI>" and "<ExampleTIN>” will be substituted with the values that represent the Consumer organization.
-
-The Producer verifies the client credentials according to the SMART Backend Services Authorization protocols and in addition verifies that the Consumer is allowed to access the specific Member Attribution List and returns one or more Group Resources representing the Member Attribution Lists for each contract between the Producer and the Consumer.
-
-NOTE: In order to avoid issues with servers, clients and networks when Group resources are large, Consumers **SHOULD** include the _summary=true parameter in all Group search and read operations. Servers **SHOULD** support the _summary parameter and provide only the Group summary without the member data as per the resource definition.  
+Note: Producers and Consumers MAY have a predetermined cadence on exchanging Member Attribution Lists and this API could be invoked based on the cadence. 
 
 **API: Discover Group using NPI or TIN**
 
 
 ```
 
-GET <Server Base URL>/Group?identifier=http://terminology.hl7.org/CodeSystem/v2-0203|<NPI or TAX>|<ExampleNPI or ExampleTIN>&_summary=true
+GET <Server Base URL>/Group?identifier=http://hl7.org/fhir/sid/us-npi|<Example NPI>&_summary=true
+GET <Server Base URL>/Group?identifier=urn:oid:2.16.840.1.113883.4.4|<Example TIN>&_summary=true
 
 ```
 

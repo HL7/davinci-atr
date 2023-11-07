@@ -12,11 +12,11 @@ This allows the consumer (client) to remove members from the Group during the re
 
 The following combinations of parameters SHALL be supported by the server implementing the operation.
 
-* MemberId only - (Removes all attributions for the Member specified by the MemberId) 
-* MemberId + ProviderNPI - (Removes all attributions for the combination of Member and Provider specified)
-* patientReference - (Removes all attributions for the Member) 
-* patientReference + providerReference - (Removes all attributions for the combination of Member and Provider specifeid)
-* patientReference + providerReference + coverageReference - (Removes the attribution for the combination of Member and Provider and Coverage resources)
+* memberId only: Removes all attributions for the Member specified by the MemberId 
+* memberId + providerNpi: Removes all attributions for the combination of Member and Provider specified
+* patientReference: Removes all attributions for the Member 
+* patientReference + providerReference: Removes all attributions for the combination of Member and Provider specified
+* patientReference + providerReference + coverageReference: Removes the attribution for the combination of Member and Provider and Coverage resources
 
 #### Effect of Attribution List Status on the member-remove operation
 
@@ -32,4 +32,6 @@ The following combinations of parameters SHALL be supported by the server implem
 **APIs : Member Remove :**
 
 POST [Base FHIR Url]/Group/[id]/$member-remove
+
+Producers **SHALL** return values from the operation as per the [FHIR Operation Response Specification](https://hl7.org/fhir/operations.html#response).
 

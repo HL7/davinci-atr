@@ -347,11 +347,6 @@
               <td>Search using identifiers which can be the Consumer NPI, Consumer TIN, Settlement Entity Identifier, Contract Identifier. Combinations of AND/OR logic for the different identifiers are allowed according to the FHIR specification.</td>
             </tr>
             <tr>
-              <th>identifier:of-type</th>
-              <td>token</td>
-              <td>Search using identifiers using a combination of system|code|value, where the system and code refer to a Identifier.type.coding.system and .code, and match if any of the type codes match.</td>
-            </tr>
-            <tr>
               <th>characteristic</th>
               <td>token</td>
               <td>Search using characteristic.code</td>
@@ -761,14 +756,6 @@
           <valueCode value="SHALL"/>
         </extension>
         <name value="identifier"/>
-        <definition value="http://hl7.org/fhir/SearchParameter/Group-identifier"/>
-        <type value="token"/>
-      </searchParam>
-      <searchParam>
-        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-          <valueCode value="SHALL"/>
-        </extension>
-        <name value="identifier:of-type"/>
         <definition value="http://hl7.org/fhir/SearchParameter/Group-identifier"/>
         <type value="token"/>
       </searchParam>

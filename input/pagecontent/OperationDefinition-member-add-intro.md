@@ -11,10 +11,12 @@ This allows the consumer (client) to add members to the Group during the reconci
 
 The following combinations of parameters SHALL be supported by the server implementing the operation.
 
-* MemberId + ProviderNPI - (Adds the member and the attributed provider to the Attribution List).
-* MemberId + ProviderNPI + attributionPeriod - (Adds the member, attributed provider and the attribution period to the Attribution List).
-* patientReference + providerReference - (Adds the member and the attributed provider to the Attribution List).
-* patientReference + providerReference + attributionPeriod - (Adds the member, attributed provider and the attribution period to the Attribution List). 
+* memberId + providerNpi: Adds the member and the attributed provider to the Attribution List
+* memberId + ProviderNpi + attributionPeriod: Adds the member, attributed provider and the attribution period to the Attribution List
+* patientReference + providerReference: Adds the member and the attributed provider to the Attribution List
+* patientReference + providerReference + attributionPeriod: Adds the member, attributed provider and the attribution period to the Attribution List
+
+Similar to any FHIR operation, Consumers need to obtain authorization to successfully invoke the operation. 
 
 #### Effect of Attribution List Status on the member-add operation
 
@@ -27,4 +29,5 @@ The following combinations of parameters SHALL be supported by the server implem
 
 POST [Base FHIR Url]/Group/[id]/$member-add
 
+Producers **SHALL** return values from the operation as per the [FHIR Operation Response Specification](https://hl7.org/fhir/operations.html#response).
 
