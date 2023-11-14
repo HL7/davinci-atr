@@ -8,6 +8,10 @@
     <profile
              value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/>
   </meta>
+  <extension
+             url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    	<valueCode value="fm"/>
+  	</extension>
   <url value="http://hl7.org/fhir/us/davinci-atr/CodeSystem/davinci-group-characteristic-codes"/>
   <version value="1.0.0"/>
   <name value="DaVinciGroupCharacteristicCodes"/>
@@ -24,7 +28,6 @@
     </coding>
   </jurisdiction>
   <caseSensitive value="true"/>
-  <valueSet value="http://hl7.org/fhir/us/davinci-atr/ValueSet/davinci-group-characteristic"/>
   <content value="complete"/>
   <count value="5"/>
   <concept>

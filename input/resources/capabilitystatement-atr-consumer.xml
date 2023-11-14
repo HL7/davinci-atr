@@ -491,6 +491,10 @@
       
     </div>
   </text>
+  <extension
+             url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    	<valueCode value="fm"/>
+  	</extension>
   <url value="http://hl7.org/fhir/us/davinci-atr/CapabilityStatement/atr-consumer"/>
   <name value="DaVinciAtrConsumer"/>
   <title value="DaVinci ATR Consumer"/>

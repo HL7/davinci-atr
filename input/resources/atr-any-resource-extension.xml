@@ -7,6 +7,10 @@
         <lastUpdated value="2022-07-12T02:02:26.725+00:00"/>
         <source value="#tIGb9qA1ir9xYjl0"/>
     </meta>
+    <extension
+             url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    	<valueCode value="fm"/>
+  	</extension>
     <url value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-any-resource-extension"/>
     <version value="0.1.0"/>
     <name value="AtrAnyResourceExtension"/>

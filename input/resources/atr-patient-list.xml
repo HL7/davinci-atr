@@ -7,6 +7,10 @@
         <lastUpdated value="2021-08-13T05:43:12.456+00:00"/>
         <source value="#op9qv8RqccCL7zOB"/>
     </meta>
+    <extension
+             url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    	<valueCode value="fm"/>
+  	</extension>
     <url value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-patient-list"/>
     <version value="0.1.0"/>
     <name value="DaVinciPatientList"/>

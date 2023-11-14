@@ -1,6 +1,12 @@
 {
     "resourceType": "SearchParameter",
     "id": "Group-characteristic-value-reference",
+    "extension" : [
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode" : "pa"
+    }
+  ],
     "url": "http://hl7.org/fhir/us/davinci-atr/SearchParameter/Group-characteristic-value-reference",
     "version": "4.0.1",
     "name": "GroupCharacteristicValueReference",
