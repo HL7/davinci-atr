@@ -1,5 +1,4 @@
-{:.stu-note}
-This is new content for the STU 2 ballot. 
+ 
 
 ### Introduction
 

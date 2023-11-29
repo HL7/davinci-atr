@@ -1,5 +1,4 @@
-{:.stu-note}
-This is modified content for the STU 2 ballot where atr-group is derived from davinci-patient-list profile. 
+
 
 ### Introduction
 

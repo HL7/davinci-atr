@@ -1,7 +1,5 @@
 ### Introduction
 
-{:.stu-note}
-This is new content for the STU 2 ballot. 
 
 This operation is a profiled version of the [Bulk Data Export Operation]({{site.data.fhir.ver.bulkig}}/index.html)). The parameters defined in the base Bulk Data Export operation are reused in this specification.
 

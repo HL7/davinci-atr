@@ -54,7 +54,7 @@ This implementation guide also leverages the [US Core]({{site.data.fhir.ver.usco
 
 Where US Core profiles do not yet exist (e.g. for Coverage, Group), profiles have been created that try to align with existing US Core profiles in terms of elements exposed and terminologies used.
 
-<div class="bg-success" markdown="1">
+
 
 #### Requirements for Implementation of the $davinci-data-export operation
  
@@ -129,7 +129,7 @@ When the Consumer is trying to discover the specific Group resource that represe
 **NOTE:** This verification is for a specific Group instance and not just the Group Resource type which is controlled by the scopes.
 
 
-</div>
+
 
 
 #### Capability Statements
@@ -337,7 +337,6 @@ GET <File URL for each Resource identified in Member Attribution List Export Req
 * Detailed examples for NDJSON file retrieval can be found in the Bulk Data IG.
 
 
-<div class="bg-success" markdown="1">
 
 ### Creation of a Member Attribution List 
 
@@ -509,4 +508,3 @@ The requirements and mechanisms to use Subscriptions for notifications is outlin
 
  
 
-</div>
