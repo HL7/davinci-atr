@@ -1,13 +1,18 @@
 ### Credits
-Primary authors:
+Primary authors STU2:
 
 * Nagesh Bashyam (Drajer LLC)
+
+Primary authors STU1:
+
+* Nagesh Bashyam (Drajer LLC)
+* Brett Marquard (WaveOne Associates)
 
 
 Project leads:
 
 * David Degandi (Cambia Health Solutions)
-* Yan Herras (Optimum eHealth)
+* Yan Heras (Optimum eHealth)
 * Viet Nguyen (Stratametrics, LLC)
 
 Project management and coordination:
