@@ -1,5 +1,5 @@
 == Suppressed Messages ==
 
-# This will be presnted to CPG per the ticket : https://jira.hl7.org/browse/FHIR-43113. Motion  
+# This will be presented to CPG per the ticket : https://jira.hl7.org/browse/FHIR-43113. Motion: Linda Michaelsen/Yan Heras : 20-0-0  
 US FHIR Usage rules require that all profiles on Coverage derive from the core US profile
 US FHIR Usage rules require that all profiles on RelatedPerson derive from the core US profile
