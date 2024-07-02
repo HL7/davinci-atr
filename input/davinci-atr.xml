@@ -28,7 +28,19 @@
   <packageId value="hl7.fhir.us.davinci-atr"/>
   <fhirVersion value="4.0.1"/>
   
+  <dependsOn id="uscore3">
+	  <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-ImplementationGuide.dependsOn.reason">
+	    <valueMarkdown value="Defines U.S. Core 1 EHR expectations on a range of resources that will be queried by ATR clients.  &#xA;"/>
+	  </extension>
+	  <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core"/>
+	  <packageId value="hl7.fhir.us.core.3.1.1"/>
+	  <version value="3.1.1"/>
+   </dependsOn>
+  
    <dependsOn id="uscoreR4">
+   <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-ImplementationGuide.dependsOn.reason">
+	    <valueMarkdown value="Defines U.S. Core 1 EHR expectations on a range of resources that will be queried by ATR clients.  &#xA;"/>
+	  </extension>
     <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core"/>
     <packageId value="hl7.fhir.us.core"/>
     <version value="6.1.0"/>
