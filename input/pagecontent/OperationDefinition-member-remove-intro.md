@@ -19,11 +19,13 @@ The following combinations of parameters SHALL be supported by the server implem
 
 #### Effect of Attribution List Status on the member-remove operation
 
-* The Producer **SHALL** allow the member-remove operation only when the attribution list status is "draft". 
+* The Producer **SHALL** allow the member-remove operation only when the attribution list status is "draft" or "open".
 
 * When the attribution list status is in a "draft" status, member-remove operations will change the member's active flag to false, indicating the the member is going to be removed from the list, however as part of the data exchange the member **SHALL** be included in the list as long as the status is draft.
 
 * Once the list has a status of final, the producer **SHOULD** remove the inactive members from the list and may only retain the active members. 
+
+* When the attribution list status is "open", the Producer **SHOULD** remove the member from the list when a member-remove operation is invoked.
 
 * When the attribution list status is "final" the Producer **SHALL** reject the operation with appropriate OperationOutcome.
 

@@ -41,7 +41,7 @@
     <min value="0"/>
     <max value="1"/>
     <documentation value="The code that indicates the type of export to be performed. For e.g hl7.fhir.us.davinci-atr to indicate Member Attribution export, 
-    and hl7.fhir.us.davinci-pdex for a PDex Export. Servers are supposed to provide the export guidance in the individual IGs. This is a new parameter added to the operation that is not present in the Bulk Data Export operation."/>
+    and hl7.fhir.us.davinci-pdex#payertopayer for a PDex Payer to Payer Data Exchange Data Export. Servers are supposed to provide the export guidance in the individual IGs. This is a new parameter added to the operation that is not present in the Bulk Data Export operation."/>
     <type value="canonical"/>
   </parameter>
   <parameter>

@@ -349,12 +349,7 @@
             <tr>
               <th>characteristic</th>
               <td>token</td>
-              <td>Search using characteristic.code</td>
-            </tr>
-            <tr>
-              <th>Group-characteristic-value-reference</th>
-              <td>composite</td>
-              <td>Search using characteristic.code and value reference</td>
+              <td>Search using characteristic</td>
             </tr>
             <tr>
               <th>name</th>
@@ -772,33 +767,12 @@
       </searchParam>
       <searchParam>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-          <valueCode value="SHALL"/>
+          <valueCode value="SHOULD"/>
         </extension>
-        <name value="Group-characteristic-value-reference"/>
-        <definition value="http://hl7.org/fhir/us/davinci-atr/SearchParameter/Group-characteristic-value-reference"/>
+        <name value="characteristic-value"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Group-characteristic-value"/>
         <type value="composite"/>
       </searchParam>
-      
-  <!--          <searchParam>
-        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-          <valueCode value="SHALL"/>
-        </extension>
-        <name value="name"/>
-        <definition value="{{site.data.fhir.path}}search.html#string"/>
-        <type value="string"/>
-      </searchParam>
-      <searchParam>
-        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-          <valueCode value="SHALL"/>
-        </extension>
-        <name value="period"/>
-        <definition value="{{site.data.fhir.path}}search.html#date"/>
-        <type value="date"/>
-      </searchParam>
-      <operation>
-      	<name value="export"/>
-      	<definition value="http://hl7.org/fhir/us/davinci-atr/OperationDefinition/davinci-data-export"/>
-      </operation> -->
     </resource>
     <resource>
       <type value="Location"/>

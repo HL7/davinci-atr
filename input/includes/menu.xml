@@ -1,10 +1,32 @@
 <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
   <li><a href="index.html">IG Home</a></li>
-  <li>
-    <a href="{{site.data.info.assets}}toc.html">Table of Contents</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="fhir.html">Reading this IG</a>
+      </li>
+      <li>
+        <a href="http://hl7.org/about/davinci">Da Vinci Overview</a>
+      </li>
+      <li>
+        <a href="credits.html">Project and Participants</a>
+      </li>
+      <li>
+        <a href="davinci-guiding-principles.html">Guiding Principles</a>
+      </li>
+      <li>
+        <a href="exchanging.html">Approaches to Exchanging FHIR Data</a>
+      </li>
+      <li>
+        <a href="validation.html">Managing Instance Validation</a>
+      </li>
+    </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">ATR Specification<b class="caret">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Specification<b class="caret">
       </b>
     </a>
     <ul class="dropdown-menu">
@@ -55,7 +77,10 @@
         <a target="_blank" href="{{site.data.fhir.path}}index.html">FHIR R4 Spec <img src="external.png" style="text-align: baseline"/></a>
       </li>
       <li>
-        <a target="_blank" href="{{site.data.fhir.ver.uscoreR4}}/index.html">US Core STU3 (FHIR R4 version)<img src="external.png" style="text-align: baseline"/></a>
+        <a target="_blank" href="{{site.data.fhir.ver.uscore3}}/index.html">US Core STU 3.1.1 (FHIR R4 version)<img src="external.png" style="text-align: baseline"/></a>
+      </li>
+      <li>
+        <a target="_blank" href="{{site.data.fhir.ver.uscoreR4}}/index.html">US Core STU 7.0.0 (FHIR R4 version)<img src="external.png" style="text-align: baseline"/></a>
       </li>
       <li>
         <a target="_blank" href="{{site.data.fhir.ver.bulkig}}/index.html">Bulk Data IG<img src="external.png" style="text-align: baseline"/></a>
@@ -65,7 +90,35 @@
       </li>
     </ul>
   </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="https://chat.fhir.org/#narrow/channel/214784-Da-Vinci-ATR">Discussion Forum</a>
+      </li>
+      <li>
+        <a href="https://confluence.hl7.org/pages/viewpage.action?pageId=65077395">Project Page</a>
+      </li>
+      <li>
+        <a href="https://confluence.hl7.org/display/DVP/Member+Attribution+List+Implementer+Support">Implementer Support</a>
+      </li>
+      <li>
+        <a href="https://jira.hl7.org/secure/Dashboard.jspa?selectPageId=17315">Specification Dashboard</a>
+      </li>
+      <li>
+        <a href="https://jira.hl7.org/secure/CreateIssueDetails!init.jspa?pid=10405&amp;issuetype=10600&amp;customfield_11302=FHIR-us-davinci-atr">Propose a Change</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="tools.html">Tooling and Support</a>
+      </li>
+    </ul>
+  </li>
   <li>
-    <a href="{{site.data.info.assets}}changes.html">Change History</a>
+    <a href="{{site.data.info.assets}}changes.html">Change Log</a>
   </li>
 </ul>

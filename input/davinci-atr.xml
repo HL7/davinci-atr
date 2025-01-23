@@ -36,6 +36,15 @@
 	  <packageId value="hl7.fhir.us.core.3.1.1"/>
 	  <version value="3.1.1"/>
    </dependsOn>
+   
+ <!--   <dependsOn id="uscore6">
+	  <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-ImplementationGuide.dependsOn.reason">
+	    <valueMarkdown value="Defines U.S. Core 1 EHR expectations on a range of resources that will be queried by ATR clients.  &#xA;"/>
+	  </extension>
+	  <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core"/>
+	  <packageId value="hl7.fhir.us.core.6.1.0"/>
+	  <version value="6.1.0"/>
+   </dependsOn> -->
   
    <dependsOn id="uscoreR4">
    <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-ImplementationGuide.dependsOn.reason">
@@ -67,7 +76,7 @@
   <dependsOn id="hrex">
     <uri value="http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex"/>
     <packageId value="hl7.fhir.us.davinci-hrex"/>
-    <version value="current"/>
+    <version value="1.1.0"/>
   </dependsOn>
   
   <dependsOn id="subscriptionsIg">
@@ -75,20 +84,14 @@
     <packageId value="hl7.fhir.uv.subscriptions-backport.r4"/>
     <version value="1.1.0"/>
   </dependsOn>
-  
+    
   <dependsOn id="cdexIg">
     <uri value="http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex"/>
     <packageId value="hl7.fhir.us.davinci-cdex"/>
-    <version value="current"/>
+    <version value="2.0.0"/>
   </dependsOn>
   
   <definition>
-   <resource>
-   	  <reference>
-        <reference value="SearchParameter/Group-characteristic-value-reference"/>
-      </reference>
-      <name value="Group Characteristic Value Reference Search Parameter"/>
-    </resource>
     <resource>
       <reference>
         <reference value="Group/davincipatientlistexample"/>
@@ -227,7 +230,7 @@
       <generation value="html"/>
       <page>
         <nameUrl value="index.html"/>
-        <title value="IG Home Page"/>
+        <title value="Member Attribution List Implementation Guide Home Page"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -263,6 +266,31 @@
       <page>
         <nameUrl value="changes.html"/>
         <title value="IG Change History"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="fhir.html"/>
+        <title value="Reading this IG"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="davinci-guiding-principles.html"/>
+        <title value="Guiding Principles"/>
+        <generation value="html"/>
+      </page>
+      <page>
+        <nameUrl value="exchanging.html"/>
+        <title value="Approaches to Exchanging FHIR Data"/>
+        <generation value="html"/>
+      </page>
+      <page>
+        <nameUrl value="validation.html"/>
+        <title value="Managing Instance Validation"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="tools.html"/>
+        <title value="Tooling and Support"/>
         <generation value="markdown"/>
       </page>
     </page>

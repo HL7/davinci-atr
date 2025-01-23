@@ -22,7 +22,7 @@ This implementation guide is designed to allow
 * Request and receive notifications of changes to Member Attribution Lists.
 
 
-### Content and organization
+### Content and Organization
 The implementation guide is organized into the following sections:
 
 * [Use Cases and Overview](usecases.html) describes the intent of the implementation guide, gives examples of its use and provides a high-level overview of expected process flow
@@ -33,10 +33,15 @@ The implementation guide is organized into the following sections:
 * [Credits](credits.html) identifies the individuals and organizations involved in developing this implementation guide
 
 ### Dependencies
-This implementation guide relies on the following other specifications:
-* **[FHIR R4]({{site.data.fhir.path}})** - The 'current' official version of FHIR as of the time this implementation guide was published.  See the [background page](background.html#fhir) for key pieces of this specification that implementers should be familiar with.
-* **[US Core STU3.1.1]({{site.data.fhir.ver.uscoreR4}}/index.html)** - The US Core version based on FHIR R4.
-* **[Bulk Data IG]({{site.data.fhir.ver.bulkig}}/index.html)** - The Bulk Data Implementation Guide that will be leveraged as part of this IG.
-* **[SMART on FHIR Backend Services Authorization]({{site.data.fhir.ver.smartapplaunch}}/backend-services.html)** - Security protocols to be used when exchanging the Member Attribution List.
 
-This implementation guide defines additional constraints and usage expectations beyond the information found in these base specifications.
+At present, ATR IG is based on [FHIR R4]({{site.data.fhir.path}}).  In addition, this guide also relies on a number of parent implementation guides:
+
+{% include dependency-table-nontech.xhtml %}
+
+This implementation guide defines additional constraints and usage expectations above and beyond the information found in these base specifications.
+
+
+### Intellectual Property Considerations
+This implementation guide and the underlying FHIR specification are licensed as public domain under the [FHIR license](http://hl7.org/fhir/R4/license.html#license). The license page also describes rules for the use of the FHIR name and logo.
+
+{% include ip-statements.xhtml %}

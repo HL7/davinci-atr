@@ -1,0 +1,13 @@
+<!--
+  - This section of the HRex guide is written in XHTML because of the expectation that the content will eventually be migrated for
+  - inclusion in the FHIR core specification - and the FHIR core specification doesn't support markdown-authored content.
+  -->
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <blockquote class="stu-note">
+    <p>
+      The content formally found at this page is now hosted <a href="http://build.fhir.org/exchanging.html">here</a> in the FHIR core specification (from FHIR R5 and on).  
+      While Da Vinci IGs remain based on FHIR R4, the guidance on selecting between alternative architectural approaches to data exchange holds irrespective of the version and the guidance now found
+      in the core specification should be adhered to when designing Da Vinci implementation guides.
+    </p>
+  </blockquote>  
+</div>

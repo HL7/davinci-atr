@@ -1,0 +1,34 @@
+FHIR's APIs are designed in a manner somewhat different from the manner payers are typically used to having APIs function.  Specifically, the default behavior in FHIR is to NOT declare in instances either the version of FHIR in use, nor the profiles (or profile versions) with which the instance is asserting conformance.  This section explains the rationale for this design approach and provides guidance on how implementers should function in an environment where instances don't typically declare what they conform with.
+
+### FHIR Version
+The long-term objective of FHIR is for implementers to be able to consume instances irrespective of what version of FHIR the instance happened to be constructed against.  Once a resource is normative, breaking changes will no longer be possible and new modifier elements will not be able to be introduced.  As a result, it will be safe for implementations to merely ignore any data elements they were not expecting.
+
+This approach mirrors how other industry specifications such as DICOM function and eliminates an issue the community has often found with v2 interfaces where, irrespective of the different versions of HL7 v2 being interoperable, because the version appears in instances, there are often exorbitant costs with upgrading interfaces to declare conformance with a new version - even if the only practical change is the version declaration.
+
+Notwithstanding these considerations, most of the resources in use by Da Vinci are not yet normative, meaning that breaking changes are still possible and determination of the version an instance is constructed with is still necessary.  The FHIR core spec [provides]({{site.data.fhir.path}}versioning.html) several approaches for determining the version of an instance.  For almost all Da Vinci implementations, the approach that will be used is looking at the ``CapabilityStatement.fhirVersion`` of the server being communicated with - and if the server supports multiple versions, by asserting the version in the Content-Type and Accept headers of the RESTful API calls.
+
+While Da Vinci interactions cannot yet be in a FHIR version-agnostic space, when using normative resources such as Patient and Observation, implementers should begin implementing (and testing) approaches that allow them to safely tolerate and ignore new elements that might appear in future versions to ensure optimal interoperability.
+
+### Profile Version
+FHIR allows all resources to declare the profile(s) they comply with by populating the [meta.profile]({{site.data.fhir.path}}resource.html#Meta) element on the resource.  Because this element uses the [canonical]({{site.data.fhir.path}}references.html#canonical) data type, it is also possible to refer to specific versions of profiles and thus be very precise about exactly what a particular instance is believed to comply with.
+
+However, guidance from the HL7 FHIR Management Group (FMG) is implementation guides should typically NOT require that instances explicitly declare their profiles or their versions.  That doesn't mean that profile declarations won't necessarily appear on instances, only that implementers shouldn't expect to necessarily see the ones they care about.
+
+The reason for this is that FHIR interfaces - particularly RESTful interfaces - are intended to be purpose-agnostic.  When a server exposes a Patient resource, they are exposing that resource to all possible systems who are interested in that data for any possible purpose they might want that data - including purposes that had not been conceived at the time the interface was developed.  Clients will need to deal with servers that restrict access to resource instances and/or [redact]({{site.data.fhir.path}}valueset-security-labels.html#http---terminology.hl7.org-CodeSystem-v3-ObservationValue-REDACTED) data from those instances to adhere to the server's data access policies.  However, the data exposed generally does not change based on what the receiving system intends to use the data for.  It's up to the client system to use the data appropriately for whatever purpose is needed.
+
+This also means that exposed instances will typically strive to meet the requirements for all potential consumers and will frequently contain elements, repetitions, and extensions that might not be of interest to all consumers.  Again, the expectation is for clients to extract the data they care about from the instance and ignore the rest.
+
+This also means that there will be many profiles (and many versions of those profiles) the instance will comply with - quite possibly including profiles the author of the system had no awareness of at the time the interface was built.  Requiring declaration of all such profiles would be a maintenance nightmare and would impose significant costs on the server.
+
+### Validation strategy
+It is up to receivers how much validation they choose to perform on inbound instances.  They are responsible for ensuring consumed data is 'safe' to use for their intended purposes and they are required to emit data that is conformant even if they choose to consume data that might not be fully conformant.
+
+Because Da Vinci instances will not declare outright what profiles and versions they are believed to be conformant against, it is up to consuming systems to determine for themselves whether the data meets their requirements.  There are two approaches to doing this:
+
+#### Profile-based validation
+In this approach, inbound instances are checked against FHIR profiles to determine if they meet requirements.  If a system only supports a single version of a single profile, the process is easy - validate all inbound data against that one profile and reject the data if it fails validation.  However, in many cases there could be multiple potential applicable profiles and/or multiple supported versions.  In this case, the instance should be checked against the potential profiles and potential versions.  For versions, typically the instance would first be checked against the newest version, then against consecutively older versions.
+
+Full profile validation can be expensive, so often it can be more efficient to just check key differentiating elements - elements whose presence or value will allow the system to quickly discriminate whether an instance could possibly comply with a profile or version, thus limiting the set of profiles the instance needs to be fully validated against.
+
+#### Business-rule validation
+In this approach, the system doesn't worry about the FHIR profiles and instead simply checks whether the data elements it needs for its business purpose are present and have values it considers valid.  (It must always check for unrecognized modifier elements.)  Provided the needed data is present, it processes the instance irrespective of validity against any specific profile version.

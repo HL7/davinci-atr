@@ -30,11 +30,16 @@
   <caseSensitive value="true"/>
   <valueSet value="http://hl7.org/fhir/us/davinci-atr/ValueSet/atr-attribution-list-status"/>
   <content value="complete"/>
-  <count value="2"/>
+  <count value="3"/>
   <concept>
     <code value="draft"/>
     <display value="The Attribution List is still in a draft form."/>
     <definition value="The Attribution List has not yet been finalized between a Prodcuer and a Consumer and reconciliation functions member-add and member-remove are allowed on the attribution list instance."/>
+  </concept>
+  <concept>
+    <code value="open"/>
+    <display value="The Attribution List is open for modifications"/>
+    <definition value="The Attribution List can be kept open for modifications for use cases where adds and deletes are performed dynamically based on workflows."/>
   </concept>
   <concept>
     <code value="final"/>

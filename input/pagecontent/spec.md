@@ -390,7 +390,7 @@ This interaction outlines the APIs for a Consumer (for example, Provider organiz
 
 In order to add a member to the Member Attribution List, the Consumer should have successfully discovered the Member Attribution List.
 The Consumer knows the MemberId and the AttributedProvider NPI or the references to the Member and the Attributed Provider in the Producer system. 
-The Member Attribution List status has to be "draft" for the reconciliation API of member-add to be allowed. 
+The Member Attribution List status has to be "draft" or "open" for the reconciliation API of member-add to be allowed. 
 
 **API: Add a member to the Member Attribution List**
 
@@ -432,7 +432,7 @@ This interaction outlines the APIs for a Consumer (for example, Provider organiz
 
 To remove a member from the Member Attribution List, the Consumer should have successfully discovered the Member Attribution List.
 The Consumer knows the MemberId and the Attributed Provider's NPI or the references to the Member and the Attributed Provider in the Producer system. 
-The [Member Attribution List status](StructureDefinition-ext-attributionListStatus.html) has to be "draft" for the reconciliation API to be allowed.
+The [Member Attribution List status](StructureDefinition-ext-attributionListStatus.html) has to be "draft" or "open" for the reconciliation API to be allowed.
 
 **API: Remove a member from the Member Attribution List**
 

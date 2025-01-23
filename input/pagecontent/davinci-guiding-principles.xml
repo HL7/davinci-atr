@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <p>
+    Guiding Principles were reviewed, edited and approved by Da Vinci governance bodies in January 2020: 
+	<ul>
+	<li>Steering Committee</li>
+	<li>Operating Committee</li>
+	<li>Clinical Advisory Council</li>
+	</ul>
+	The Guiding  Principles are  considered  foundational  to Da  Vinci  work  products, and will  be  incorporated as relevant into Da  Vinci Implementation  Guides  and artifacts to inform  and  instruct  the implementation community.  For more details: <a href="https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome">hl7.me/davincinews</a>.
+
+  </p>
+
+  <a name="coreprinciples"> </a>
+	<h3>Core Principles</h3>
+  <ol>
+    <li>Implementation Guides (IGs) should be based on a specifically identified need or purpose to exchange PHI. Acceptable Exchange Purposes include:
+	<ol style="list-style-type: lower-alpha;">
+			<li>Clinical/Treatment</li>
+			<li>Healthcare Operations</li>
+			<li>Payment</li>
+			<li>Regulatory</li>
+		</ol>
+	</li>
+    <li>The IG should require that responders have the ability to:
+	<ol style="list-style-type: lower-alpha;">
+			<li>specify/constrain the scope of data access; and/or</li>
+			<li>review and approve the content prior to access or release</li>
+		</ol>
+	<b>NOTE:</b> A responder should have the option, but not the obligation, to review data prior to release (e.g., to limit burden, the responder might choose to not review if the requester is a trusted party and the request is well bounded or repeated – e.g., routine prior authorization exchanges on individual patients).
+	</li>
+    <li>All IGs will include a note that implementers must ensure that the use of the guide meets all applicable federal or state laws and regulations.</li>
+    <li>All IGs should incorporate these Guiding Principles to the extent applicable.</li>
+  </ol>
+
+  <a name="principles"> </a>
+	<h3>Implementer Principles</h3>
+  <ol>
+    <li>The scope of information exchanged should be limited to that required to address the specified Purpose of Use.
+	<ol style="list-style-type: lower-alpha;">
+			<li>The requester should limit the request for information to that required to address the specific, stated purpose e.g., trading partners will use data use agreements (DUAs), business associate agreements (BAAs) and/or contracts to specify the potential reuse or repurposing of data shared between two parties, allowing one agreement to potentially enable reuse of data for the permitted purpose of quality data reporting, but specifically prohibiting the use of said data in future benefits determination or contract negotiations.</li>
+			<li>The responder should provide reasonable access, based on responder’s Internal Policies related to Minimum Necessary and Permissible Disclosures under HIPAA and state law, to the requested information for patients who have a valid, defined relationship to the requester.</li>
+			<li>Payers will not condition their network participation agreements with providers based on providers agreeing to participate in Da Vinci or to exchange information beyond what is contemplated by provider’s Internal Policies.</li>
+		</ol>
+		<b>Examples of appropriate requests and exchanges:</b>
+		<ol>
+			<li>If the need is for a specific lab value (e.g. A1c) and Current Diagnoses, then the query should be limited to those elements.</li>
+			<li>If the need is to validate that a specific procedure was performed for the patient (e.g., colorectal screening during the past 10 years), then the request should be limited to the appropriate information during that time period to verify the presence or absence of the specific procedure.</li>
+		</ol>
+	</li>  
+    <li>Requester should ask for structured/coded information where possible. Since not all information is structured, the request for notes to identify the presence or absence of specific information can be used when structured queries are not sufficient, supported, or available, or are necessary to demonstrate that a patient has declined otherwise recommended care. When asking for unstructured data, requesters should place appropriate limitations on data requests (e.g., indicate time parameters for requested clinical notes).</li>
+    <li>Bulk data exchanges should be based on a mutually agreed upon (i.e., between the payer and provider) member identification list or methodology or demonstration of a validated previous relationship of the patient to the requester and responder.</li>
+	<li>Requesters should utilize Data Minimization Practices, e.g., filtering and purging, to minimize unnecessary data use and retention. Collection of data should be minimized so that it is narrowly tailored to the requester’s stated purpose.</li>	
+	</ol>
+</div>

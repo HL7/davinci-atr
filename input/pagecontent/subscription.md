@@ -22,7 +22,7 @@ The following is an example of the Member Attribution List change SubscriptionTo
 
 #### Consumer Requirements for Subscription Creation
 
-* The Consumer **SHOULD** support the creation of a SubscriptionTopic by a Consumer.
+* The Consumer **SHOULD** support the creation of a Subscription in a Producer system.
 
 * When the Consumer creates Subscription resources in the Producer system, the Consumer **SHALL** represent the canonical URL for the atr-list-change topic from the above table as part of the Subscription.criteria element.
 

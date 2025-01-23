@@ -19,7 +19,7 @@ Similar to any FHIR operation, Consumers need to obtain authorization to success
 
 #### Effect of Attribution List Status on the member-add operation
 
-* The Producer **SHALL** allow the member-add operation only when the attribution list status is "draft". 
+* The Producer **SHALL** allow the member-add operation only when the attribution list status is "draft" or "open".
 
 * When the attribution list status is "final" the Producer **SHALL** reject the operation with appropriate OperationOutcome.
 
