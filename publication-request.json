@@ -6,6 +6,6 @@
   "milestone" : "true",
   "status" : "trial-use",
   "sequence" : "STU2 Release 1",
-  "desc" : "This release adds the generic patient lists, generic davinci bulk export and the ability for reconciling member attribution lists using member-add and member-remove operations.",
+  "desc" : "This release adds the generic patient lists, generic DaVinci bulk export and the ability for reconciling member attribution lists using member-add and member-remove operations.",
   "changes" : "changes.html"
 }
