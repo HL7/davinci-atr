@@ -9,7 +9,7 @@
         <a href="fhir.html">Reading this IG</a>
       </li>
       <li>
-        <a href="http://hl7.org/about/davinci">Da Vinci Overview</a>
+        <a href="usecases.html">Use Cases</a>
       </li>
       <li>
         <a href="credits.html">Project and Participants</a>
@@ -30,11 +30,14 @@
       </b>
     </a>
     <ul class="dropdown-menu">
-      <li>
-        <a href="{{site.data.info.assets}}index.html">ATR Home Page</a>
+    <li>
+        <a href="conformance.html">Conformance Expectations</a>
       </li>
       <li>
-        <a href="{{site.data.info.assets}}usecases.html">Use Cases and Overview</a>
+        <a href="security.html">Privacy, Safety, and Security</a>
+      </li>
+      <li>
+        <a href="{{site.data.info.assets}}index.html">ATR Home Page</a>
       </li>
       <li>
         <a href="{{site.data.info.assets}}background.html">Technical Background</a>
@@ -43,12 +46,6 @@
         <a href="{{site.data.info.assets}}spec.html">
           <b>Formal Specification</b>
         </a>
-      </li>
-      <li>
-        <a href="{{site.data.info.assets}}downloads.html">Downloads</a>
-      </li>
-      <li>
-        <a href="{{site.data.info.assets}}credits.html">Credits</a>
       </li>
     </ul>
   </li>
@@ -63,9 +60,6 @@
       <li>
         <a href="{{site.data.fhir.uscoreR4}}/index.html">US Core STU3 (FHIR R4 version)</a>
       </li>
-      <li>
-        <a href="{{site.data.info.assets}}downloads.html">Downloads</a>
-      </li>
     </ul>
   </li>  
   <li class="dropdown">
@@ -77,10 +71,16 @@
         <a target="_blank" href="{{site.data.fhir.path}}index.html">FHIR R4 Spec <img src="external.png" style="text-align: baseline"/></a>
       </li>
       <li>
-        <a target="_blank" href="{{site.data.fhir.ver.uscore3}}/index.html">US Core STU 3.1.1 (FHIR R4 version)<img src="external.png" style="text-align: baseline"/></a>
+        <a target="_blank" href="{{site.data.fhir.ver.hrex}}index.html">HRex 1.1.0 <img src="external.png" style="text-align: baseline"/></a>
       </li>
       <li>
-        <a target="_blank" href="{{site.data.fhir.ver.uscoreR4}}/index.html">US Core STU 7.0.0 (FHIR R4 version)<img src="external.png" style="text-align: baseline"/></a>
+        <a target="_blank" href="{{site.data.fhir.ver.uscore3}}/index.html">US Core 3.1.1 <img src="external.png" style="text-align: baseline"/></a>
+      </li>
+      <li>
+        <a target="_blank" href="{{site.data.fhir.ver.uscore6}}/index.html">US Core 6.1.0 <img src="external.png" style="text-align: baseline"/></a>
+      </li>
+      <li>
+        <a target="_blank" href="{{site.data.fhir.ver.uscore7}}/index.html">US Core 7.0.0 <img src="external.png" style="text-align: baseline"/></a>
       </li>
       <li>
         <a target="_blank" href="{{site.data.fhir.ver.bulkig}}/index.html">Bulk Data IG<img src="external.png" style="text-align: baseline"/></a>

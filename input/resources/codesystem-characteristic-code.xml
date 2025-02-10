@@ -17,7 +17,7 @@
   <name value="DaVinciGroupCharacteristicCodes"/>
   <title value="Davinci Group Characteristic Codes"/>
   <status value="active"/>
-  <experimental value="true"/>
+  <experimental value="false"/>
   <date value="2022-12-06"/>
   <description value="The DaVinci Group CharacteristicCodeSystem is a &#39;starter set&#39; of codes supported for identifying the characteristics shared by members of a group."/>
   <jurisdiction>

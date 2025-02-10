@@ -3,3 +3,14 @@
 # This will be presented to CPG per the ticket : https://jira.hl7.org/browse/FHIR-43113. Motion: Linda Michaelsen/Yan Heras : 20-0-0  
 US FHIR Usage rules require that all profiles on Coverage derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 US FHIR Usage rules require that all profiles on RelatedPerson derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
+
+# These are DaVinci specific template warnings
+DA VINCI: The Change Log page (changes.html) does not include any Jira tracker items links for the section with title Release 0.1.0
+DA VINCI: This IG does not include an explicit dependency on US Core 3.1.1.
+
+# Future THO Warnings
+Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# US Core Inherited Warnings
+The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
