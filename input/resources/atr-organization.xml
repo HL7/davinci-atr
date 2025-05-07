@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="atr-organization"/>
+    <meta>
+        <versionId value="3"/>
+        <lastUpdated value="2021-08-13T05:43:12.456+00:00"/>
+    </meta>
+    <extension
+             url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    	<valueCode value="fm"/>
+  	</extension>
+    <url
+       value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-organization"/>
+  <version value="2.1.0"/>
+  <name value="ATROrganization"/>
+  <title value="Davinci ATR Organization"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2019-09-01"/>
+  <publisher value="HL7 International / Financial Management"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description value="This is the Organization Resource profile for the IG."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Organization"/>
+    <baseDefinition value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|7.0.0"/>
+    <derivation value="constraint"/>
+    <differential>
+    <element id="Organization">
+      <path value="Organization"/>
+      <short value="Davinci ATR Organization"/>
+      <definition
+                  value="Sets expectations for supported capabilities for Organization resource in Member Attribution Lists."/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Organization.address.district">
+      <path value="Organization.address.district"/>
+      <min value="0"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+  </differential>
+</StructureDefinition>

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="atr-coverage"/>
+    <meta>
+        <versionId value="3"/>
+        <lastUpdated value="2021-08-13T05:43:12.456+00:00"/>
+    </meta>
+    <extension
+             url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    	<valueCode value="fm"/>
+  	</extension>
+    <url value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-coverage"/>
+    <version value="0.1.0"/>
+    <name value="ATRCoverage"/>
+    <title value="DaVinci ATR Coverage 3.1"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <date value="2019-09-01"/>
+    <publisher value="HL7 International - Financial Management"/>
+    <contact>
+        <telecom>
+            <system value="url"/>
+            <value value="http://hl7.org/Special/committees/fm"/>
+        </telecom>
+    </contact>
+    <description value="Coverage Resource profile for exchanging Member Attribution Lists."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+        </coding>
+    </jurisdiction>
+    <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Coverage"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Coverage"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Coverage">
+            <path value="Coverage"/>
+            <short value="DaVinci ATR Coverage"/>
+            <definition value="Sets expectations for supported capabilities for Coverage resource in Member Attribution Lists."/>
+        </element>
+        <element id="Coverage.extension:insuranceProductType">
+            <path value="Coverage.extension"/>
+            <sliceName value="insuranceProductType"/>
+            <min value="0"/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-insuranceProductType"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Coverage.identifier">
+      <path value="Coverage.identifier"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="type.coding.system"/>
+        </discriminator>
+        <discriminator>
+          <type value="value"/>
+          <path value="type.coding.code"/>
+        </discriminator>
+        <rules value="open"/>
+      </slicing>
+      <min value="0"/>
+      <max value="*"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Coverage.identifier:MemberIdentifier">
+      <path value="Coverage.identifier"/>
+      <sliceName value="MemberIdentifier"/>
+      <min value="0"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Coverage.identifier:MemberIdentifier.type">
+      <path value="Coverage.identifier.type"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Coverage.identifier:MemberIdentifier.type.coding">
+      <path value="Coverage.identifier.type.coding"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Coverage.identifier:MemberIdentifier.type.coding.system">
+      <path value="Coverage.identifier.type.coding.system"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="uri"/>
+      </type>
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Coverage.identifier:MemberIdentifier.type.coding.code">
+      <path value="Coverage.identifier.type.coding.code"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="code"/>
+      </type>
+      <fixedCode value="MB"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Coverage.identifier:MemberIdentifier.system">
+      <path value="Coverage.identifier.system"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Coverage.identifier:MemberIdentifier.value">
+      <path value="Coverage.identifier.value"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Coverage.status">
+      <path value="Coverage.status"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="code"/>
+      </type>
+      <fixedCode value="active"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Coverage.policyHolder">
+      <path value="Coverage.policyHolder"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile
+                       value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-patient"/>
+        <targetProfile
+                       value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-relatedperson"/>
+        <targetProfile
+                       value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-relatedperson|7.0.0"/>
+        <targetProfile
+                       value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-organization"/>
+      </type>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Coverage.subscriber">
+      <path value="Coverage.subscriber"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile
+                       value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-patient"/>
+        <targetProfile
+                       value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-relatedperson"/>
+        <targetProfile
+                       value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-relatedperson|7.0.0"/>
+      </type>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Coverage.subscriberId">
+      <path value="Coverage.subscriberId"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Coverage.beneficiary">
+      <path value="Coverage.beneficiary"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile
+                       value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-patient"/>
+      </type>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Coverage.dependent">
+      <path value="Coverage.dependent"/>
+      <min value="0"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Coverage.relationship">
+      <path value="Coverage.relationship"/>
+      <min value="0"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Coverage.period">
+      <path value="Coverage.period"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Coverage.payor">
+      <path value="Coverage.payor"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile
+                       value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-patient"/>
+        <targetProfile
+                       value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-relatedperson"/>
+        <targetProfile
+                       value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-relatedperson|7.0.0"/>
+        <targetProfile
+                       value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-organization"/>
+      </type>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Coverage.class">
+      <path value="Coverage.class"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="type.coding.system"/>
+        </discriminator>
+        <discriminator>
+          <type value="value"/>
+          <path value="type.coding.code"/>
+        </discriminator>
+        <rules value="open"/>
+      </slicing>
+      <min value="0"/>
+      <max value="*"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Coverage.class:PlanIdentifier">
+      <path value="Coverage.class"/>
+      <sliceName value="PlanIdentifier"/>
+      <min value="0"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Coverage.class:PlanIdentifier.type">
+      <path value="Coverage.class.type"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Coverage.class:PlanIdentifier.type.coding">
+      <path value="Coverage.class.type.coding"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Coverage.class:PlanIdentifier.type.coding.system">
+      <path value="Coverage.class.type.coding.system"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="uri"/>
+      </type>
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/coverage-class"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Coverage.class:PlanIdentifier.type.coding.code">
+      <path value="Coverage.class.type.coding.code"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="code"/>
+      </type>
+      <fixedCode value="plan"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Coverage.class:PlanIdentifier.value">
+      <path value="Coverage.class.value"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+  </differential>
+</StructureDefinition>

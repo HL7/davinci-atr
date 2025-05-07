@@ -7,7 +7,7 @@
 	},
 	"text": {
 		"status": "generated",
-		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <table>\n        <tbody>\n          <tr>\n            <td>Name</td>\n            <td>B�n�dicte du March�</td>\n          </tr>\n          <tr>\n            <td>Address</td>\n            <td>43, Place du March� Sainte Catherine, 75004 Paris, France</td>\n          </tr>\n          <tr>\n            <td>Contacts</td>\n            <td>Phone: +33 (237) 998327</td>\n          </tr>\n        </tbody>\n      </table>\n    </div>"
+		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Donnie Bradley</div>"
 	},
 	"identifier" : [
 	    {
@@ -38,9 +38,9 @@
 	"name": [
 		{
 			"use": "official",
-			"family": "Douglas",
+			"family": "Bradley",
 			"given": [
-				"Bradly"
+				"Donnie"
 			],
 			"prefix": [
 				"Mr."

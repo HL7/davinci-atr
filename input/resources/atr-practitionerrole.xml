@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="atr-practitionerrole"/>
+    <meta>
+        <versionId value="3"/>
+        <lastUpdated value="2021-08-13T05:43:12.456+00:00"/>
+    </meta>
+    <extension
+             url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    	<valueCode value="fm"/>
+  	</extension>
+    <url
+       value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-practitionerrole"/>
+  <version value="2.1.0"/>
+  <name value="ATRPractitionerRole"/>
+  <title value="Davinci ATR PractitionerRole"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2019-09-01"/>
+  <publisher value="HL7 International / Financial Management"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description
+               value="This is the PractitionerRole Resource profile for the IG."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="PractitionerRole"/>
+    <baseDefinition value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole|7.0.0"/>
+    <derivation value="constraint"/>
+    <differential>
+    <element id="PractitionerRole">
+      <path value="PractitionerRole"/>
+      <short value="Davinci ATR PractitionerRole"/>
+      <definition
+                  value="Sets expectations for supported capabilities for PractitionerRole resource in Member Attribution Lists."/>
+      <mustSupport value="false"/>
+    </element>
+    <element id="PractitionerRole.period">
+      <path value="PractitionerRole.period"/>
+      <min value="0"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="PractitionerRole.practitioner">
+      <path value="PractitionerRole.practitioner"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile
+                       value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-practitioner"/>
+      </type>
+      <mustSupport value="true"/>
+    </element>
+    <element id="PractitionerRole.organization">
+      <path value="PractitionerRole.organization"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile
+                       value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-organization"/>
+      </type>
+      <mustSupport value="true"/>
+    </element>
+    <element id="PractitionerRole.location">
+      <path value="PractitionerRole.location"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile
+                       value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-location"/>
+      </type>
+      <mustSupport value="true"/>
+    </element>
+  </differential>
+</StructureDefinition>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ext-attributionListStatus"/>
+    <meta>
+        <versionId value="2"/>
+        <lastUpdated value="2022-07-12T02:02:26.725+00:00"/>
+    </meta>
+    <extension
+             url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    	<valueCode value="fm"/>
+  	</extension>
+    <url
+       value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-attributionListStatus"/>
+  <version value="2.1.0"/>
+  <name value="AttributionListStatus"/>
+  <title value="Attribution List Status"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2019-09-01"/>
+  <publisher value="HL7 International / Financial Management"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description
+               value="The attribution list status designates if the list is in a draft form or if the list is in a final form. When a list is designated as final, reconciliation operations member-add and member-remove are not allowed to be invoked."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <fhirVersion value="4.0.1"/>
+    <kind value="complex-type"/>
+  <abstract value="false"/>
+  <context>
+    <type value="element"/>
+    <expression value="Group"/>
+  </context>
+  <type value="Extension"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+  <derivation value="constraint"/>
+    <differential>
+    <element id="Extension">
+      <path value="Extension"/>
+      <short value="Indicates the status of the attribution list"/>
+      <definition
+                  value="The attribution list status designates if the list is in a draft form or if the list is in a final form. When a list is designated as final, reconciliation operations member-add and member-remove are not allowed to be invoked."/>
+      <min value="0"/>
+      <max value="1"/>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url"/>
+      <type>
+        <code value="uri"/>
+      </type>
+      <fixedUri
+                value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-attributionListStatus"/>
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]"/>
+      <type>
+        <code value="code"/>
+      </type>
+      <binding>
+        <strength value="extensible"/>
+        <description
+                     value="The Da Vinci Attribution List Status is a starter set of codes used to indicate the status of the attribution list."/>
+        <valueSet
+                  value="http://hl7.org/fhir/us/davinci-atr/ValueSet/atr-attribution-list-status"/>
+      </binding>
+    </element>
+  </differential>
+</StructureDefinition>

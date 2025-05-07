@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ext-changeType"/>
+    <meta>
+        <versionId value="2"/>
+        <lastUpdated value="2022-07-12T02:02:26.725+00:00"/>
+    </meta>
+    <extension
+             url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    	<valueCode value="fm"/>
+  	</extension>
+    <url
+       value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-changeType"/>
+  <version value="2.1.0"/>
+  <name value="ChangeType"/>
+  <title value="Group Member Change Information"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2019-09-01"/>
+  <publisher value="HL7 International / Financial Management"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description
+               value="changeType can be new (member added), dropped (member removed), changed (member information has changed), nochange (no change in member information since group was created)."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <fhirVersion value="4.0.1"/>
+    <kind value="complex-type"/>
+  <abstract value="false"/>
+  <context>
+    <type value="element"/>
+    <expression value="Group.member"/>
+  </context>
+  <type value="Extension"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+  <derivation value="constraint"/>
+    <differential>
+    <element id="Extension">
+      <path value="Extension"/>
+      <short
+             value="Indicates whether a member was added, removed or changed when the Group was created/updated."/>
+      <definition
+                  value="changeType can be new (member added), dropped (member removed), changed (member information has changed), nochange (no change in member information since group was created)."/>
+      <min value="0"/>
+      <max value="1"/>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url"/>
+      <type>
+        <code value="uri"/>
+      </type>
+      <fixedUri
+                value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-changeType"/>
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]"/>
+      <type>
+        <code value="code"/>
+      </type>
+      <binding>
+        <strength value="extensible"/>
+        <description
+                     value="The Da Vinci ATR Change Type Value Set is a &amp;#39;starter set&amp;#39; of codes for identifying the detailed changes associated with Member Attribution Lists"/>
+        <valueSet
+                  value="http://hl7.org/fhir/us/davinci-atr/ValueSet/atr-changetype"/>
+      </binding>
+    </element>
+  </differential>
+</StructureDefinition>

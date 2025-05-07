@@ -22,7 +22,7 @@
 				],
 				"text": "Medical Record Number"
 			},
-			"system": "http://hospital.smarthealthit.org",
+			"system": "http://example.org",
 			"value": "smart-8888804"
 		}
 	],

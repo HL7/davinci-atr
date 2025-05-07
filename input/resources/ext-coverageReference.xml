@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ext-coverageReference"/>
+    <meta>
+        <versionId value="2"/>
+        <lastUpdated value="2022-07-12T02:02:26.725+00:00"/>
+    </meta>
+    <extension
+             url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    	<valueCode value="fm"/>
+  	</extension>
+    <url
+       value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-coverageReference"/>
+  <version value="2.1.0"/>
+  <name value="CoverageReference"/>
+  <title value="Coverage Reference"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2019-09-01"/>
+  <publisher value="HL7 International / Financial Management"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description
+               value="Indicates the Coverage associated with the member placing them on the attribution list."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <fhirVersion value="4.0.1"/>
+    <kind value="complex-type"/>
+  <abstract value="false"/>
+  <context>
+    <type value="element"/>
+    <expression value="Group.member"/>
+  </context>
+  <type value="Extension"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+  <derivation value="constraint"/>
+    <differential>
+    <element id="Extension">
+      <path value="Extension"/>
+      <short
+             value="Indicates the Coverage assocaited with the member placing them on the attribution list."/>
+      <definition
+                  value="Indicates the Coverage associated with the member placing them on the attribution list."/>
+      <min value="0"/>
+      <max value="1"/>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url"/>
+      <type>
+        <code value="uri"/>
+      </type>
+      <fixedUri
+                value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-coverageReference"/>
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile
+                       value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-coverage|7.0.0"/>
+        <targetProfile
+                       value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-coverage"/>
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

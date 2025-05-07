@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="atr-location"/>
+    <meta>
+        <versionId value="3"/>
+        <lastUpdated value="2021-08-13T05:43:12.456+00:00"/>
+    </meta>
+    <extension
+             url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    	<valueCode value="fm"/>
+  	</extension>
+    <url
+       value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-location"/>
+  <version value="2.1.0"/>
+  <name value="ATRLocation"/>
+  <title value="Davinci ATR Location"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2019-09-01"/>
+  <publisher value="HL7 International / Financial Management"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description value="This is the Location Resource profile for the IG."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Location"/>
+    <baseDefinition value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|7.0.0"/>
+    <derivation value="constraint"/>
+    <differential>
+	    <element id="Location">
+	      <path value="Location"/>
+	      <short value="Davinci ATR Location"/>
+	      <definition
+	                  value="Sets expectations for supported capabilities for Location resource in Member Attribution Lists."/>
+	      <mustSupport value="false"/>
+	    </element>
+	    <element id="Location.identifier">
+	      <path value="Location.identifier"/>
+	      <min value="0"/>
+	      <max value="*"/>
+	      <mustSupport value="true"/>
+	    </element>
+  	</differential>
+</StructureDefinition>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="atr-relatedperson"/>
+    <meta>
+        <versionId value="3"/>
+        <lastUpdated value="2021-08-13T05:43:12.456+00:00"/>
+    </meta>
+    <extension
+             url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    	<valueCode value="fm"/>
+  	</extension>
+    <url
+       value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-relatedperson"/>
+  <version value="2.1.0"/>
+  <name value="ATRRelatedPerson"/>
+  <title value="Davinci ATR RelatedPerson 3.1"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2019-09-01"/>
+  <publisher value="HL7 International / Financial Management"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description
+               value="This is the RelatedPerson Resource profile for the IG to be used when vendors are implementing ATR requirements based on US Core 3.1.1"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="RelatedPerson"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/RelatedPerson"/>
+    <derivation value="constraint"/>
+    <differential>
+    <element id="RelatedPerson">
+      <path value="RelatedPerson"/>
+      <short value="Davinci ATR RelatedPerson 3.1"/>
+      <definition
+                  value="Sets expectations for supported capabilities for RelatedPerson resource in Member Attribution Lists."/>
+      <mustSupport value="false"/>
+    </element>
+    <element id="RelatedPerson.identifier">
+      <path value="RelatedPerson.identifier"/>
+      <min value="0"/>
+      <max value="*"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="RelatedPerson.patient">
+      <path value="RelatedPerson.patient"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile
+                       value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-patient"/>
+      </type>
+      <mustSupport value="true"/>
+    </element>
+    <element id="RelatedPerson.relationship">
+      <path value="RelatedPerson.relationship"/>
+      <min value="0"/>
+      <max value="*"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="RelatedPerson.name">
+      <path value="RelatedPerson.name"/>
+      <min value="0"/>
+      <max value="*"/>
+      <mustSupport value="true"/>
+    </element>
+  </differential>
+</StructureDefinition>

@@ -7,7 +7,7 @@
 	},
 	"identifier": [
 		{
-			"system": "http://hospital.smarthealthit.org",
+			"system": "http://example.org",
 			"value": "B1-S.F2"
 		}
 	],

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="atr-group"/>
+    <meta>
+        <versionId value="3"/>
+        <lastUpdated value="2021-08-13T05:43:12.456+00:00"/>
+    </meta>
+    <extension
+             url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    	<valueCode value="fm"/>
+  	</extension>
+    <url
+       value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-group"/>
+  <version value="2.1.0"/>
+  <name value="ATRGroup"/>
+  <title value="Davinci ATR Group"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2019-09-01"/>
+  <publisher value="HL7 International / Financial Management"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description value="This is the Group Resource profile for the IG."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Group"/>
+    <baseDefinition value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-patient-list"/>
+    <derivation value="constraint"/>
+    <differential>
+    <element id="Group">
+      <path value="Group"/>
+      <short value="Davinci ATR Group"/>
+      <definition
+                  value="Sets expectations for supported capabilities for Group resource in Member Attribution Lists."/>
+      <mustSupport value="false"/>
+    </element>
+    <element id="Group.meta.lastUpdated">
+      <path value="Group.meta.lastUpdated"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Group.extension:contractValidityPeriod">
+      <path value="Group.extension"/>
+      <sliceName value="contractValidityPeriod"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+        <profile
+                 value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-contractValidityPeriod"/>
+      </type>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Group.extension:attributionListStatus">
+      <path value="Group.extension"/>
+      <sliceName value="attributionListStatus"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+        <profile
+                 value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-attributionListStatus"/>
+      </type>
+      <mustSupport value="true"/>
+      <binding>
+        <strength value="extensible"/>
+        <description
+                     value="The Da Vinci Attribution List Status is a starter set of codes used to indicate the status of the attribution list."/>
+        <valueSet
+                  value="http://hl7.org/fhir/us/davinci-atr/ValueSet/atr-attribution-list-status"/>
+      </binding>
+    </element>
+    <element id="Group.identifier">
+      <path value="Group.identifier"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="system"/>
+        </discriminator>
+        <rules value="open"/>
+      </slicing>
+      <min value="0"/>
+      <max value="*"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Group.identifier:npi">
+      <path value="Group.identifier"/>
+      <sliceName value="npi"/>
+      <min value="0"/>
+      <max value="*"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Group.identifier:npi.system">
+      <path value="Group.identifier.system"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="uri"/>
+      </type>
+      <fixedUri value="http://hl7.org/fhir/sid/us-npi"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Group.identifier:npi.value">
+      <path value="Group.identifier.value"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Group.identifier:tin">
+      <path value="Group.identifier"/>
+      <sliceName value="tin"/>
+      <min value="0"/>
+      <max value="*"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Group.identifier:tin.system">
+      <path value="Group.identifier.system"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="uri"/>
+      </type>
+      <fixedUri value="urn:oid:2.16.840.1.113883.4.4"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Group.identifier:tin.value">
+      <path value="Group.identifier.value"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Group.member">
+      <path value="Group.member"/>
+      <min value="0"/>
+      <max value="*"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Group.member.extension:changeType">
+      <path value="Group.member.extension"/>
+      <sliceName value="changeType"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+        <profile
+                 value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-changeType"/>
+      </type>
+      <mustSupport value="true"/>
+      <binding>
+        <strength value="extensible"/>
+        <description
+                     value="The Da Vinci ATR Change Type Value Set is a &amp;#39;starter set&amp;#39; of codes for identifying the detailed changes associated with Member Attribution Lists"/>
+        <valueSet
+                  value="http://hl7.org/fhir/us/davinci-atr/ValueSet/atr-changetype"/>
+      </binding>
+    </element>
+    <element id="Group.member.extension:coverageReference">
+      <path value="Group.member.extension"/>
+      <sliceName value="coverageReference"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+        <profile
+                 value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-coverageReference"/>
+      </type>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Group.member.extension:attributedProvider">
+      <path value="Group.member.extension"/>
+      <sliceName value="attributedProvider"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+        <profile
+                 value="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-attributedProvider"/>
+      </type>
+      <mustSupport value="true"/>
+    </element>
+  </differential>
+</StructureDefinition>
