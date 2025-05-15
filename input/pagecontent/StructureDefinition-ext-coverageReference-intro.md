@@ -4,7 +4,7 @@ This extension is used to identify the specific Coverage resource reference that
 
 **Implementation Requirements**
 
-Implementers are advised to read [Data Model Requirements](spec.html#member-attribution-list-data-model-requirements) to implement the coverageReference extension during the creation of a Member Attribution List.
+Implementers are advised to read [Data Model Requirements](spec.html#member-attribution-list-data-model-requirements) to implement the coverageReference extension during the creation of a Member Attribution List. 
 
 
 
